@@ -1,14 +1,16 @@
-## Hooks - Actios y Filters
+## Hooks - Actions y Filters
 
 Los hooks (o ganchos) de WordPress son la forma en la que una pieza de código puede interactuar con otra pieza. Es la base de cómo interactúan los plugins y temas con WordPress, pero también lo extienden.
 
 Hay dos tipos des hooks: Actions y Filters (acciones y filtros). Para usarlos, necesitas escribir una función personalizada, también llamada de retorno (o Callback), y entonces, registrarla con un hook de WordPress para una acción o filtro específico.
 
-    Actions: te permiten añadir data o cambiar cómo opera WordPress. Las funciones de retorno para las acciones correrán en un punto específico 
-    de la ejecución de WordPress y pueden ejecutar alguna tarea, como mostrar una salida al usuario o insertar algo en la base de datos.
+    Actions: te permiten añadir data o cambiar cómo opera WordPress. Las funciones de retorno para las acciones correrán 
+    en un punto específico de la ejecución de WordPress y pueden ejecutar alguna tarea, como mostrar una salida al usuario 
+    o insertar algo en la base de datos.
 
-    Filters: te dan la habilidad de cambiar datos durante la ejecución de WordPress. La función de retorno para los filtros aceptará una variable, 
-    la modificará y la devolverá. Están diseñados para trabajar de manera aislada y nunca deben tener efectos secundarios como el de afectar a variables globales.
+    Filters: te dan la habilidad de cambiar datos durante la ejecución de WordPress. La función de retorno para los filtros 
+    aceptará una variable, la modificará y la devolverá. Están diseñados para trabajar de manera aislada y nunca deben tener 
+    efectos secundarios como el de afectar a variables globales.
 
 WordPress provee muchos hooks que puedes usar, pero también puedes crear los tuyos propios, de esta forma, otros desarrolladores pueden extender y modificar tu plugin o tema.
 
