@@ -25,4 +25,22 @@ Y por último arrancaremos la máquina:
 
 	http://192.168.33.10
 
-### VPDistillery (preparado para instalar Wordpress)
+### VPDistillery (preparado para instalar WordPress)
+Prepara el Vagrantfile con la instalación de WordPress. Documentación: https://github.com/flurinduerst/WPDistillery
+
+Setup
+
+To setup a new project running Scotch Box and WordPress, simply follow these steps:
+
+    In a terminal, run: git clone https://github.com/flurinduerst/WPDistillery.git my-project
+    Customize wpdistillery/config.yml to suit your needs. See configuration file documentation.
+    Inside the Vagrantfile add your local URL at config.vm.hostname. This should be the same as wpsettings:url: in config.yml.
+    Run vagrant up from where your Vagrantfile is.
+
+Done! You can now access your project at the local URL (for example yoursite.vm) defined in Step 3. (or at http://192.168.33.10/)
+
+Note: Currently there's an issue related to ScotchBox that hinders Vagrant from mounting VirtualBox Shared folders. The solution is to install vagrant-vbguest before running vagrant. This will install the correct vbguest package into the box:
+
+vagrant plugin install vagrant-vbguest
+vagrant vbguest
+
