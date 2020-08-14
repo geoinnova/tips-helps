@@ -20,10 +20,12 @@ En la activación, los plugins pueden ejecutar una rutina para añadir reglas de
 
 En la desactivación, los plugins pueden ejecutar una rutina para eliminar datos temporales como la caché y archivos y directorios temporales.
 
-Para configurar un hook de activación, usa la función register_activation_hook():
-register_activation_hook( __FILE__, 'pluginprefix_function_to_run' );
+Hook de activación > función register_activation_hook():
 
-Para configurar un hook de desactivación, usa la función register_deactivation_hook():
-register_deactivation_hook( __FILE__, 'pluginprefix_function_to_run');
+    register_activation_hook( __FILE__, 'pluginprefix_function_to_run' );
+
+Hook de desactivación > función register_deactivation_hook():
+
+    register_deactivation_hook( __FILE__, 'pluginprefix_function_to_run');
 
 El primer parámetro en cada una de estas funciones hace referencia al archivo principal de tu plugin. Normalmente estas dos funciones se activarán dentro del archivo principal del plugin; sin embargo, si las funciones están colocadas en otro archivo, tienes que actualizar el primer parámetro para apuntar correctamente al archivo principal del plugin.
