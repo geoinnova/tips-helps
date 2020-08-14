@@ -31,8 +31,11 @@ Prepara el Vagrantfile con la instalación de WordPress. Documentación: https:/
 ### Dependencies
 
     ScotchBox (using Vagrant & Virtualbox)
-    Vagrant Hostsupdater (vagrant plugin install vagrant-hostsupdater) > Es un plugin de Vagrant que crea como un servidor DNS para no tener que utilizar la 
-    dirección IP sino que podamos usar un nombre de dominio
+    Vagrant Hostsupdater (vagrant plugin install vagrant-hostsupdater) > Es un plugin de Vagrant que crea como un 
+    servidor DNS para no tener que utilizar la dirección IP sino que podamos usar un nombre de dominio
+    
+    vagrant plugin install vagrant-hostsupdater
+    vagrant plugin uninstall vagrant-hostsupdater
 
 
 #### Setup
