@@ -12,3 +12,5 @@ Nos posicionamos en la carpeta donde vayamos a instalarlo y clonamos el reposito
 
 	git clone https://github.com/scotch-io/scotch-box my-project
 
+Se creará una carpeta <b>/public </b> que será donde incluyamos nuestros proyectos.
+Un archivo Vagrantfile, para configurar
