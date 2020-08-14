@@ -28,6 +28,13 @@ Y por último arrancaremos la máquina:
 ### VPDistillery (preparado para instalar WordPress)
 Prepara el Vagrantfile con la instalación de WordPress. Documentación: https://github.com/flurinduerst/WPDistillery
 
+### Dependencies
+
+    ScotchBox (using Vagrant & Virtualbox)
+    Vagrant Hostsupdater (vagrant plugin install vagrant-hostsupdater) > Es un plugin de Vagrant que crea como un servidor DNS para no tener que utilizar la 
+    dirección IP sino que podamos usar un nombre de dominio
+
+
 #### Setup
 
 To setup a new project running Scotch Box and WordPress, simply follow these steps:
