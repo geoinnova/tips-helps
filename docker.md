@@ -5,7 +5,7 @@ https://xenfacil.com/paginas/scotchbox/
 
 En vez de Vagrant vamos a instalar <strong>scotch box </strong>, para ello previamente debemos:
 
-	Instalar VirtualBox en nuestra computadora
-	Instalar Vagrant en nuestra computadora
+	Instalar VirtualBox
+	Instalar Vagrant
       
 
