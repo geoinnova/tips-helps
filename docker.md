@@ -24,3 +24,5 @@ Y por último arrancaremos la máquina:
 (la primera vez que lo ejecutemos nos descargará la máquina)
 
 	http://192.168.33.10
+
+### VPDistillery (preparado para instalar Wordpress)
