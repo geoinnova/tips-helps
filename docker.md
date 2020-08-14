@@ -18,3 +18,5 @@ Un archivo Vagrantfile, para configurar
 Y por último arrancaremos la máquina:
 
 	vagrant up
+	
+(la primera vez que lo ejecutemos nos descargará la máquina)
