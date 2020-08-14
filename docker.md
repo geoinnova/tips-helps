@@ -52,3 +52,4 @@ Done! You can now access your project at the local URL (for example `yoursite.vm
 vagrant plugin install vagrant-vbguest
 vagrant vbguest
 ```
+#seguir por minuto 23 https://openwebinars.net/academia/aprende/wordpress-entorno-local/5213/
