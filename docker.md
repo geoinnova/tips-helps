@@ -14,3 +14,7 @@ Nos posicionamos en la carpeta donde vayamos a instalarlo y clonamos el reposito
 
 Se creará una carpeta <b>/public </b> que será donde incluyamos nuestros proyectos.
 Un archivo Vagrantfile, para configurar
+
+Y por último arrancaremos la máquina:
+
+	vagrant up
