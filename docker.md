@@ -20,3 +20,5 @@ Y por último arrancaremos la máquina:
 	vagrant up
 	
 (la primera vez que lo ejecutemos nos descargará la máquina)
+
+	http://192.168.33.10
