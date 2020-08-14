@@ -13,7 +13,8 @@ Nos posicionamos en la carpeta donde vayamos a instalarlo y clonamos el reposito
 	git clone https://github.com/scotch-io/scotch-box my-project
 
 Se creará una carpeta <b>/public </b> que será donde incluyamos nuestros proyectos.
-Un archivo Vagrantfile, para configurar
+Un archivo Vagrantfile, para configurar los valores de la máquina: https://javiermartinalonso.github.io/devops/devops/vagrant/2018/02/09/vagrant-vagrantfile.html
+
 
 Y por último arrancaremos la máquina:
 
