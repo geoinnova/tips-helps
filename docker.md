@@ -3,7 +3,7 @@ Vagrant, una gran herramienta que facilita la creación de entornos virtuales de
 
 https://xenfacil.com/paginas/scotchbox/
 
-Utilizaremos <strong>Scotch Box</strong>, que es un Vagrant Box preconfigurado con una gama completa de funciones LAMP scotch box, para ello previamente debemos tener instalados:
+Utilizaremos <strong>Scotch Box</strong>, que es un Vagrant Box preconfigurado con una gama completa de funciones LAMP. Para ello previamente debemos tener instalados:
 
 	VirtualBox
 	Vagrant
