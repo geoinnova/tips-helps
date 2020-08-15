@@ -43,7 +43,7 @@ Prepara el Vagrantfile con la instalación de WordPress. Documentación: https:/
 To setup a new project running Scotch Box and WordPress, simply follow these steps:
 
 1. In a terminal, run: `git clone https://github.com/flurinduerst/WPDistillery.git my-project`
-2. Customize `wpdistillery/config.yml` to suit your needs. See [configuration file documentation](README_CONFIG.md).
+2. Customize `wpdistillery/config.yml` to suit your needs. See [configuration file documentation](https://github.com/flurinduerst/WPDistillery/blob/master/README_CONFIG.md).
 3. Inside the `Vagrantfile` add your local URL at `config.vm.hostname`. This should be the same as `wpsettings:url:` in `config.yml`.
 4. Run `vagrant up` from where your `Vagrantfile` is.
 
