@@ -55,3 +55,6 @@ Done! You can now access your project at the local URL (for example `yoursite.vm
 vagrant plugin install vagrant-vbguest
 vagrant vbguest
 ```
+
+https://www.busindre.com/guia_rapida_de_vagrant
+
