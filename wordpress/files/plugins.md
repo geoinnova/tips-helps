@@ -18,18 +18,17 @@ Como mínimo, un comentario de cabecera debe contener el nombre del plugin, pero
 Así quedaría el código básico de la cabecera en un plugin de WordPress:
 
     /**
-     * Plugin Name: WordPress.org Plugin
-     * Plugin URI:  https://developer.wordpress.org/plugins/the-basics/
-     * Description: Basic WordPress Plugin Header Comment
-     * Version:     20160911
-     * Author:      WordPress.org
-     * Author URI:  https://developer.wordpress.org/
+     * Plugin Name: Prueba
+     * Plugin URI:  https://rabasco-developer.es/plugin
+     * Description: Curso creación de plugin
+     * Version:     2020-08
+     * Author:      rabasco-developer
+     * Author URI:  https://rabasco-developer.es
      * License:     GPL2
      * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-     * Text Domain: wporg
+     * Text Domain: erb
      * Domain Path: /languages
      */
-
 
 ## Hooks - Actions y Filters
 
