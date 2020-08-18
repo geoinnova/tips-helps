@@ -1,3 +1,45 @@
+## Requisitos en el header
+
+Como mínimo, un comentario de cabecera debe contener el nombre del plugin, pero puedes - y debes - incluir algunos datos más:
+
+    Plugin Name: El nombre del plugin, el cuál se mostrará en la lista de plugins en el admin de WordPress.
+
+    Plugin URI: La página de inicio del plugin, que debe estar en WordPress.org o en tu propio sitio web.
+
+    Description: Una descripción corta del plugin. Mantén esta descripción por debajo de los 140 caracteres.
+
+    Version: La versión actual de tu plugin. Nota que WordPress y la API de plugins usa la función version_compare() 
+    cuando considera los números de versiones: por ejemplo, 1.02 es mayor que 1.1.
+
+    Author: El nombre del autor del plugin. Si hay más de uno, sepáralos por coma.
+
+    Author URI: El sitio web del autor o su perfil en otro sitio web como el de WordPress.org.
+
+    License: El nombre corto de la licencia (slug), por ejemplo GPLD2.
+
+    License URI: Enlace para la licencia.
+
+    Text Domain: El text domain se usa para poder internacionalizar tu plugin, o traducirlo a otros idiomas. Usa el paquete gettext.
+
+    Domain Path: La ruta del dominio le indica a WordPress dónde encontrar las traducciones.
+
+Así quedaría el código básico de la cabecera en un plugin de WordPress:
+
+
+    /**
+     * Plugin Name: WordPress.org Plugin
+     * Plugin URI:  https://developer.wordpress.org/plugins/the-basics/
+     * Description: Basic WordPress Plugin Header Comment
+     * Version:     20160911
+     * Author:      WordPress.org
+     * Author URI:  https://developer.wordpress.org/
+     * License:     GPL2
+     * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+     * Text Domain: wporg
+     * Domain Path: /languages
+     */
+
+
 ## Hooks - Actions y Filters
 
 Los hooks (o ganchos) de WordPress son la forma en la que una pieza de código puede interactuar con otra pieza. Es la base de cómo interactúan los plugins y temas con WordPress, pero también lo extienden.
