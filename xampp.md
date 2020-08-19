@@ -16,5 +16,8 @@ Solución: https://stackoverflow.com/questions/19932371/1-cant-create-write-to-f
       Salir de la shell raíz con exit o simplemente cierre la Terminal.
 
       Reinicie XAMPP (apache, ftp y mysql).
+      
+      
+      sudo chmod 644 config.inc.php
 
 
