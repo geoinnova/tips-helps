@@ -2,7 +2,7 @@
 
 
 Creación de endpoint personalizado para la REST API de Wordpress
-devuelve json con los id y categorías de los eventos (eventon)
+- Devuelve json con los id y categorías de los eventos (eventon)
 
     
     function erb_events_categories(){
