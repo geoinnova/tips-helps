@@ -37,5 +37,18 @@ Función que devuelve json con los id y categorías de los eventos (eventon)
           echo json_encode($events_categories);
         }
   
+  La misma funcion pero devolviendo todos los datos
+  
+          function erb_events_categories(){
+          global $wpdb;
+          $query = "SELECT * 
+                    FROM wp_terms AS t 
+                      INNER JOIN wp_term_taxonomy AS tt 
+                      ON t.term_id = tt.term_id AND tt.taxonomy='event_type_2'";
+             $categories = $wpdb->get_results($query);
+
+             echo json_encode($categories);
+          }
+  
   llamada: https://abasedemusica.es/agenda/wp-json/erb/v2/events-categories
   
