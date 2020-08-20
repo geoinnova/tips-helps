@@ -25,3 +25,5 @@ Devuelve json con los id y categorías de los eventos (eventon)
           echo json_encode($events_categories);
         }
   
+  llamada: https://abasedemusica.es/agenda/wp-json/erb/v2/events-categories
+  
