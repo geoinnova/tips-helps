@@ -1,17 +1,17 @@
 ### JSON CATEGORÍAS DE EVENTOS PLUGIN EVENTON
 
 
-Creación de endpoint personalizado para la REST API de Wordpress
+Creación de endpoint personalizado para la REST API de Wordpress, recibe un parámetro en la url (musica || teatro)
 
 
         // Registramos una ruta nueva para la rest api
         add_action( 'rest_api_init', function () {
-            register_rest_route( 'erb/v2', '/events-categories/',
-                array(
-                    'methods' => 'GET', 
-                    'callback' => 'erb_events_categories'
-                )
-            );
+	register_rest_route( 'erb/v2', '/events-categories/(?P<tipo>(musica|teatro))',
+		array(
+			'methods' => 'GET', 
+			'callback' => 'erb_events_categories'
+		)
+	    );
         });
 
 
