@@ -6,7 +6,7 @@ Creación de endpoint personalizado para la REST API de Wordpress, recibe un par
 
         // Registramos una ruta nueva para la rest api
         add_action( 'rest_api_init', function () {
-	register_rest_route( 'erb/v2', '/events-categories/(?P<tipo>(musica|teatro))',
+		register_rest_route( 'erb/v2', '/events-categories/(?P<tipo>(musica|teatro))',
 		array(
 			'methods' => 'GET', 
 			'callback' => 'erb_events_categories'
