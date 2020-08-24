@@ -1,3 +1,11 @@
+### modo autofit de Android que causa problemas con el ancho css en la página web
+
+Es como si no detectara que estás en versión movil.
+
+https://html.dokry.com/6736
+
+https://www.youtube.com/watch?v=hPd93mijFCM
+
 ### Paginador
 
   Paginador Prensa
