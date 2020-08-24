@@ -11,3 +11,5 @@ Puede reconstruir la URL y agregar variables de consulta a la consulta de URL ut
                 ],
                 home_url()
             );
+
+Url devuelta: http://wordpress.vm/?action=erb_frontend_delete&post=12
