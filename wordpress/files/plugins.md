@@ -61,3 +61,25 @@ Hook de desactivación > función register_deactivation_hook():
     register_deactivation_hook( __FILE__, 'pluginprefix_function_to_run');
 
 El primer parámetro en cada una de estas funciones hace referencia al archivo principal de tu plugin. Normalmente estas dos funciones se activarán dentro del archivo principal del plugin; sin embargo, si las funciones están colocadas en otro archivo, tienes que actualizar el primer parámetro para apuntar correctamente al archivo principal del plugin.
+
+## Organización de archivos
+
+El directorio raíz de tu plugin debe contener un archivo llamado como tu plugin: plugin-name.php y opcionalmente un archivo para la desinstalación, uninstall.php. Todos los otros archivos deben estar organizados en sub-carpetas cuando sea posible.
+Estructura de carpetas
+
+Una estructura de carpetas limpia ayuda a mantener los archivos similares juntos. Aquí tienes un ejemplo de estructura de carpetas como referencia:
+
+    /plugin-name
+         plugin-name.php
+         uninstall.php
+         /languages
+         /includes
+         /admin
+         /admin/js
+         /admin/css
+         /admin/images
+         /public
+         /public/js
+         /public/css
+         /public/images
+
