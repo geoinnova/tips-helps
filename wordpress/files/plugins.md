@@ -83,3 +83,5 @@ Una estructura de carpetas limpia ayuda a mantener los archivos similares juntos
          /public/css
          /public/images
 
+### Boilerplate
+Podemos usar algunos alguna plantilla o punto de partida para desarrollar el plugin: https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
