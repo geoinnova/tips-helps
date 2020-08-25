@@ -2,9 +2,16 @@
 
 Es como si no detectara que estás en versión movil.
 
+    .mod-icon-grid {
+        display: grid ;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr) );   
+    }
+
 https://html.dokry.com/6736
 
 https://www.youtube.com/watch?v=hPd93mijFCM
+
 
 ### Paginador
 
