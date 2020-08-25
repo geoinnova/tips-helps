@@ -13,7 +13,8 @@
         });
      </script>
 
-// Dentro de wordpress - Se comprueba si la web se está ejecutando dentro de un iframe o no
+Dentro de wordpress - Se comprueba si la web se está ejecutando dentro de un iframe o no
+
     <script>
       var iFrameDetection = (window === window.parent) ? false : true;
       if (iFrameDetection){
