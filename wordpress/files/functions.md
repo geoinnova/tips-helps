@@ -13,6 +13,8 @@ Devuelve si el usuario actual tiene la capacidad especificada.
          */
         add_action('init', 'erb_delete_post');
     }
+Capacidades y roles: https://wordpress.org/support/article/roles-and-capabilities/
+
 
 ## add_query_arg( $args )
 
