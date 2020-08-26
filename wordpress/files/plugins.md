@@ -88,8 +88,9 @@ Podemos usar algunos alguna plantilla o punto de partida para desarrollar el plu
 
 ### Validando los datos
 
-Hay al menos tres formas de hacerlo: funciones de PHP, funciones de WordPress y funciones personalizadas que tu escribas.
-Funciones de PHP
+Hay al menos 3 formas de hacerlo: funciones de PHP, funciones de WordPress y funciones personalizadas que tu escribas.
+
+#### Funciones de PHP
 
 La validación básica es factible usando muchas de las funciones de PHP, incluyendo estas:
 
@@ -118,7 +119,8 @@ WordPress provee muchas funciones útiles que te ayudan a validar diferentes tip
 Puedes comprobar la referencia del código de WordPress para más funciones como estas. Busca funciones con nombres como estos: *_exists(), *_validate() y is_*(). No todas estas son funciones de validación pero muchas son útiles.
 Funciones de PHP y JavaScript personalizadas
 
-Puedes escribir tus propias funciones e incluirlas en tu plugin. Cuando escribas funciones de validación debes nombrarlas como una pregunta (ejemplos: is_phone, is_available, is_es_zipcode).
+#### Funciones propias
+Cuando escribas funciones de validación debes nombrarlas como una pregunta (ejemplos: is_phone, is_available, is_es_zipcode).
 
 La función debe devolver un valor booleano, sea true o false, dependiendo de si el dato es válido o no. Esto te permetirá usar la función como condición.
 Ejemplo
