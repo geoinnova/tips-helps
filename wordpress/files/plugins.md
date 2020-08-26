@@ -86,7 +86,7 @@ Una estructura de carpetas limpia ayuda a mantener los archivos similares juntos
 ### Boilerplate
 Podemos usar algunos alguna plantilla o punto de partida para desarrollar el plugin: https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
 
-### Validando los datos
+## Validando los datos
 
 Hay al menos 3 formas de hacerlo: funciones de PHP, funciones de WordPress y funciones personalizadas que tu escribas.
 
@@ -138,5 +138,44 @@ Este ejemplo de código comprueba una clave de ordenación entrante (llamada ord
             // modifica la consulta para ordenar por la clave orderby
         }
         
+## Securizando la entrada
+Securizar la entrada es el proceso de sanear (limpiar y filtrar) datos de entrada. 
 
+La serie de funciones de ayuda sanitize_*() de WordPress soy muy buenas, ya que te aseguran que estás usando datos finales seguros, y requieren un mínimo esfuerzo por tu parte:
+
+    sanitize_email()
+    sanitize_file_name()
+    sanitize_html_class()
+    sanitize_key()
+    sanitize_meta()
+    sanitize_mime_type()
+    sanitize_option()
+    sanitize_sql_orderby()
+    sanitize_text_field()
+    sanitize_title()
+    sanitize_title_for_query()
+    sanitize_title_with_dashes()
+    sanitize_user()
+    esc_url_raw()
+    wp_filter_post_kses()
+    wp_filter_nohtml_kses()
+
+Ejemplo
+
+Digamos que tenemos un campo de entrada llamado título (title).
+
+    <input id="title" type="text" name="title">
+
+Puedes sanear los datos de entrada con la función sanitize_text_field():
+
+    $title = sanitize_text_field($_POST['title']);
+    update_post_meta($post->ID, 'title', $title);
+
+Bajo la cortina, sanitize_text_field() hace lo siguiente:
+
+    Comprueba por codificación UTF-8 no válida.
+    Convierte el símbolo menor-que (<) a entidad.
+    Elimina todas las etiquetas.
+    Elimina los saltos de línea, tabulaciones y espacios en blanco extra.
+    Elimina los bytes nulos.
 
