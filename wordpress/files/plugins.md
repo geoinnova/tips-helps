@@ -85,3 +85,56 @@ Una estructura de carpetas limpia ayuda a mantener los archivos similares juntos
 
 ### Boilerplate
 Podemos usar algunos alguna plantilla o punto de partida para desarrollar el plugin: https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
+
+### Validando los datos
+
+Hay al menos tres formas de hacerlo: funciones de PHP, funciones de WordPress y funciones personalizadas que tu escribas.
+Funciones de PHP
+
+La validación básica es factible usando muchas de las funciones de PHP, incluyendo estas:
+
+    isset() y empty() para comprobar si una variable existe y no está en blanco.
+
+    mb_strlen() o strlen() para comprobar que una cadena tenga el número de caracteres esperados.
+
+    preg_match(), strpos() para comprobar ocurrencias de ciertas cadenas en otras cadenas.
+
+    count() para comprobar cuántos ítems hay en un array.
+
+    in_array() para comprobar si algo existe dentro de un array.
+
+#### Funciones de WordPress
+
+WordPress provee muchas funciones útiles que te ayudan a validar diferentes tipos de datos. Aquí hay algunos ejemplos:
+
+    is_email() va a validar si es una dirección de correo electrónico válida.
+
+    term_exists() comprueba si un tag, categoría u otra taxonomía existe.
+
+    username_exists() comprueba si nombre de usuario existe.
+
+    validate_file() validará que una ruta insertada hacia un archivo sea una ruta real (pero no si el archivo existe).
+
+Puedes comprobar la referencia del código de WordPress para más funciones como estas. Busca funciones con nombres como estos: *_exists(), *_validate() y is_*(). No todas estas son funciones de validación pero muchas son útiles.
+Funciones de PHP y JavaScript personalizadas
+
+Puedes escribir tus propias funciones e incluirlas en tu plugin. Cuando escribas funciones de validación debes nombrarlas como una pregunta (ejemplos: is_phone, is_available, is_es_zipcode).
+
+La función debe devolver un valor booleano, sea true o false, dependiendo de si el dato es válido o no. Esto te permetirá usar la función como condición.
+Ejemplo
+
+Digamos que vas a realizar una consulta a la base de datos sobre una publicación y quieres darle al usuario la posibilidad de ordenar los resulatdos de la consulta.
+
+Este ejemplo de código comprueba una clave de ordenación entrante (llamada orderby) contra un array de claves permitidas usando la función de PHP in_array con tipado estricto habilidado (que dice a PHP que se asegure que la clave de ordenación no está solo en el array sino también en la cadena como se espera).
+
+        <?php
+        $allowed_keys = ['author', 'post_author', 'date', 'post_date'];
+
+        $orderby = sanitize_key($_POST['orderby']);
+
+        if (in_array($orderby, $allowed_keys, true)) {
+            // modifica la consulta para ordenar por la clave orderby
+        }
+        
+
+
