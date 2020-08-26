@@ -179,3 +179,56 @@ Bajo la cortina, sanitize_text_field() hace lo siguiente:
     Elimina los saltos de línea, tabulaciones y espacios en blanco extra.
     Elimina los bytes nulos.
 
+
+## Securizando la salida
+Securizar la salida es el proceso de escapado de datos de salida. Escapado significa eliminar los datos no queridos, como HTML mal formado o etiquetas de scripts.
+
+Cuando estás procesando datos, asegúrate de escaparlos correctamente. El escapado previene de ataques XSS.
+
+### Escapado
+
+El escapado te ayuda a securizar tus datos antes de procesarlos para el usuario final. WordPress tiene unas cuantas de funciones que puedes usar para los escenarios más comunes.
+
+    esc_html() - Usa esta función en cualquier momento que un elemento HTML encierre una sección de datos que se vayan a mostrar.
+    esc_url() - Usa esta función en todas las URLs, incluyendo aquellas en los atributos src y href de un elemento HTML.
+    esc_js() - Usa esta función para el código JavaScript en el mismo documento.
+    esc_attr() - Usa esta función en todo lo que esté mostrado en un atributo de un elemento HTML.
+
+    La mayoría de las funciones de WordPress prepararán tus datos para mostrarlos escapados, así que no necesitarás escapar los datos de neuvo. Por ejemplo, puedes usar con seguridad la función the_title() sin escapado.
+
+### Escapado con Localización
+
+En vez de usar echo para mostrar datos, es normal usar las funciones de localización de WordPress, como _e() o __(). Estas funciones simplemente envuelven una función de localización dentro de una función de escapado:
+
+esc_html_e('Hello World', 'text_domain');
+// Es lo mismo que
+echo esc_html(__('Hello World', 'text_domain'));
+
+Estas funciones de ayuda combinan localización y escapado:
+
+    esc_html__()
+    esc_html_e()
+    esc_html_x()
+    esc_attr__()
+    esc_attr_e()
+    esc_attr_x()
+
+### Escapado personalizado
+
+En el caso que necesites escapar tu salida de una forma específica, la función wp_kses() (pronunciada “kisses”) será util. Esta función te asegura que sólo los elementos HTML especificados, los atributos y los valores de atributos aparezcan en tu salida y normalicen las entidades HTML.
+
+        $allowed_html = [
+            'a'      => [
+                'href'  => [],
+                'title' => [],
+            ],
+            'br'     => [],
+            'em'     => [],
+            'strong' => [],
+        ];
+        echo wp_kses($custom_content, $allowed_html);
+
+La función wp_kses_post() es una función envolvente para wp_kses donde $allowed_html es una configuración de reglas usadas por el contenido de una publicación.
+
+    echo wp_kses_post( $post_content )
+
