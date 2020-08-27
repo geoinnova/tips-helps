@@ -367,4 +367,6 @@ Es importante que securicemos nuestro plugin desde el principio. Esta página so
 - Capacidades y roles: https://decodecms.com/como-usar-roles-y-capacidades-en-wordpress/
 
 
+## Añadir estilos
 
+Plugin que genera el código para plantillas: https://github.com/bueltge/wordpress-admin-style
