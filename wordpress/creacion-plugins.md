@@ -364,5 +364,7 @@ Es importante que securicemos nuestro plugin desde el principio. Esta página so
 - Menús de administración: https://codex.wordpress.org/Administration_Menus
 - Crear menus en el panel de administración: https://danielcastanera.com/crear-menus-panel-administracion-wordpress/
 - Iconos: https://developer.wordpress.org/resource/dashicons/#welcome-learn-more
+- Capacidades y roles: https://decodecms.com/como-usar-roles-y-capacidades-en-wordpress/
+
 
 
