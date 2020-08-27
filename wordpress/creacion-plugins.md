@@ -362,4 +362,6 @@ Esto creará una página de configuración vacía en Ajustes -> OpenWebinars Bad
 Es importante que securicemos nuestro plugin desde el principio. Esta página solo estará disponible para los usuarios que puedan manejar opciones, es decir de Editores hacia arriba.
 
 Menús de administración: https://codex.wordpress.org/Administration_Menus
+Crear menus en el panel de administración: https://danielcastanera.com/crear-menus-panel-administracion-wordpress/
+Iconos: https://developer.wordpress.org/resource/dashicons/#welcome-learn-more
 
