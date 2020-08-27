@@ -2,18 +2,18 @@
 
 Como mínimo, un comentario de cabecera debe contener el nombre del plugin, pero puedes - y debes - incluir algunos datos más:
 
-    - Plugin Name: El nombre del plugin, el cuál se mostrará en la lista de plugins en el admin de WordPress.
-    - Plugin URI: La página de inicio del plugin, que debe estar en WordPress.org o en tu propio sitio web.
-    - Description: Una descripción corta del plugin. Mantén esta descripción por debajo de los 140 caracteres.
-    - Version: La versión actual de tu plugin. Nota que WordPress y la API de plugins usa la función version_compare() 
+    * Plugin Name: El nombre del plugin, el cuál se mostrará en la lista de plugins en el admin de WordPress.
+    * Plugin URI: La página de inicio del plugin, que debe estar en WordPress.org o en tu propio sitio web.
+    * Description: Una descripción corta del plugin. Mantén esta descripción por debajo de los 140 caracteres.
+    * Version: La versión actual de tu plugin. Nota que WordPress y la API de plugins usa la función version_compare() 
     cuando considera los números de versiones: por ejemplo, 1.02 es mayor que 1.1.
-    - Author: El nombre del autor del plugin. Si hay más de uno, sepáralos por coma.
-    - Author URI: El sitio web del autor o su perfil en otro sitio web como el de WordPress.org.
-    - License: El nombre corto de la licencia (slug), por ejemplo GPLD2.
-    - License URI: Enlace para la licencia.
-    - Text Domain: El text domain se usa para poder internacionalizar tu plugin, o traducirlo a otros idiomas. 
+    * Author: El nombre del autor del plugin. Si hay más de uno, sepáralos por coma.
+    * Author URI: El sitio web del autor o su perfil en otro sitio web como el de WordPress.org.
+    * License: El nombre corto de la licencia (slug), por ejemplo GPLD2.
+    * License URI: Enlace para la licencia.
+    * Text Domain: El text domain se usa para poder internacionalizar tu plugin, o traducirlo a otros idiomas. 
     Usa el paquete gettext.
-    - Domain Path: La ruta del dominio le indica a WordPress dónde encontrar las traducciones.
+    * Domain Path: La ruta del dominio le indica a WordPress dónde encontrar las traducciones.
 
 Así quedaría el código básico de la cabecera en un plugin de WordPress:
 
@@ -312,3 +312,54 @@ Ejemplo completo
         }
 
 Buen artículo con ejemplo de nonce: https://decodecms.com/que-son-los-nonces-en-wordpress/
+
+
+## Crear página de configuración del plugin
+El primer paso para empezar a darle funcionalidad a nuestro plugin es tener un sitio donde poder modificar el comportamiento del mismo. Esto normalmente lo haremos en el Escritorio de WordPress. 
+
+Podemos crear una sección única para nuestro plugin 
+
+    (add_menu_page( string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = null ) ), 
+
+o añadirlo a secciones que ya tiene WordPress 
+
+    (add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function )), como Ajustes, Herramientas u otras.
+
+Para insertar nuestra página de configuración del plugin usaremos el gancho admin_menu. Concretamente, si queremos insertarlo en el menú Ajustes, contamos con la función add_options_page(). El código para crear nuestra página de configuración básica en WordPress sería:
+
+    /*
+     * Add a link to our plugin in the admin menu
+     * under 'Settings > OpenWebinars Badges'
+     */
+
+    function openwebinars_badges_menu() {
+
+      /*
+       * Use the add_options page function
+       * add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function );
+       */
+
+      add_options_page(
+        'Official OpenWebinars Badges Plugins',
+        'OpenWebinars Badges',
+        'manage_options',
+        'openwebinars-badges',
+        'openwebinars_badges_options_page'
+      );
+    }
+    add_action( 'admin_menu', 'openwebinars_badges_menu' );
+
+Esto creará una página de configuración vacía en Ajustes -> OpenWebinars Badges. Pero en la función add_options_page() hemos indicado que la función que “llenará” nuestra página, o la función a ejecutar dentro de esa página sea openwebinars_badges_options_page. 
+
+    function openwebinars_badges_options_page() {
+      if( !current_user_can( 'manage_options' ) ) {
+        wp_die( 'You do not have sufficient permissions to access this page.' );
+      }
+
+      echo '<p>Welcome to our plugin page!</p>';
+    }
+
+Es importante que securicemos nuestro plugin desde el principio. Esta página solo estará disponible para los usuarios que puedan manejar opciones, es decir de Editores hacia arriba.
+
+Menús de administración: https://codex.wordpress.org/Administration_Menus
+
