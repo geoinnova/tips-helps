@@ -365,3 +365,4 @@ Menús de administración: https://codex.wordpress.org/Administration_Menus
 Crear menus en el panel de administración: https://danielcastanera.com/crear-menus-panel-administracion-wordpress/
 Iconos: https://developer.wordpress.org/resource/dashicons/#welcome-learn-more
 
+
