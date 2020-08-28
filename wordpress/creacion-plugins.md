@@ -370,3 +370,27 @@ Es importante que securicemos nuestro plugin desde el principio. Esta página so
 ## Añadir estilos
 
 Plugin que genera el código para plantillas: https://github.com/bueltge/wordpress-admin-style
+
+## Trabajando con formularios en la página de configuración
+Tenemos dos métodos de envío y recepción de datos: GET y POST. 
+
+Es importante validar y securizar tus formularios. Una buena forma de hacerlo es añadir un campo oculto que nos prevendrá de SPAM en nuestros formularios.
+
+      <input type="hidden" name="openwebinars_form_submitted" value="Y">
+
+En el lado servidor debemos comprobar este campo para comenzar a renderizar el formulario:
+
+       * Check that our form has been submitted
+       */
+      if ( isset( $_POST['openwebinars_form_submitted'] ) ) {
+          $hidden_field = esc_html( $_POST['openwebinars_form_submitted'] );
+
+          if ( $hidden_field == 'Y' ) {
+              $openwebinars_email = esc_html( $_POST['openwebinars_email'] );
+
+              // echo $openwebinars_email;
+          }
+      }
+      
+
+
