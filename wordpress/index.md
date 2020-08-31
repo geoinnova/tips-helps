@@ -1,3 +1,8 @@
+# Conectar Worpress y Mailchimp
+
+https://www.youtube.com/watch?v=a9cyVjqc1Sw
+
+
 # Creación de plugins en wordpress
 
 
