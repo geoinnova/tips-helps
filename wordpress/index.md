@@ -2,6 +2,9 @@
 
 https://www.youtube.com/watch?v=a9cyVjqc1Sw
 
+Para modificar los textos de confirmación de los emails: https://www.youtube.com/watch?v=JSkQ8Oh81sQ
+
+
 
 # Creación de plugins en wordpress
 
