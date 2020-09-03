@@ -1,3 +1,11 @@
+# Crear cupones
+### Activarlos
+
+	Woocommerce > Ajustes > Generales > Activar cupones
+	
+https://maugelves.com/como-crear-cupones-de-descuento-en-woocommerce/
+
+
 # Conectar Worpress y Mailchimp
 
 https://www.youtube.com/watch?v=a9cyVjqc1Sw
