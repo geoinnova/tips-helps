@@ -1,5 +1,7 @@
 ## Utilizar API REST PARA CRUD DE PRODUCTOS DESDE EL FRONT-END
 
+- API Documentation: https://woocommerce.github.io/woocommerce-rest-api-docs/?javascript#create-a-product
+
 https://decodecms.com/como-usar-la-rest-api-de-woocommerce/
 
 
