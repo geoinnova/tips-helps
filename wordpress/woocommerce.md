@@ -6,9 +6,9 @@ https://decodecms.com/como-usar-la-rest-api-de-woocommerce/
 ### Ejemplo de cómo crear un producto
 Crear productos es muy similar a crear publicaciones con la API REST de WordPress. Solo difieren los parámetros.
 
-![alt text](https://rudrastyh.com/wp-content/uploads/2017/10/woocommerce-rest-api-keys.gif)
+Para obtener KEY:SECRET seguir los pasos.
 
-Pair KEY:SECRET we obtain in the first step.
+![alt text](https://rudrastyh.com/wp-content/uploads/2017/10/woocommerce-rest-api-keys.gif)
 
         $api_response = wp_remote_post( 'https://your-website/wp-json/wc/v2/products', array(
             'headers' => array(
