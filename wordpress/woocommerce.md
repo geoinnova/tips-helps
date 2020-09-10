@@ -1,3 +1,7 @@
+## Crear páginas por defecto de woocommerce
+
+       Woocommerce > Estado > Pestaña Herramientas > Crea las páginas por defecto de WooCommerce
+
 ## Añadir marcas o proveedores a los productos
 
 #### Plugin Perfect Woocommerce Brands
