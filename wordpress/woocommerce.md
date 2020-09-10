@@ -1,3 +1,20 @@
+## Añadir marcas o proveedores a los productos
+
+#### Plugin Perfect Woocommerce Brands
+
+Con el plugin vamos a poder realizar las siguientes acciones:
+
+    i.- Crear marcas
+    ii.- Asignar marca a cada producto
+    iii.- Utilizar widgets especiales para listar marcas y filtrar productos por marca
+    iv.- Añadir carrusel de marcas + filtro
+    vi.- creación automática de página de marca en la que se mostrarán los productos que pertenecen a dicha marca
+    
+    
+https://www.tiendaonlinemurcia.es/como-poner-marcas-de-productos-o-fabricantes-en-woocommerce/
+
+
+
 ## Utilizar API REST PARA CRUD DE PRODUCTOS DESDE EL FRONT-END
 
 - API Documentation: https://woocommerce.github.io/woocommerce-rest-api-docs/?javascript#create-a-product
