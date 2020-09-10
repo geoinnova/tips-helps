@@ -13,6 +13,8 @@ Con el plugin vamos a poder realizar las siguientes acciones:
     
 https://www.tiendaonlinemurcia.es/como-poner-marcas-de-productos-o-fabricantes-en-woocommerce/
 
+[Video](https://www.youtube.com/watch?time_continue=1&v=qE3bzs7bCCw&feature=emb_logo)
+
 
 
 ## Utilizar API REST PARA CRUD DE PRODUCTOS DESDE EL FRONT-END
