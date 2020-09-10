@@ -15,6 +15,13 @@ https://www.tiendaonlinemurcia.es/como-poner-marcas-de-productos-o-fabricantes-e
 
 [Video](https://www.youtube.com/watch?time_continue=1&v=qE3bzs7bCCw&feature=emb_logo)
 
+#### Control de stock
+
+Como activar el control de stock y varios plugin que nos pueden servir
+
+https://www.webempresa.com/blog/control-stock-woocommerce.html
+
+
 
 
 ## Utilizar API REST PARA CRUD DE PRODUCTOS DESDE EL FRONT-END
