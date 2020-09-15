@@ -1,3 +1,21 @@
+## Si la API no funciona porque tengamos otro wordpress en el raiz
+
+Incluir en la raiz donde tengamos el wordpress montado el archivo .htaccess
+
+
+              # BEGIN WordPress
+
+              <IfModule mod_rewrite.c>
+              RewriteEngine On
+              RewriteBase /ayuntamiento/
+              RewriteRule ^index\.php$ - [L]
+              RewriteCond %{REQUEST_FILENAME} !-f
+              RewriteCond %{REQUEST_FILENAME} !-d
+              RewriteRule . /ayuntamiento/index.php [L]
+              </IfModule>
+
+              # END WordPress
+
 ## Crear páginas por defecto de woocommerce
 
        Woocommerce > Estado > Pestaña Herramientas > Crea las páginas por defecto de WooCommerce
