@@ -1,3 +1,21 @@
+## Eliminar campos  del formulario de checkout a la hora de comprar (woocommerce)
+
+/**
+  * Función para quitar campos  del formulario de checkout
+  * woocommerce_default_address_fields > modificar tanto billing como shipping
+  */
+  public function remove_checkout_fields($fields)
+  {
+    unset($fields['company']);
+    unset($fields['address_1']);
+    unset($fields['address_2']);
+    unset($fields['billing']['billing_phone']);
+    unset($fields['city']);
+    unset($fields['postcode']);
+    unset($fields['country']);
+    return $fields;
+  }
+
 ## current_user_can( string $capability, mixed $args )
 
 Devuelve si el usuario actual tiene la capacidad especificada.
