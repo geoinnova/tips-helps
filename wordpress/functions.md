@@ -1,39 +1,29 @@
-  /**
-   * Updates all orders with processing status to completed
-   * This is needed cause tickets are virtual products and not dowloadable 
-   */
-  public function update_order_status_to_completed($order_id)
-  {
-      global $woocommerce;
-      
-      // Payment gateway ids
-      $paymentMethods = array('paytpv', 'paypal');
-      
-      if ( !$order_id ) return;
-      $order = new WC_Order( $order_id );
+### Actualiza todos los pedidos con estado de procesamiento a completado
+Esto es necesario porque los tickets son productos virtuales y no se pueden descargar
 
-      if ( !in_array( $order->payment_method, $paymentMethods ) ) return;
-      $order->update_status('completed');
-  }
+    public function update_order_status_to_completed($order_id)
+    {
+        global $woocommerce;
+
+        // Payment gateway ids
+        $paymentMethods = array('paytpv', 'paypal');
+
+        if ( !$order_id ) return;
+        $order = new WC_Order( $order_id );
+
+        if ( !in_array( $order->payment_method, $paymentMethods ) ) return;
+        $order->update_status('completed');
+    }
   
-  /**
-  * Función para quitar el telefono del formulario de checkout, solo está en billing
-  * hook woocommerce_checkout_fields, solo billing 
-  */
-  public function remove_phone_billing_checkout_field($fields)
-  {
-    unset($fields['billing']['billing_phone']);
-    unset($fields['order']['order_comments']); // notas - info adicional
-    return $fields;
-  }
+### Función para quitar el telefono del formulario de checkout.
+Sólo está en billing hook woocommerce_checkout_fields
 
-  /**
-   * Force WooCommerce terms and conditions link to open in a new page when clicked on the checkout page
-   */
-  public function woocommerce_checkout_terms_and_conditions()
-  {
-    remove_action('woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditions_page_content', 30);
-  }
+    public function remove_phone_billing_checkout_field($fields)
+    {
+      unset($fields['billing']['billing_phone']);
+      unset($fields['order']['order_comments']); // notas - info adicional
+      return $fields;
+    }
 
 ## Eliminar campos  del formulario de checkout a la hora de comprar (woocommerce)
 
