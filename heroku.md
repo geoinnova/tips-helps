@@ -10,18 +10,23 @@
 * crear un proyecto Java usando Maven
 * la construcción del proyecto creará el archivo -1.war en la carpeta de destino
 * Inicializar Git en la carpeta del proyecto
-    git init
-    git add .
-    git commit -am "Servicio Web Java - Primer commit"
+
+          git init
+          git add .
+          git commit -am "Servicio Web Java - Primer commit"
     
 * Implementar la aplicación en heroku utilizando heroku-cli
-    heroku login
+    
+          heroku login
     
 * Instalar heroku-cli-deploy plugin
-    heroku plugins:install heroku-cli-deploy
+    
+          heroku plugins:install heroku-cli-deploy
     
 * Deploy app on heroku
-    heroku war:deploy target/<war_filename>.war --app <heroku-app-name>
+   
+          heroku war:deploy target/<war_filename>.war --app <heroku-app-name>
   
 * Lo ejecutamos
-heroku open --app java-trasslink
+
+      heroku open --app java-trasslink
