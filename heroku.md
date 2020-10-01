@@ -8,7 +8,11 @@
       brew tap heroku/brew && brew install heroku
       
 * Crear un proyecto Java usando Maven
-* la construcción del proyecto creará el archivo -1.war en la carpeta de destino
+  la construcción del proyecto creará el archivo -1.war en la carpeta de destino
+  Podemos crear el archivo war:
+  
+        jar cvf servicioweb.war /ServicioWeb
+  
 * Inicializar Git en la carpeta del proyecto
 
           git init
