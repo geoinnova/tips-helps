@@ -4,8 +4,10 @@
 * [Crear nuevo proyecto](https://dashboard.heroku.com/new-app)
 * Descargar en instalar GIT - Subir nuestro proyecto a GITHUB
 * [Descargar e instalar Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
   Para instalarlo en Mac utilizar la instrucción:
-      brew tap heroku/brew && brew install heroku
+  
+        brew tap heroku/brew && brew install heroku
       
 * Crear un proyecto Java usando Maven
   la construcción del proyecto creará el archivo -1.war en la carpeta de destino
