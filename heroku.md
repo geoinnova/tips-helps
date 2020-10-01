@@ -1,4 +1,6 @@
-## Desplegar aplicación Java con BBDD en Heroku
+## Desplegar aplicación Java en Heroku
+
+#### [Video Explicativo](https://www.youtube.com/watch?v=7p8jyidcNMs)
 
 * Crear cuenta heroku
 * [Crear nuevo proyecto](https://dashboard.heroku.com/new-app)
@@ -11,7 +13,7 @@
       
 * Crear un proyecto Java usando Maven
   la construcción del proyecto creará el archivo -1.war en la carpeta de destino
-  Podemos crear el archivo war:
+  Podemos crear el archivo war desde un jar:
   
         jar cvf servicioweb.war /ServicioWeb
   
