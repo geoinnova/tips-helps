@@ -1,4 +1,4 @@
-## Si la API no funciona porque tengamos otro wordpress en el raiz
+## .htaccess -Si la API no funciona porque tengamos otro wordpress en el raiz
 
 Incluir en la raiz donde tengamos el wordpress montado el archivo .htaccess
 
