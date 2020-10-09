@@ -1,8 +1,6 @@
 [ASPECTOS BÁSICOS DE UN TEMA](#ASPECTOS-B%C3%81SICOS-DE-UN-TEMA)
 - [ASPECTOS BÁSICOS DE UN TEMA](#ASPECTOS-B%C3%81SICOS-DE-UN-TEMA)
-  - [¿Qué es un tema?](#%C2%BFQu%C3%A9-es-un-tema)
-    - [Qué puede hacer un tema](#Qu%C3%A9-puede-hacer-un-tema)
-    - [Cuál es la diferencia entre un tema y un plugin](#Cu%C3%A1l-es-la-diferencia-entre-un-tema-y-un-plugin)
+    - [Diferencia entre un tema y un plugin](#Diferencia-entre-un-tema-y-un-plugin)
   - [Index.php y styles.css](#Indexphp-y-stylescss)
   - [Jerarquía de plantillas](#Jerarqu%C3%ADa-de-plantillas)
     - [Usando las plantillas](#Usando-las-plantillas)
@@ -11,16 +9,15 @@
   - [Functions.php](#Functionsphp)
     - [Un plugin](#Un-plugin)
     - [Functions.php](#Functionsphp-1)
+  - [Incluyendo CSS y JS a nuestro tema](#Incluyendo-CSS-y-JS-a-nuestro-tema)
+    - [Enqueuing Scripts y hojas de estilos](#Enqueuing-Scripts-y-hojas-de-estilos)
+    - [Hojas de estilos](#Hojas-de-estilos)
+    - [Scripts](#Scripts)
+  - [Tipos de contenido](#Tipos-de-contenido)
+    - [Tipos de contenido por defecto](#Tipos-de-contenido-por-defecto)
 
-# ASPECTOS BÁSICOS DE UN TEMA
-
-## ¿Qué es un tema?
-Un tema para WordPress cambia el diseño de un sitio web. Podríamos decir que un tema es el front-end de WordPress, mientras que lo que ves en el Escritorio de WordPress es el back-end.
-
-### Qué puede hacer un tema
-Los temas toman el contenido y los datos almacenados por WordPress y lo muestran en el navegador. Cuando creas un tema para WordPress, eres tú quien decide cómo se verá el contenido.
-
-### Cuál es la diferencia entre un tema y un plugin
+# ASPECTOS BÁSICOS DE UN TEMA  
+### Diferencia entre un tema y un plugin
 Es normal encontrar características cruzadas en temas y plugins. Sin embargo, las mejores prácticas son:
 
 * un tema controla la presentación del contenido; mientras que
@@ -141,3 +138,53 @@ Con **functions.php** podemos:
 - Definir las funciones que deseemos para usarlas en las plantillas del tema.
   
 [Ejemplos de código en functions.php.](https://developer.wordpress.org/themes/basics/theme-functions/#examples)
+
+## Incluyendo CSS y JS a nuestro tema
+
+Añadir estilos y scripts a un tema WordPress es un proceso realmente fácil. Básicamente, tienes que crear una función que añada todos tus scripts y estilos. Añadiéndolos de esta forma, WordPress creará una ruta accesible para que puedas encontrar el archivo y cualquier dependencia necesaria (como jQuery) y así podrás usar un gancho que insertará tus scripts y hojas de estilos.
+
+### Enqueuing Scripts y hojas de estilos
+La manera correcta de añadir nuestros scripts y hojas de estilos al tema es añadirlo (enqueue en inglés) en el archivo **functions.php.**
+
+Las funciones básicas son:
+
+- Añadir el script o estilo usando wp_enqueue_script() o wp_enqueue_style().
+
+
+### Hojas de estilos
+En vez de cargar las hojas de estilo en nuestro archivo header.php, tenemos que cargarla usando la **función wp_enqueue_style.**
+
+Para añadir (enqueue) el archivo **styles.css:**
+
+        wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+
+Para más detalles sobre la función wp_enqueue_style, visita la página del Codex que la detalla. Función [wp_enqueue_style](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)].
+
+### Scripts
+Cualquier archivo JavaScript adicional requerido por el tema tiene que ser cargado usando la función **wp_enqueue_script**. Esto asegura la carga y caché correcta, y permite el uso de etiquetas condicionales para usarlas en páginas específicas.
+
+**wp_enqueue_script tiene una síntaxis similar a wp_enqueue_style.**
+
+Para añadir (enqueue) un script en **functions.php**:
+
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
+
+
+Para más detalles sobre la función wp_enqueue_script, visita la página del Codex que la detalla. Función [wp_enqueue_script](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+
+## Tipos de contenido
+Hay varios tipos de contenido en WordPress. Estos tipos de contenidos se describen normalmente como **Post Types**, lo cual puede ser un poco confuso, porque las entradas (posts en inglés) son un tipo de contenido en sí. Para evitar confusiones llamaremos a los Post Types, Tipos de Contenido; y a los Posts, Entradas. Estas son las convecciones que se usan en la comunidad hispana de WordPress.
+
+Internamente, todos los tipos de contenido de WordPress están almacenados en el mismo lugar - en la tabla **wp_posts** de la base de datos - pero están diferenciados por una columna llamada **post_type**.
+
+Adicionalmente a los tipos de contenido por defecto, podmeos crear **Custom Post Types o tipos de contenido personalizados**. Esta característica de WordPress es muy potente, y veremos algún ejemplo durante el curso.
+
+### Tipos de contenido por defecto
+Existen cinco tipos de contenido por defecto:
+
+- Entradas (Post Type: ‘post’).
+- Páginas (Post Type: ‘page’).
+- Medios (Post Type: ‘attachment’).
+- Revisión (Post Type: ‘revision’).
+- Menú de navegación (Post Type: ‘nav_menu_item’).
