@@ -1,0 +1,4 @@
+- [¿Qué es un tema?](#%C2%BFQu%C3%A9-es-un-tema)
+- [Index.php y styles.css](#Indexphp-y-stylescss)
+- [Jerarquía de plantillas](#Jerarqu%C3%ADa-de-plantillas)
+- [The loop](#The-loop)
