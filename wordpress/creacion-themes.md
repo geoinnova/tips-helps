@@ -1,16 +1,20 @@
-- [¿Qué es un tema?](#%C2%BFQu%C3%A9-es-un-tema)
-  - [Qué puede hacer un tema](#Qu%C3%A9-puede-hacer-un-tema)
-  - [Cuál es la diferencia entre un tema y un plugin](#Cu%C3%A1l-es-la-diferencia-entre-un-tema-y-un-plugin)
-- [Index.php y styles.css](#Indexphp-y-stylescss)
-- [Jerarquía de plantillas](#Jerarqu%C3%ADa-de-plantillas)
-- [The loop](#The-loop)
+- [ASPECTOS BÁSICOS DE UN TEMA](#ASPECTOS-B%C3%81SICOS-DE-UN-TEMA)
+  - [¿Qué es un tema?](#%C2%BFQu%C3%A9-es-un-tema)
+    - [Qué puede hacer un tema](#Qu%C3%A9-puede-hacer-un-tema)
+    - [Cuál es la diferencia entre un tema y un plugin](#Cu%C3%A1l-es-la-diferencia-entre-un-tema-y-un-plugin)
+  - [Index.php y styles.css](#Indexphp-y-stylescss)
+  - [Jerarquía de plantillas](#Jerarqu%C3%ADa-de-plantillas)
+    - [Usando las plantillas](#Usando-las-plantillas)
+  - [The loop](#The-loop)
+    - [Usando el loop](#Usando-el-loop)
+  - [Functions.php](#Functionsphp)
+    - [Un plugin](#Un-plugin)
+    - [Functions.php](#Functionsphp-1)
 
-### Creación de temas
-
+# ASPECTOS BÁSICOS DE UN TEMA
 
 ## ¿Qué es un tema?
-Un tema para WordPress (WordPress theme en inglés) cambia el diseño de un sitio web. Podríamos decir que un tema es el front-end de WordPress, mientras que lo que ves en el Escritorio de WordPress es el back-end.
-
+Un tema para WordPress cambia el diseño de un sitio web. Podríamos decir que un tema es el front-end de WordPress, mientras que lo que ves en el Escritorio de WordPress es el back-end.
 
 ### Qué puede hacer un tema
 Los temas toman el contenido y los datos almacenados por WordPress y lo muestran en el navegador. Cuando creas un tema para WordPress, eres tú quien decide cómo se verá el contenido.
@@ -59,7 +63,7 @@ Las plantillas parciales básicas son:
   
 El archivo **header.php** incluye el código desde la primera línea hasta la apertura de la etiqueta body. Por su parte, el archivo footer.php incluye el código desde la etiqueta de de cierre del body hasta el final del código html. De la plantilla sidebar.php hablaremos más adelante.
 
-###Usando las plantillas
+### Usando las plantillas
 Dentro de una plantilla WordPress puedes usar las etiquetas de plantillas (Template Tags) para mostrar información dinámicamente, incluir otras plantillas, o personalizar tu sitio.
 
 Al dividir el header y el footer en dos plantillas, podemos incluirlas en la plantilla index.php con las funciones <?php get_header ?> y <?php get_footer ?>, las cuales cargan el contenido de las plantillas parciales en la plantilla principal.
@@ -75,10 +79,64 @@ Ejemplo de index.php:
         ?>
 
 [Más sobre Jerarquía de plantillas]([#%C2%BFQu%C3%A9-es-un-tema](https://developer.wordpress.org/themes/basics/template-hierarchy/))
-- [¿Qué es un tema?](#%C2%BFQu%C3%A9-es-un-tema)
-  - [Qué puede hacer un tema](#Qu%C3%A9-puede-hacer-un-tema)
-  - [Cuál es la diferencia entre un tema y un plugin](#Cu%C3%A1l-es-la-diferencia-entre-un-tema-y-un-plugin)
-- [Index.php y styles.css](#Indexphp-y-stylescss)
-- [Jerarquía de plantillas](#Jerarqu%C3%ADa-de-plantillas)
-- [The loop](#The-loop)
+
 ## The loop
+El loop (o bucle)  es el mecanismo por defecto que WordPress usa para mostrar las entradas a través del tema. La cantidad de entradas mostradas es determinada por el Número máximo de entradas a mostrar en el sitio definido en los ajustes de lectura.
+
+El loop extrae la información de cada entrada desde la base de datos e inserta la información apropiada en el lugar de cada etiqueta de plantilla (Template Tag). El código HTML o PHP que esté dentro del loop será procesado para cada entrada.
+
+El loop puede ser usado para varias cosas, por ejemplo:
+
+- Mostrar títulos de entradas y extractos en la página de inicio.
+- Mostrar el contenido y los comentarios de una entrada único.
+- Mostrar el contenido en una página individual usando etiquetas de plantillas.
+- Mostrar información de tipo de contenido personalizado (Custom Post Types) y campos personalizados (Custom Fields).
+
+El loop básico es:
+
+        <?php
+        if ( have_posts() ) : while ( have_posts() ) : the_post();
+                the_content();
+        endwhile;
+        else :
+                _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+        endif;
+        ?>
+
+Este bloque de código nos dice que mientras existan entradas, recorra el bucle mostrándolas. La función have_posts() comrpueba si hay alguna entrada. Si las hubiera, el bucle while sigue ejecutándose mientras la condición sea entre paréntesis sea cierta. Es decir, mientras entradas, el bucle seguirá ejecutándose.
+
+### Usando el loop
+El loop debe estar ubicado en el archivo **index.php, y en cualquier otra plantilla que vaya ser usada para mostrar información de las entradas**. Para no duplicar la cabecera una y otra vez, el loop debe estar después de la función get_header(). 
+
+[Lista detallada de todas las etiquetas de plantilla (Template tags)](https://developer.wordpress.org/themes/basics/the-loop/#what-the-loop-can-display)
+
+## Functions.php
+El archivo **functions.php** es donde añadiremos las funcionalidades propias de nuestro tema. Este archivo se comporta como un plugin, añadiendo características y funcionalidad a un sitio WordPress. 
+
+Podemos usarlo para llamar a funciones propias de WordPress o crear nuestras propias funciones.
+
+Hay una serie de ventajas y desventajas de usar un plugin o functions.php.
+
+### Un plugin
+- Requiere un texto de cabecera específico y único.
+- Es almacenado en la carpeta wp-content/plugins, normalmente en un subdirectorio.
+- Solo se ejecuta cuando está activo.
+- Aplica para todos los temas.
+- Debe tener un propósito único.
+
+
+### Functions.php
+- No requiere un texto de cabecera único.
+- Es almacenado en el subdirectorio del tema.
+- Se ejecuta solo cuando el tema está activo.
+- Aplica solo al tema (si se cambia de tema, las características definidas en él no podrán ser usadas).
+- Puede tener números bloques de código para diferentes propósitos.
+
+
+Con **functions.php** podemos:
+
+- Usar los WordPress hooks (ganchos de WordPress).
+- Habilitar características de WordPress con la función add_theme_support().
+- Definir las funciones que deseemos para usarlas en las plantillas del tema.
+  
+[Ejemplos de código en functions.php.](https://developer.wordpress.org/themes/basics/theme-functions/#examples)
