@@ -41,6 +41,27 @@
     - [Localizar](#Localizar)
     - [Archivos MO](#Archivos-MO)
     - [Accesibilidad](#Accesibilidad)
+- [Underscores, starter theme](#Underscores-starter-theme)
+  - [Empieza a trabajar con _s](#Empieza-a-trabajar-con-s)
+    - [Directorio raíz](#Directorio-ra%C3%ADz)
+    - [Entradas](#Entradas)
+    - [Páginas](#P%C3%A1ginas)
+    - [Archivo, Resultados de búsqueda y páginas de error](#Archivo-Resultados-de-b%C3%BAsqueda-y-p%C3%A1ginas-de-error)
+    - [Plantilla por defecto](#Plantilla-por-defecto)
+    - [Plantilla de comentarios](#Plantilla-de-comentarios)
+    - [Archivo functions](#Archivo-functions)
+    - [Hojas de estilos](#Hojas-de-estilos-1)
+    - [Captura de pantalla](#Captura-de-pantalla)
+    - [Carpetas dentro del directorio raíz](#Carpetas-dentro-del-directorio-ra%C3%ADz)
+    - [Directorio “inc”](#Directorio-inc)
+    - [Directorio “js”](#Directorio-js)
+    - [Directorio “languages”](#Directorio-languages)
+    - [Directorio “layouts”](#Directorio-layouts)
+  - [Temas padres y temas hijos](#Temas-padres-y-temas-hijos)
+    - [Qué es un tema padre](#Qu%C3%A9-es-un-tema-padre)
+    - [Qué es un tema hijo](#Qu%C3%A9-es-un-tema-hijo)
+    - [Cómo crear un tema hijo](#C%C3%B3mo-crear-un-tema-hijo)
+  - [Temas premium](#Temas-premium)
 
 # ASPECTOS BÁSICOS DE UN TEMA  
 ### Diferencia entre un tema y un plugin
@@ -604,3 +625,180 @@ Un tema de WordPress debe generar páginas que todo el mundo pueda usar, incluye
 
 
 Te recomiendo que sigas las Pautas de [Accesibilidad de la W3C. WCAG 2.0](http://www.codexexempla.org/traducciones/pautas-accesibilidad-contenido-web-2.0.htm)
+
+# Underscores, starter theme
+Underscores, también conocido **como _s**, es un starter theme Open Source creado principalmente por desarrolladores de Automattic. 
+**Un starter theme es un tema creado por desarrolladores experimentados que te ahorran gran cantidad de trabajo**, ya que suele tener implementado las plantillas y características básicas que necesitamos en un theme.
+
+Las características de **Underscores** son:
+
+- Una buena cantidad de plantillas HTML5 livianas, bien documentadas y modernas.
+- Una plantilla 404 muy útil.
+- Una implementación de una cabecera personalizada en inc/custom-header.php que puede ser activada con solo descomentar una línea de código en functions.php y añadir el bloque de código que se encuentra en los comentarios del archivo inc/custom-header.php al archivo header.php.
+- Etiquetas de plantilla personalizadas en inc/template-tags.php que mantienen las plantillas limpias y previenen la duplicación de código.
+- Pequeños tweaks en inc/extras.php que pueden mejorar la experiencia en el desarrollo del tema.
+- Un script en js/navigation.js que adaptan el menú de navegación para dispositivos móviles. Solo te tienes que preocupar de darle los estilos que necesite.
+- Dos ejemplos de diseños en CSS en la carpeta layouts/ para una sidebar en cada lateral del contenido.
+- Estilos CSS bien organizados e inteligentes en el archivo styles.css que nos ayudarán a crear un diseño rápidamente.
+
+
+Para crear un tema basado en _s solo tenemos que ir a **underscores.me** y generar nuestro tema basado en _s. Con solo poner el nombre del tema que queremos crear y pulsar en el botón “Generate” tendremos nuestro starter theme listo para empezar a crear.
+
+## Empieza a trabajar con _s
+Cómo organices los archivos de tu tema es algo que irás depurando con el tiempo. Con la excepción de uno o dos archivos, la disposición de los archivos no tiene límite si ya tienes una base con PHP. Pero tienes que encontrar el equilibrio entre tú método de organización de archivos, fácil de usar para tus usuarios (porque ellos podrán crear temas hijos), y el simple sentido común.
+
+Por ahora veamos cómo es la estructura de archivos de Underscores y cómo usarla, incluyendo funciones extra.
+
+### Directorio raíz
+Al descargar Underscores por primera vez, podría asustarnos la cantidad de archivos que encontramos en el tema. No te preocupes, la mayoría de ellos se explican solo con su nombre de archivo. Y otros pueden agruparse porque tienen un comportamiento similar.
+
+La estructura principal de archivos HTML manejan la cabecera, el pie de página, la columna de contenido y el área de widgets del sitio. Como bien sabes, el código HTML de cada elemento se encuentran en los archivos header.php, footer.php y sidebar.php. Por defecto, el archivo que carga el contenido es el index.php. Normalmente colocaremos el contenido en una columna y la sidebar en otra.
+
+WordPress sabe que este archivo es el último recurso. En su lugar, busca otros archivos en la raíz del tema por nombre y los usa si tienen un propósito especial.
+
+### Entradas
+Cuando se carga una entrada, WordPress busca el archivo single.php para mostrar el contenido. Sin embargo, en Underscores este archivo solo contiene el loop (bucle) para detectar el posts, pero es el archivo content-single.php el que contiene el HTML que se mostrará finalmente.
+
+Al fin y al cabo, los dos archivos se comportan igual, peor se modulariza al crear un archivo para “maquetar” el contenido.
+
+### Páginas
+Cuando se carga una página, WordPress busca el archivo page.php para mostrar el contenido. Y de la misma forma que las entradas, carga una plantilla extra para maquetar el contenido en HTML, esta plantilla se encuentra en el archivo content-page.php.
+
+### Archivo, Resultados de búsqueda y páginas de error
+La misma funcionalidad aplica a otras plantillas de WordPress basadas en la jerarquía de plantillas. Las principales plantillas a parte de las entradas y páginas serán archive.php, search.php y 404.php.
+
+Estos archivos controlan todas las páginas de Archivo (taxonomías [categorías y etiquetas]), archivos de fecha y archivos de autor), resultados de búsqueda y páginas de error, respectivamente.
+
+### Plantilla por defecto
+Si no existiera ninguno de los archivos anteriormente mencionados o la página que se tiene que cargar no corresponde a ninguna plantilla específica de WordPress, WordPress sabe que tiene que recurrer al archivo index.php. Es la plantilla genérica y a prueba de errores, por eso es uno de los archivos obligatorios en todo tema.
+
+Dentro del index.php hay un loop como en cualquier otra plantilla. Sin embargo, este loop llama a la plantilla content.php que sirve como contenido genérico, sin emportar el tipo de contenido cargado. En el caso de que no hubiera ninguna entrada publicada, carga la plantilla content-none.php.
+
+<a href="https://openwebinars.net/media/django-summernote/2016-02-15/d8b919e4-80dc-4165-8009-179edcaaee5d.png"><img src="https://openwebinars.net/media/django-summernote/2016-02-15/d8b919e4-80dc-4165-8009-179edcaaee5d.png" width="300px"></a>
+
+### Plantilla de comentarios
+El archivo comments.php es el responsable de mostrar los comentarios, pings y formulario de comentarios. Tanto en la plantilla single.php como en page.php, se usa la función comments_template() para habilitar la funcionalidad de los comentarios. Esta función de WordPress sabe que teine que buscar el archivo comments.php en la raíz del tema.
+
+### Archivo functions
+Cómo describíamos en las primeras lecciones de este curso, el archivo functions.php sirve para esteblecer la funcionalidad básica de neustro tema. Además de poder extender la funcionalidad de nuestro tema, en este archivo registramos la zona de wigets, establecemos los tamaños de las miniaturas, y cargamos los recursos del tema como los archivos JavaScript. WordPress lo lee automáticamente, así que lo que pongas en él será tenido en cuenta.
+
+### Hojas de estilos
+En la hoja de estilos de Underscores podemos ver toda la información que necesitaríamos detallar para nuestre tema profesional y listo para publicar. Toda la información que se muestra en el Escritorio de WordPress, bajo la sección Apariencia -> Temas, es cargada de este archivo.
+
+Underscores tiene una serie de estilos cargados, que haremos bien en dejar, cuando empecemos a crear los nuestros.
+
+También se incluye otra hoja de estilos en Underscores, es el archivo rtl.css. RTL significa “right to left” o “de derecha a izquierda”. Este archivo se usa para ajustar los estilos del tema para lenguajes que se leen de derecha a izquierda. Normalmente, no requiere de mucho código CSS para hacer este ajuste.
+
+### Captura de pantalla
+En el Escritorio de WordPress, concretamente en la página de temas, verás comunmente una captura de pantalla para cada tema. Esta captura de pantalla puede diferenciar tu tema o compañía. WordPress busca el archivo **screenshot.png** para mostrarlo, así que ¡sé creativo!.
+
+### Carpetas dentro del directorio raíz
+WordPress no requiere ninguna carpeta en el tema, pero es una buena práctica organizar nuestros archivos en directorios. Underscores viene con las carpetas inc, js, languages, layouts y template-parts.
+
+### Directorio “inc”
+Este directorio, abreviatura de “includes”, contiene archivos PHP que son una extensión del archivo functions.php. Incluir otros archivos desde el archivo functions.php asegura que estos se usarán también. Puedes echarle un vistazo a cada archivo, que contiene código de buena calidad y bien documentado para saber qué hace cada archivo.
+
+### Directorio “js”
+Este directorio contiene los archivos JavaScript personalizado de tu tema. Incluye los archivos customizer.js, navigation.js y skip-link-focus-fix.js.
+
+### Directorio “languages”
+Dependiendo de cómo vayamos a utilizar nuestro tema, tendremos que prepararlo para usar otros idiomas a parte del original. El directorio “languages” es el lugar para proveer las instruciones y archivos necesarios para traducción.
+
+### Directorio “layouts”
+Este directorio contiene dos hojas de estilos para configurar las columnas de contenido y sidebar. Underscores sabe que la mayoría de los temas tienen una disposición contenido/sidebar o sidebar/contenido, así que estos dos archivos proveen código CSS de ejemplo para usar cualquiera de estas dos disposiciones.
+
+## Temas padres y temas hijos
+Un tema hijo permite cambiar pequeños aspectos de la apariencia de un sitio que todavía preserva la funcionalidad y el diseño del tema original. Para entender cómo funcionan los temas hijos, es importante de entender primero la relación entre temas padres y temas hijos.
+
+### Qué es un tema padre
+Un tema padre es un tema completo de WordPress que contiene todas las plantillas requeridas en un tema WordPress y lo necesario para que el tema funcione. Todos los temas (excluyendo los temas hijos) son considerados temas padres.
+
+### Qué es un tema hijo
+Un tema hijo hereda el look and feel del tema padre y toda su funcionalidad, pero puede usarse para hacer modificaciones a cualquier parte del tema. De esta forma, separamos las modificaciones de los archivos del tema padre. Usando un tema hijo, podemos seguir actualizando el tema padre sin que esto afecte a las modificaciones hechas en nuestro sitio.
+
+Los temas hijos:
+
+- Hacen nuestras modificaciones portables y replicables.
+- Mantienen las modificaciones separadas de las funcionalidades del tema padre.
+- Permite que el tema padre se actualice sin destruir las modificaciones.
+- Nos ahorra tiempo en el desarrollo ya que no estamos reinventando la rueda.
+- Son una gran forma de aprender sobre el desarrollo de temas.
+
+### Cómo crear un tema hijo
+1. Crea la carpeta del tema hijo
+Primero, tienes que crear una carpeta en el directorio de temas localizado en **wp-content/themes.**
+
+Esta carpeta tiene que llamarse igual que el tema padre, pero seguida de -child. Por ejemplo, para el tema twentysixteen el tema hijo debería ser twentysixteen-child.
+
+
+2. Crea una hoja de estilos: styles.css
+Lo siguiente es crear una hoja de estilos llamada styles.css, la que contendrá todos los estilos y las declaraciones que controlan el diseño de nuestro tema. La hoja de estilos debe contener la cabecera requerida en todo tema WordPress. Como añadido a esta cabecera, tendremos que indicarle el tema padre al que corresponde este tema hijo en la línea “Template”.
+
+    /*
+    Theme Name:     Twenty Sixteen Child
+    Theme URI:      http://example.com/
+    Description:    Child theme for the Twenty Sixteen theme
+    Author:         Your name here
+    Author URI:     http://example.com/about/
+    Template:       twentysixteen
+    Version:        0.1.0
+    */
+
+3. Crea un archivo functions.php
+La mayoría de los archivos de nuestro tema hijo sobreescribirán a los mismos del tema padre. Por ejemplo, el archivo styles.css sobreescribe a los estilos en el mismo archivo del tema padre. Sin embargo, el archivo functions.php es diferente: en vez de sobreescribir la funcionalidad del tema padre, se cargan los dos archivos. Específicamente, el archivo functions.php del tema hijo es cargado antes del functions.php del tema padre.
+
+Crear el functions.php es opcional. Solo se necesita para añadir código PHP adicional al tema. Alternativamente, el código PHP puede estar dentro de un plugin, lo que hace nuestra funcionalidad más portable sin importar el tema que estemos usando.
+
+4. Heredar estilos
+A menos que queramos cambiar completamente el diseño de nuestro tema, es recomendable que carguemos todos los estilos del tema padre. Heredar estos estilos nos ahorrará tiempo si solo vamos a hacer cambios menores en el diseño. El no hacerlo nos permitirar usar las plantillas del tema padre para mostrarlas de la forma en la que deseemos, con un diseño totalmente personalizado desde cero.
+
+Para importar los estilos del tema padre tendrás que añadir la siguiente línea al archivo styles.css de tu tema hijo:
+
+@import url(" ../twentysixteen/style.css" );
+
+5. Añadir archivos de plantillas
+A diferencia del archivo functions.php, cualquier archivo que añadamos a nuestro tema hijo sobreescribirá el mismo archivo en el tema padre.
+
+En la mayoría de los casos, lo mejor es crear una copia de la plantilla que queramos cambiar y hacer modificaciones sobre esa copia, dejando la plantilla en el tema padre sin cambios.
+
+6. Incluyendo otros archivos
+Cuando necesites incluir archivos que estén dentro del directorio de tu tema hijo, tendrás que usar la función get_stylesheet_directory(). Para referenciar al tema padre, tendrías que usar la función get_template_directory().
+
+7. Añadiendo estilos y scripts
+Los scripts y estilos tienen que ser añadidos (enqueued) en una función propia, y entonces tienen que ser encerrados en una acción.
+
+WordPress no cargará automáticamente los estilos de tu tema hijo en el front-end. Para ello tienes que cargarlo de la forma que se mostraba en las primeras unidades. Aquí viene un ejemplo para refrescar la memoria. El siguiente código tendrías que añadirlo en el **functions.php** de tu tema:
+
+    <?php
+    add_action( 'wp_enqueue_scripts', 'my_plugin_add_stylesheet' );
+    function my_plugin_add_stylesheet() {
+        wp_enqueue_style( 'my-style', get_stylesheet_directory_uri() . '/style.css', false, '1.0', 'all' );
+    }
+
+## Temas premium
+
+Los temas premiums son temas de pago que son mantenidos por sus desarrolladores con regularidad. Los temas premium ofrecen un diseño final, aunque la mayoría de ellos son muy personalizables. Elegir un tema premium puede ser abrumador, puesto que hay miles de ellos. Pero hay algo que siempre has de tener en cuenta, compra siempre temas premium desde marketplaces reputados. Para facilitarte la tarea, te recomendamos esta serie de sitios en los que encontrarás los mejores temas premium:
+
+    www.themeforest.net
+    www.elegantthemes.com
+    www.mojo-themes.com
+    www.woothemes.com
+
+¡Y muchos más! Utilizar temas premium te facilitan mucho trabajo, no reinventas la rueda, y puedes entregar un sitio listo para usar en muy poco tiempo. Algunas ventajas de usar temas premium son:
+
+- Calidad. Una vez que hayas escogido un marketplace reputable, puedes esperar un tema de más alta calidad que un tema gratuito. Esto quiere decir, por ejemplo, que es más exclusivo.
+- Funcionalidad. De las mejores cosas que tiene un tema premium, es la gran lista de opciones que puedes encontrar para personalizar el tema, y dotarle de funcionalidades infinitas.
+- Seguridad. Esta característica estará presente en un tema premium si has seguido la recomendación de comprarlo en un marketplace reputado y no descargarlo gratuitamente de otro lugar.
+- Actualizaciones. Una vez que hayas comprado el tema, recibirás actualizaciones, normalmente durante un año, o en algunos casos indefinidas. Las actualizaciones mantienen la seguridad de tu tema y eliminan tecnologías obsoletas.
+- Soporte. De las mejores cosas que obtienes al comprar un tema premium es el soporte por parte de su desarrollador. Además, suelen estar muy bien documentados.
+
+Como decíamos antes, temas premium existen miles, pero si quieres cerrar el círculo, aquí tienes los tres temas premium más conocidos:
+
+  Divi
+  Me arriesgaría a decir que Divi es el tema premium más famoso. Es una navaja suiza, un tema muy potente que permite personalizarlo de tal forma que no parezca Divi. Cómo una de sus últimas características, el nuevo Page Builder, que te permitirá crear un diseño totalmente personalizado sin necesidad de código.
+
+  Avada
+  Es el tema más vendido en themeforest, que a su vez es el marketplace más famoso. La mejor característica de Avada son la cantidad de Demos que trae consigo. Son como pequeños temas dentro de Avada que te dejan un sitio listo para entregar en muy poco tiempo.
+
+  Flatsome
+  Puede que sea el más developer-friendly de los tres. Un tema muy enfocado a eCommerce y que usa shortcodes para casi todo. Puedes usar estos shortcodes tanto en páginas/posts como en plantillas dentro de un tema hijo.
