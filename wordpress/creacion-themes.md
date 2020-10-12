@@ -18,17 +18,28 @@
   - [Plantillas para entradas, páginas y medios](#Plantillas-para-entradas-p%C3%A1ginas-y-medios)
     - [Feed y página individual de entradas](#Feed-y-p%C3%A1gina-individual-de-entradas)
     - [Etiquetas de plantilla](#Etiquetas-de-plantilla)
-  - [Enlazando plantillas y directorios](#Enlazando-plantillas-y-directorios)
-    - [Enlazando a plantillas del tema](#Enlazando-a-plantillas-del-tema)
-  - [Etiquetas condicionales](#Etiquetas-condicionales)
-  - [Dónde usar etiquetas condicionales](#D%C3%B3nde-usar-etiquetas-condicionales)
-  - [Mostrar sidebars en nuestro tema](#Mostrar-sidebars-en-nuestro-tema)
-  - [Crear la plantilla sidebar.php](#Crear-la-plantilla-sidebarphp)
+    - [Enlazando plantillas y directorios](#Enlazando-plantillas-y-directorios)
+      - [Enlazando a plantillas del tema](#Enlazando-a-plantillas-del-tema)
+      - [Enlazando a directorios del tema](#Enlazando-a-directorios-del-tema)
+    - [Etiquetas condicionales](#Etiquetas-condicionales)
+    - [Dónde usar etiquetas condicionales](#D%C3%B3nde-usar-etiquetas-condicionales)
+  - [SIDEBAR](#SIDEBAR)
+    - [Registar una Sidebar](#Registar-una-Sidebar)
+    - [Mostrar sidebars en nuestro tema](#Mostrar-sidebars-en-nuestro-tema)
+    - [Crear la plantilla sidebar.php](#Crear-la-plantilla-sidebarphp)
   - [Widgets](#Widgets)
+  - [Menus de navegación](#Menus-de-navegaci%C3%B3n)
     - [Mostrar el Menú](#Mostrar-el-Men%C3%BA)
+  - [Paginación y comentarios](#Paginaci%C3%B3n-y-comentarios)
+  - [Imágenes destacadas y miniaturas](#Im%C3%A1genes-destacadas-y-miniaturas)
     - [Dar soporte a imágenes destacadas](#Dar-soporte-a-im%C3%A1genes-destacadas)
+    - [Establecer una imagen destacada](#Establecer-una-imagen-destacada)
+    - [Tamaño de las imágenes](#Tama%C3%B1o-de-las-im%C3%A1genes)
+  - [Internacionalización, localización y accesibilidad](#Internacionalizaci%C3%B3n-localizaci%C3%B3n-y-accesibilidad)
+    - [Cómo internacionalizar tu tema](#C%C3%B3mo-internacionalizar-tu-tema)
     - [Variables](#Variables)
     - [Localizar](#Localizar)
+    - [Archivos MO](#Archivos-MO)
     - [Accesibilidad](#Accesibilidad)
 
 # ASPECTOS BÁSICOS DE UN TEMA  
@@ -310,9 +321,9 @@ Para mostrar la versión de WordPress que está corriendo en el blog, tienes que
 
 En el Codex encontrarás una lista detallada de los parámetros que se le pueden pasar a cada Template Tag. [Lista de Template Tags.](https://codex.wordpress.org/Template_Tags)
 
-## Enlazando plantillas y directorios
+### Enlazando plantillas y directorios
 
-### Enlazando a plantillas del tema
+#### Enlazando a plantillas del tema
 
 Como ya hemos aprendido anterioremente, un tema WordPress está compuesto por un número diferente de plantillas. Como mínimo, suelen incluir los archivos **sidebar.php, header.php y footer.php**. Estos archivos son referenciados a lo largo del tema usando etiquetas de plantilla, por ejemplo:
 
@@ -335,7 +346,7 @@ Un ejemplo que veíamos en el código del archivo **single.php** del tema Twenty
     get_template_part( 'template-parts/content', 'single' );
 
 
-##Enlazando a directorios del tema
+#### Enlazando a directorios del tema
 
 Para enlazar a un directorio del tema, puedes usar las siguientes funciones:
 
@@ -349,7 +360,7 @@ Si no estás usando un tema hijo ambas funciones devolverán lo mismo, la URI co
 
 En cambio, si estás usando un tema hijo, la función **get_stylesheet_directory_uri()** devolverá la URI de tu tema hijo, mientras que **get_template_directory_uri()** devolverá la URI de tu tema padre.
 
-## Etiquetas condicionales
+### Etiquetas condicionales
 Las etiquetas condicionales (Conditional Tags) se usan para **alterar la visualización del contenido dependiendo de las condiciones que coincidan en la página actual**. Le dan la información a WordPress de qué código mostrar bajo unas condiciones específicas. Las etiquetas condicionales normalmente trabajan con la sentencia condicional if / else de PHP.
 
 Por ejemplo, puedes preguntar si un usuario está logueado, y entonces darle un saludo diferente dependiendo del resultado.
@@ -361,7 +372,7 @@ Por ejemplo, puedes preguntar si un usuario está logueado, y entonces darle un 
     endif;
 
 
-## Dónde usar etiquetas condicionales
+### Dónde usar etiquetas condicionales
 
 Para poder usar una etiqueta condicional, la información debe estar cargada de la base de datos, por ejemplo, la consulta debe estar ejecutada. Si usas una etiqueta condicional antes de que haya información, no habrá nada que comprobar en la sentencia if / else.
 
@@ -374,13 +385,13 @@ Dos formas de implementar etiquetas condicionales son:
 
 Para una lista detallada de todas las etiquetas condicionales visita el siguiente enlace. [Etiquetas condicionales.](https://codex.wordpress.org/Template_Tags)
 
-#SIDEBAR
+## SIDEBAR
 Una sidebar es una zona donde podemos colocar widgets en nuestro tema. No es obligatorio añadir una sidebar a nuestro tema, pero hacerlo permite a los editores y otros usuarios de WordPress poder añadir contenido a las zonas de widgets a través del Customizer (Personalizador) o en el panel de administración de widgets.
 
 Los widgets pueden utilizarse para varios propósitos, que van desde listar las entradas recientes hasta habilitar un chat en vivo.
 
 
-##Registar una Sidebar
+### Registar una Sidebar
 Para usar una sidebar, tenemos que registrarla en el archivo **functions.php.**
 
 Para empezar, la función **register_sidebar()** tiene varios parámetros que deben ser definidos independientemente de que estén marcados como opcionales.
@@ -426,14 +437,14 @@ Al registrar una sidebar le decimos a WordPress que estamos creando una zona de 
 
 La primera nos permite registrar una sidebar y la segunda múltiples de ellas.
 
-## Mostrar sidebars en nuestro tema
+### Mostrar sidebars en nuestro tema
 Una vez que registramos nuestra sidebar, necesitamos una forma de mostrarlas en nuestro tema. Para hacerlo, hay dos pasos:
 
 - Crear el archivo de plantilla **sidebar.php** y mostrar la sidebar usando la función **dynamic_sidebar.**
 - Cargarla en tu tema usando la función **get_sidebar**.
 
 
-## Crear la plantilla sidebar.php
+### Crear la plantilla sidebar.php
 Una plantilla sidebar contiene el código de nuestra sidebar. WordPress reconoce el archivo sidebar.php y cualquier plantilla con el tema **sidebar-{name}.php**. Esto significa que podemos organizar nuestros archivos para que cada plantilla contenga una sidebar.
 
 En el ejemplo de la plantilla single.php del tema TwentySixteen se hace referencia a una sidebar por su id:
@@ -454,7 +465,7 @@ Un widget es un **objeto PHP que puede mostrar código HTML**. El mismo tipo de 
 
 Cuando creamos un nuevo widget, aparecerá en la sección **Apariencia -> Widgets** de nuestro WordPress. Los ususarios pueden añadir un widget a una zona de widgets y personalizar la configuración del widget desde el Escritorio de WordPress.
 
-##Menus de navegación
+## Menus de navegación
 Para poder crear/modificar nuestro menú desde el Escritorio de WordPress tenemos que añadirlo programáticamente. Realmente no estaremos creando un menú, sino dando soporte a nuestro tema para usar menús de navegación dinámicos.
 
 Para registrar un menú, de nuevo tenemos que acudir a nuestro archivo **functions.php** y registar nuestro menú.
@@ -481,7 +492,7 @@ Una vez que lo hemos registrado, tenemos que usar la función **wp_nav_menu()** 
 
 [Referencia de la función wp_nav_menu.](https://developer.wordpress.org/themes/basics/conditional-tags/#function-reference)
 
-##Paginación y comentarios
+## Paginación y comentarios
 La paginación permite al lector ir hacia atrás y hacia adelante a través de múltiples páginas de contenido.
 
 WordPress puede usar la paginación cuando:
@@ -518,7 +529,7 @@ En este ejemplo se muestra dónde puedes añadir las funciones de paginación pa
 
     <?php endif; ?>
 
-##Imágenes destacadas y miniaturas
+## Imágenes destacadas y miniaturas
 Las imágenes destacadas son imágenes que representan a una entrada, página o tipo de contenido personalizado. Cuando creamos un tema, puedes mostrar la imagen destacada de formas diferentes, en la página de Archivo, en la cabecera, arriba de un post, por ejemplo.
 
 ### Dar soporte a imágenes destacadas
@@ -526,10 +537,10 @@ Los temas tienen que declarar el soporte para las imágenes destacadas antes de 
 
     add_theme_support( 'post_thumbnails' );
 
-###Establecer una imagen destacada
+### Establecer una imagen destacada
 Una vez que hayamos añadido soporte para imágenes destacadas, podremos asignar una imagen destacada a una entrada o página en la pantalla de edición de la misma.
 
-###Tamaño de las imágenes
+### Tamaño de las imágenes
 El tamaño por defecto de las imágenes de WordPress son “Miniatura”, “Mediano”, “Grande” y “Tamaño Completo” (el tamaño original de la imagen cargada). Estos tamaños de imagen pueden ser configurados en el Escritorio de WordPress bajo **Ajustes -> Medios.** También podemos definir nuestros propios tamaños de imagen pasando un array con las dimensiones de la imagen.:
 
     the_post_thumbnail(); // Sin parámetro -> Miniatura
@@ -539,10 +550,10 @@ El tamaño por defecto de las imágenes de WordPress son “Miniatura”, “Med
     the_post_thumbnail( 'full' ); // Resolución de la imagen original (Sin modificar)
     the_post_thumbnail( array( 100, 100 ) ); // Otras resoluciones (alto, ancho)
 
-##Internacionalización, localización y accesibilidad
+## Internacionalización, localización y accesibilidad
 Internacionalización es el proceso de desarrollar un tema fácilmente traducible en otros lenguajes. Internacionalización se abrevia normalmente por i18n (porque hay 18 letras entre la i y la n).
-
-###Cómo internacionalizar tu tema
+ 
+### Cómo internacionalizar tu tema
 Para hacer las cadenas de caracteres traducibles tenemos que **encerrar las cadenas originales en una llamada** a un conjunto de funciones especiales.
 
 La función básica que usaremos para internacionalizar nuestro tema es **__()**. A esta función le pasaremos dos parámetros, el primero es la cadena a traducir, y el segundo es el dominio del texto, es decir, el identificador que le dirá a WordPress a dónde pertenece esa cadena.
@@ -577,7 +588,7 @@ Archivos PO
 
 Cada traductor toma un archivo POT y traduce la sección msgstr en su propio idioma. El resultado es un archivo PO con el mismo formato que el POT, pero con las traducciones y cabeceras específicas del lenguaje. Hay un archivo PO por cada lenguaje en un tema.
 
-###Archivos MO
+### Archivos MO
 
 De cada archivo PO traducido se genera un archivo MO. Estos archivos legibles por la máquina son binarios que las funciones gettext usan, y son una versión “compilada” de un archivo PO.
 
