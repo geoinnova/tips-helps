@@ -24,10 +24,17 @@
     - [Enlazando a plantillas del tema](#Enlazando-a-plantillas-del-tema)
   - [Etiquetas condicionales](#Etiquetas-condicionales)
   - [Dónde usar etiquetas condicionales](#D%C3%B3nde-usar-etiquetas-condicionales)
+  - [Mostrar sidebars en nuestro tema](#Mostrar-sidebars-en-nuestro-tema)
+  - [Crear la plantilla sidebar.php](#Crear-la-plantilla-sidebarphp)
+  - [Widgets](#Widgets)
+    - [Mostrar el Menú](#Mostrar-el-Men%C3%BA)
+    - [Dar soporte a imágenes destacadas](#Dar-soporte-a-im%C3%A1genes-destacadas)
+    - [Variables](#Variables)
+    - [Localizar](#Localizar)
+    - [Accesibilidad](#Accesibilidad)
 
 # FUNCTIONS.PHP
 ## registrar menu (1-1'27'')
-
 
 # ASPECTOS BÁSICOS DE UN TEMA  
 ### Diferencia entre un tema y un plugin
@@ -373,76 +380,221 @@ Dos formas de implementar etiquetas condicionales son:
 Para una lista detallada de todas las etiquetas condicionales visita el siguiente enlace. [Etiquetas condicionales.](https://codex.wordpress.org/Template_Tags)
 
 #SIDEBAR
-Hemos referenciado a la sidebar varias veces pero aún no hemos definido qué es una sidebar (barra lateral). Una sidebar es una zona donde podemos colocar widgets en nuestro tema. No es obligatorio añadir una sidebar a nuestro tema, pero hacerlo permite a los editores y otros usuarios de WordPress poder añadir contenido a las zonas de widgets a través del Customizer (Personalizador) o en el panel de administración de widgets.
+Una sidebar es una zona donde podemos colocar widgets en nuestro tema. No es obligatorio añadir una sidebar a nuestro tema, pero hacerlo permite a los editores y otros usuarios de WordPress poder añadir contenido a las zonas de widgets a través del Customizer (Personalizador) o en el panel de administración de widgets.
 
 Los widgets pueden utilizarse para varios propósitos, que van desde listar las entradas recientes hasta habilitar un chat en vivo.
 
 
-Registar una Sidebar
-Para usar una sidebar, tenemos que registrarla en el archivo functions.php.
+##Registar una Sidebar
+Para usar una sidebar, tenemos que registrarla en el archivo **functions.php.**
 
-Para empezar, la función register_sidebar() tiene varios parámetros que deben ser definidos independientemente de que estén marcados como opcionales.
+Para empezar, la función **register_sidebar()** tiene varios parámetros que deben ser definidos independientemente de que estén marcados como opcionales.
 
-name - nombre de la sidebar. El nombre que los usuarios verán en el panel de Widgets.
-
-id - debe ser en minúsculas. Puedes referenciar esta sidebar usando la función dynamic_sidebar y este id.
-
-description - Descripción de la sidebar. También se mostrará en el panel de administración de widgets.
-
-class - El nombre de la clase CSS para asignar al código HTML del widget.
-
-before_widget - Código HTML que se establecerá antes de cada widget.
-
-after_widget - Código HTML que se establecerá después de cada widget. Se debe usar para cerrar las etiquetas de before_widget.
-
-before_title - Código HTML que se establecerá antes del título de cada widget, como una especie de cabecera (header) de etiqueta.
-
-afer_title - Código HTML que se establecerá después de cada título. Se debe usar para cerrar las etiquetas de before_title.
+- name - nombre de la sidebar. El nombre que los usuarios verán en el panel de Widgets.
+- id - debe ser en minúsculas. Puedes referenciar esta sidebar usando la función dynamic_sidebar y este id.
+- description - Descripción de la sidebar. También se mostrará en el panel de administración de widgets.
+- class - El nombre de la clase CSS para asignar al código HTML del widget.
+- before_widget - Código HTML que se establecerá antes de cada widget.
+- after_widget - Código HTML que se establecerá después de cada widget. Se debe usar para cerrar las etiquetas de before_widget.
+- before_title - Código HTML que se establecerá antes del título de cada widget, como una especie de cabecera (header) de etiqueta.
+- afer_title - Código HTML que se establecerá después de cada título. Se debe usar para cerrar las etiquetas de before_title.
 
 
-Para registrar una sidebar usamos la función register_sidebar y la función widgets_init.
+Para registrar una sidebar usamos la función **register_sidebar y la función widgets_init**.
 
-function themename_widgets_init() {
-    register_sidebar( array(
-        'name'          => __( 'Primary Sidebar', 'theme_name' ),
-        'id'            => 'sidebar-1',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h1 class="widget-title">',
-        'after_title'   => '</h1>',
-    ) );
+    function themename_widgets_init() {
+        register_sidebar( array(
+            'name'          => __( 'Primary Sidebar', 'theme_name' ),
+            'id'            => 'sidebar-1',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h1 class="widget-title">',
+            'after_title'   => '</h1>',
+        ) );
 
-    register_sidebar( array(
-        'name'          => __( 'Secondary Sidebar', 'theme_name' ),
-        'id'            => 'sidebar-2',
-        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</li></ul>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-}
-add_action( 'widgets_init', 'themename_widgets_init' );
+        register_sidebar( array(
+            'name'          => __( 'Secondary Sidebar', 'theme_name' ),
+            'id'            => 'sidebar-2',f
+            'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li></ul>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+    }
+    add_action( 'widgets_init', 'themename_widgets_init' );
 
 
 Al registrar una sidebar le decimos a WordPress que estamos creando una zona de widgets en Apariencia -> Widgets dónde los usuarios pueden arrastrar sus widgets. Hay dos funciones para registrar una sidebar:
 
-register_sidebar().
+- register_sidebar().
+- register_sidebars().
 
-register_sidebars().
 La primera nos permite registrar una sidebar y la segunda múltiples de ellas.
 
-
-Mostrar sidebars en nuestro tema
+## Mostrar sidebars en nuestro tema
 Una vez que registramos nuestra sidebar, necesitamos una forma de mostrarlas en nuestro tema. Para hacerlo, hay dos pasos:
 
-Crear el archivo de plantilla sidebar.php y mostrar la sidebar usando la función dynamic_sidebar.
+- Crear el archivo de plantilla **sidebar.php** y mostrar la sidebar usando la función **dynamic_sidebar.**
+- Cargarla en tu tema usando la función **get_sidebar**.
 
-Cargarla en tu tema usando la función get_sidebar.
 
-
-Crear la plantilla sidebar.php
-Una plantilla sidebar contiene el código de nuestra sidebar. WordPress reconoce el archivo sidebar.php y cualquier plantilla con el tema sidebar-{name}.php. Esto significa que podemos organizar nuestros archivos para que cada plantilla contenga una sidebar.
+## Crear la plantilla sidebar.php
+Una plantilla sidebar contiene el código de nuestra sidebar. WordPress reconoce el archivo sidebar.php y cualquier plantilla con el tema **sidebar-{name}.php**. Esto significa que podemos organizar nuestros archivos para que cada plantilla contenga una sidebar.
 
 En el ejemplo de la plantilla single.php del tema TwentySixteen se hace referencia a una sidebar por su id:
 
-<?php get_sidebar( 'content-bottom' ); ?>
+    <?php get_sidebar( 'content-bottom' ); ?>
+
+## Widgets
+Un widget añade contenido y características a una sidebar. Las zonas de widgets proveen una forma de personalizar su sitio a los usuarios. Una zona de widgets puede aparecer en múltiples páginas o solo en una página. Tu tema puede tener una zona de widgets o todas las que quieras.
+
+Algunos ejemplos de usos de zonas de widgets son:
+
+- Diseñar una página de inicio usando widgets. Esto permite a los propietarios del sitio decidir qué debe aparecer en cada seción de su página de inicio.
+- Crear un pie de página (footer) que los usuarios puedan personalizar con su propio contenido.
+- Añadir una sidebar personalizable al blog.
+
+
+Un widget es un **objeto PHP que puede mostrar código HTML**. El mismo tipo de widget puede ser usado varias veces en la misma página, por ejemplo un widget de texto puede repetirse con el mismo o distinto contenido en la misma sidebar varias veces. Los widgets pueden guardar información en la base de datos (en la tabla **wp_options**).
+
+Cuando creamos un nuevo widget, aparecerá en la sección **Apariencia -> Widgets** de nuestro WordPress. Los ususarios pueden añadir un widget a una zona de widgets y personalizar la configuración del widget desde el Escritorio de WordPress.
+
+##Menus de navegación
+Para poder crear/modificar nuestro menú desde el Escritorio de WordPress tenemos que añadirlo programáticamente. Realmente no estaremos creando un menú, sino dando soporte a nuestro tema para usar menús de navegación dinámicos.
+
+Para registrar un menú, de nuevo tenemos que acudir a nuestro archivo **functions.php** y registar nuestro menú.
+
+Usaremos la función register_nav_menus() para registrar un menú.
+
+      function register_my_menus() {
+        register_nav_menus(
+          array(
+            'header-menu' => __( 'Header Menu' ),
+            'extra-menu' => __( 'Extra Menu' )
+          )
+        );
+      }
+      add_action( 'init', 'register_my_menus' );
+
+En este ejemplo, se han añadido dos localizaciones a la pestaña “Gestionar localizaciones” en Apariencia -> Menus. Estas localizaciones son “Header Menu” y “Extra Menu”. Podremos crear tantas localizaciones como necesitemos, evaluando qué tipos de menús vamos a utilizar en nuestro tema.
+
+### Mostrar el Menú
+Una vez que lo hemos registrado, tenemos que usar la función **wp_nav_menu()** para decirle a nuestro tema dónde mostrar el menú. Por ejemplo, añadir la siguiente línea de código a nuestro archivo header.php para mostrar el header-menu anteriormente registrado:
+
+    wp_nav_menu( array( 'theme_location' => 'header-menu' ) );
+
+
+[Referencia de la función wp_nav_menu.](https://developer.wordpress.org/themes/basics/conditional-tags/#function-reference)
+
+##Paginación y comentarios
+La paginación permite al lector ir hacia atrás y hacia adelante a través de múltiples páginas de contenido.
+
+WordPress puede usar la paginación cuando:
+
+- Estás viendo una lista de entradas y existen más entradas de las que caben en una página.
+- “Rompes” un mensaje más largo de lo deseado manualmente usando la etiqueta <!--nextpage-->.
+
+
+**El uso más común de la paginación en WordPress** es el de dividir la lista de entradas en páginas separadas. Si estás viendo una categoría, página de archivo o el feed por defecto, WordPress solo muestra **10 entradas por defecto**. Los usuarios pueden **cambiar el número** de entradas que aparecen en cada página en la sección **Ajustes -> Lectura.**
+
+En este ejemplo se muestra dónde puedes añadir las funciones de paginación para el loop principal. Añade las funciones antes o después del loop:
+
+
+    <?php if ( have_posts() ) : ?>
+
+        <!-- Add the pagination functions here. -->
+
+        <!-- Start of the main loop. -->
+        <?php while ( have_posts() ) : the_post(); ?>
+
+        <!-- the rest of your theme's main loop -->
+
+        <?php endwhile; ?>
+        <!-- End of the main loop -->
+
+        <!-- Add the pagination functions here. -->
+
+      <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+      <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+
+    <?php else : ?>
+
+    <?php _e('Sorry, no posts matched your criteria.'); ?>
+
+    <?php endif; ?>
+
+##Imágenes destacadas y miniaturas
+Las imágenes destacadas son imágenes que representan a una entrada, página o tipo de contenido personalizado. Cuando creamos un tema, puedes mostrar la imagen destacada de formas diferentes, en la página de Archivo, en la cabecera, arriba de un post, por ejemplo.
+
+### Dar soporte a imágenes destacadas
+Los temas tienen que declarar el soporte para las imágenes destacadas antes de que la interface de imágenes destacadas aparezca en la pantalla de edición. El soporte para imágenes destacadas es declarado poniendo la siguiente línea en el archivo **functions.php** de nuestro tema:
+
+    add_theme_support( 'post_thumbnails' );
+
+###Establecer una imagen destacada
+Una vez que hayamos añadido soporte para imágenes destacadas, podremos asignar una imagen destacada a una entrada o página en la pantalla de edición de la misma.
+
+###Tamaño de las imágenes
+El tamaño por defecto de las imágenes de WordPress son “Miniatura”, “Mediano”, “Grande” y “Tamaño Completo” (el tamaño original de la imagen cargada). Estos tamaños de imagen pueden ser configurados en el Escritorio de WordPress bajo **Ajustes -> Medios.** También podemos definir nuestros propios tamaños de imagen pasando un array con las dimensiones de la imagen.:
+
+    the_post_thumbnail(); // Sin parámetro -> Miniatura
+    the_post_thumbnail( 'thumbnail' ); // Miniatura (por defecto 150px x 150px max)
+    the_post_thumbnail( 'medium' ); // Resolución media (por defecto 300px x 300px max)
+    the_post_thumbnail( 'large' ); // Resolución grande (por defecto 640px x 640px max)
+    the_post_thumbnail( 'full' ); // Resolución de la imagen original (Sin modificar)
+    the_post_thumbnail( array( 100, 100 ) ); // Otras resoluciones (alto, ancho)
+
+##Internacionalización, localización y accesibilidad
+Internacionalización es el proceso de desarrollar un tema fácilmente traducible en otros lenguajes. Internacionalización se abrevia normalmente por i18n (porque hay 18 letras entre la i y la n).
+
+###Cómo internacionalizar tu tema
+Para hacer las cadenas de caracteres traducibles tenemos que **encerrar las cadenas originales en una llamada** a un conjunto de funciones especiales.
+
+La función básica que usaremos para internacionalizar nuestro tema es **__()**. A esta función le pasaremos dos parámetros, el primero es la cadena a traducir, y el segundo es el dominio del texto, es decir, el identificador que le dirá a WordPress a dónde pertenece esa cadena.
+
+**El dominio del texto debe coincidir con el slug del tema**. Si el nombre del tema es Mi tema o está en una carpeta llamada mi-tema, el nombre de dominio debe ser mi-tema.
+
+Cadena de ejemplo:
+
+    __( $text, $text_domain );
+    __('String(texto a internacionalizar)', 'mi-tema' );
+
+### Variables
+Si estamos usando variables en una cadena tenemos que usar un placeholder. Por ejemplo:
+
+    echo "Tu ciudad es $ciudad."
+
+Usa la función printf:
+
+    printf(
+    __( 'Tu diudad es %s.', 'mi-tema' ),
+    $ciudad
+    );
+
+Existe una amplia gamas de funciones para internacionalizar cadenas, échale un vistazo a la lista en la documentación. 
+[Funciones de localización](https://developer.wordpress.org/themes/functionality/internationalization/#localization-functions)
+
+### Localizar
+Localizar (localization en inglés) es el proceso de traducir un tema internacionalizable. Se abrevia como l10n (porque hay 10 letras entre la l y la n).
+
+Archivos de localización
+Archivos PO
+
+Cada traductor toma un archivo POT y traduce la sección msgstr en su propio idioma. El resultado es un archivo PO con el mismo formato que el POT, pero con las traducciones y cabeceras específicas del lenguaje. Hay un archivo PO por cada lenguaje en un tema.
+
+###Archivos MO
+
+De cada archivo PO traducido se genera un archivo MO. Estos archivos legibles por la máquina son binarios que las funciones gettext usan, y son una versión “compilada” de un archivo PO.
+
+Echa un vistazo a la documentación sobre cómo generar archivos MO y POT. Generar archivos POT.
+
+### Accesibilidad
+Un tema de WordPress debe generar páginas que todo el mundo pueda usar, incluyendo aquellos que no pueden ver o usar un ratón. Aunque la accesibilidad web puede ser un tema complejo, se reduce a cuatro principios básicos. El contenido debe ser:
+
+- Perceptible : El contenido debe estar disponible para todos.
+- Operable : Los usuarios deben ser capaces de moverse por el sitio y operar en él de manera efectiva.
+- Entendible : El contenido debe ser presentado de una manera que apoye el entendimiento.
+- Robusto : El contenido debe estar igual de disponible para un rango amplio de usuarios.
+
+
+Te recomiendo que sigas las Pautas de [Accesibilidad de la W3C. WCAG 2.0](http://www.codexexempla.org/traducciones/pautas-accesibilidad-contenido-web-2.0.htm)
