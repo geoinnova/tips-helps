@@ -1,5 +1,3 @@
-- [FUNCTIONS.PHP](#FUNCTIONSPHP)
-  - [registrar menu (1-1'27'')](#registrar-menu-1-127)
 - [ASPECTOS BÁSICOS DE UN TEMA](#ASPECTOS-B%C3%81SICOS-DE-UN-TEMA)
     - [Diferencia entre un tema y un plugin](#Diferencia-entre-un-tema-y-un-plugin)
   - [Index.php y styles.css](#Indexphp-y-stylescss)
@@ -32,9 +30,6 @@
     - [Variables](#Variables)
     - [Localizar](#Localizar)
     - [Accesibilidad](#Accesibilidad)
-
-# FUNCTIONS.PHP
-## registrar menu (1-1'27'')
 
 # ASPECTOS BÁSICOS DE UN TEMA  
 ### Diferencia entre un tema y un plugin
