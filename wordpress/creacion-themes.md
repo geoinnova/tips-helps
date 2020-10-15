@@ -81,6 +81,10 @@
     - [Textdomain](#Textdomain)
     - [Página de inicio](#P%C3%A1gina-de-inicio)
     - [Mostrar widgets en página de inicio](#Mostrar-widgets-en-p%C3%A1gina-de-inicio)
+- [Test para nuestro tema](#Test-para-nuestro-tema)
+  - [Validando nuestro tema](#Validando-nuestro-tema)
+  - [Documentar nuestro tema](#Documentar-nuestro-tema)
+    - [Enviar nuestro tema](#Enviar-nuestro-tema)
 
 # ASPECTOS BÁSICOS DE UN TEMA  
 ### Diferencia entre un tema y un plugin
@@ -1152,4 +1156,34 @@ Por defecto, al estar cargando la función genesis(); estamos insertando el loop
     remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 
+# Test para nuestro tema
 
+Teniendo en cuenta que WordPress usa JavaScript y PHP como principales lenguajes, testar nuestros temas requiere conocimientos de testing en estos lenguajes. Aquí os presentamos algunas herramientas que os pueden ayudar a probar vuestros temas y publicarlos.
+
+La mejor forma de **probar nuestro tema** es instalar el plugin **Theme Check** y empezar a mejorar según las recomendaciones que nos vaya dando.
+
+En cuanto a **código**, contamos con **dos librerías para testing** muy conocidas y ampliamente usadas en la comunidad WordPress, **PHPUnit y QUnit**.
+
+
+## Validando nuestro tema
+
+Antes de poder envíar un tema al repositorio de WordPress tenemos que asegurarnos que cumple con los estándares. Para validar nuestro tema, debemos comprobar esta lista que nos ayudará a asegurar la calidad de nuestro tema:
+
+    Validar HTML
+    Validar CSS
+    Validar para las guías WCAG (accesibilidad)
+    Validar para los estándares de la Sección (accesibilidad)
+    Validar para los estándares WAI (accesibilidad)
+    Comprobar en diferentes navegadores
+    Re-validar HTML y CSS
+
+Algunas herramientas que puedes usar para validación aparecen en la documentación oficial de WordPress. [Herramientas para validación.](https://developer.wordpress.org/themes/advanced-topics/validating-your-theme/)
+
+## Documentar nuestro tema
+Documentar el código es algo muy importante, y no iba a ser menos con nuestro tema. Para ellos podemos usar la herramienta phpDoc, y los estándares de comentarios que esta usa. Puedes echarle un vistazo a la documentación de [phpDoc](https://openwebinars.net/academia/aprende/crear-temas-para-wordpress/981/phpdoc.org).
+
+Además de documentar el código, para subir nuestro tema al repositorio oficial, tendremos que escribir una lista de requerimientos y recomendaciones. Podemos incluirlo en un archivo llamado readme.txt con formato MarkDown y en él incluiremos las instrucciones de instalación, y una documentación básica de nuestro tema.
+
+### Enviar nuestro tema
+
+Finalmente, enviaremos nuestro tema al repositorio oficial a través del enlace en la sección [Themes->Upload](https://wordpress.org/themes/upload/).
