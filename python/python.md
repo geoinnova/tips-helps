@@ -31,3 +31,7 @@ https://geekytheory.com/configurar-visual-studio-code-programar-python
 
 ### Funciones
         type()=> tipo de la variable
+
+### Instalar un paquete
+pip3 install BeautifulSoup4
+pip3 install requests
