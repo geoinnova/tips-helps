@@ -15,7 +15,7 @@ instalar virtualenv https://www.accordbox.com/blog/scrapy-tutorial-2-how-install
 
 # Instalar Scrapy en un virtualenv [Tutorial](https://www.accordbox.com/blog/scrapy-tutorial-2-how-install-scrapy-mac/)
 
-  pip3 install scrapy
+    pip3 install scrapy
 
 Scrapy instalado a través del código anterior es global, por lo que está disponible en todos sus proyectos. Eso puede ser conveniente a veces, pero también puede convertirse en problemas. Entonces, ¿cómo instalar Scrapy en un entorno aislado? Por eso virtualenv creó. En mi Mac, solo algunos paquetes de Python, como pip y virtualenv, están disponibles globalmente; otros paquetes como Scrapy, Django se instalan en entornos virtuales.
 
