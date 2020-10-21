@@ -13,7 +13,7 @@ instalar virtualenv https://www.accordbox.com/blog/scrapy-tutorial-2-how-install
 
 ## Scrapy https://scrapy.org/
 
-# Instalar Scrapy
+# Instalar Scrapy en un virtualenv [Tutorial](https://www.accordbox.com/blog/scrapy-tutorial-2-how-install-scrapy-mac/)
 
   pip3 install scrapy
 
@@ -21,24 +21,26 @@ Scrapy instalado a través del código anterior es global, por lo que está disp
 
 Después de instalar Python a través de pip3, instalamos virtualenv
 
-  pip3 install virtualenv
+    pip3 install virtualenv
   
 ### Ahora podemos crear un virtualenv para que lo usemos
-  cd ~
-  mkdir Virtualenvs
-  cd Virtualenvs
-  virtualenv scrapy_env
+    cd ~
+    mkdir Virtualenvs
+    cd Virtualenvs
+    virtualenv scrapy_env
+    
 #### Se ha creado un virtualenv llamado scrapy_env
 
 Si necesitamos activar un virtualenv, simplemente usamos source
 
-  source scrapy_env/bin/activate
+    source scrapy_env/bin/activate
   
 Si necesitamos salir del virtualenv usamos el comando 
 
-  deactivate
+    deactivate
 
-michaelyins-Mac: Virtualenvs michaelyin $ fuente scrapy_env / bin / activar
-(scrapy_env) michaelyins-Mac: Virtualenvs michaelyin $
 
-Como puede ver, usamos la fuente scrapy_env / bin / active para activar virtualenv, y ahora si instala el paquete python, todos ellos estarían en un entorno aislado, y el nombre del virtualenv se puede ver en el indicador de shell lo que significa que ahora estamos en un virtualenv. Si desea saber más sobre virtualenv, simplemente consulte esta buena guía de Python. Ya que estamos en un virtualenv, podemos empezar a instalar Scrapy.
+Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si instala el paquete python, todos ellos estarían en un entorno aislado, y el nombre del virtualenv se puede ver en el indicador de shell lo que significa que ahora estamos en un virtualenv. Si desea saber más sobre virtualenv, simplemente consulte esta buena guía de Python. Ya que estamos en un virtualenv, podemos empezar a instalar Scrapy.
+
+    (scrapy_env) Mac:Virtualenvs erabasco$  
+    
