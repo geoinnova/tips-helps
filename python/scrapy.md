@@ -48,7 +48,8 @@ Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si i
     
     scrapy
     
-    (Creando una aplicación con Python y desplegando a Heroku)[https://www.youtube.com/watch?v=PEcWR882goU]
+    
+   [Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
     
     
     
