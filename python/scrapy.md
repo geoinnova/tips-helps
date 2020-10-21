@@ -3,7 +3,9 @@
 
 
 [Tutorial Scrapy; Extraer información de Mercado Libre](https://github.com/luisramirez-m/mercadolibre-scrapy)
+
 [Scrapy vagrant](https://github.com/sgarciapdx/scrapy-vagrant/blob/master/Vagrantfile)
+
 https://gist.github.com/raphaelfruneaux/be9fd2051b52cdbffcd6
 
 ## Ver esto
