@@ -34,6 +34,8 @@ Después de instalar Python a través de pip3, instalamos virtualenv
 Si necesitamos activar un virtualenv, simplemente usamos source
 
     source scrapy_env/bin/activate
+    
+    (scrapy_env) Mac:Virtualenvs erabasco$ 
   
 Si necesitamos salir del virtualenv usamos el comando 
 
@@ -42,5 +44,8 @@ Si necesitamos salir del virtualenv usamos el comando
 
 Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si instala el paquete python, todos ellos estarían en un entorno aislado, y el nombre del virtualenv se puede ver en el indicador de shell lo que significa que ahora estamos en un virtualenv. Si desea saber más sobre virtualenv, simplemente consulte esta buena guía de Python. Ya que estamos en un virtualenv, podemos empezar a instalar Scrapy.
 
-    (scrapy_env) Mac:Virtualenvs erabasco$  
+    pip3 install scrapy
+    
+    scrapy
+    
     
