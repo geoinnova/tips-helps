@@ -38,3 +38,6 @@
 * Lo ejecutamos
 
       heroku open --app java-trasslink
+
+
+[Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
