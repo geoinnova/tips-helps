@@ -53,6 +53,7 @@ Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si i
    
    
    heroku login
+   creamos la carpeta /teatro/scraper
    
     
     
