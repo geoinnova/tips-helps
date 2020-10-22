@@ -88,7 +88,7 @@ Debe contener la siguiente linea:
 - git init
 - git add .
 - git commit -m "primer commit"
-- heroku create
+- heroku create (heroku create --app teatro-scraper)
 - git push heroku master
 - Elegimos la url donde se ha desplegado
 
