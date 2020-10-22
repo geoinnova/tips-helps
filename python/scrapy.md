@@ -55,22 +55,21 @@ Pasos:
    
    - heroku login
    - creamos la carpeta /teatro/scraper
-   - Creamos el ambiente virtual virtualenv 
-      
+   - Creamos el ambiente virtual virtualenv  
    
-   Para instalarlo:
-   
-      #sudo easy_install pip
-      #pip3 install virtualenv (yo he usado pip3)
-      
-   
-   Para crear el ambiente virtual:
-   
-      #virtualenv venv
-      
-   Activarlo
-   
-      source venv/bin/activate
+       Para instalarlo:
+
+          #sudo easy_install pip
+          #pip3 install virtualenv (yo he usado pip3)
+
+
+       Para crear el ambiente virtual:
+
+          #virtualenv venv
+
+       Activarlo
+
+          source venv/bin/activate
       
   
   SEGUIR MINUTO 4: https://www.youtube.com/watch?v=PEcWR882goU
