@@ -41,3 +41,19 @@
 
 
 [Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
+
+## Desplegar Aplicación Phyton en heroku.
+Una vez tenemos nuestro proyecto en la carpeta **Virtualenv** debemos declarar las dependencias con 2 archivos:
+    - requirements.txt
+    - Procfile
+    
+**Para crear el requirements.tx**
+pip3 freeze > requirements.txt
+
+**Procfile**
+Debe contener la siguiente linea:
+
+    web: python teatro-scraper
+    
+
+
