@@ -49,23 +49,31 @@ Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si i
     scrapy
     
     
-   [Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
+### [Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
    
+Pasos: 
    
    - heroku login
    - creamos la carpeta /teatro/scraper
    - Creamos el ambiente virtual virtualenv 
-      Para instalarlo
+      
+   
+   Para instalarlo:
+   
       #sudo easy_install pip
       #pip3 install virtualenv (yo he usado pip3)
       
-      Para crear el ambiente virtual:
+   
+   Para crear el ambiente virtual:
+   
       #virtualenv venv
       
-      Activarlo
+   Activarlo
+   
       source venv/bin/activate
       
-      SEGUIR MINUTO 4: https://www.youtube.com/watch?v=PEcWR882goU
+  
+  SEGUIR MINUTO 4: https://www.youtube.com/watch?v=PEcWR882goU
       
    
     
