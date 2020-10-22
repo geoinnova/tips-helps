@@ -72,7 +72,7 @@ Pasos:
           source venv/bin/activate
       
       
-  Una vez tenemos nuestro proyecto debemos declarar las dependencias con 2 archivos: 
+  Una vez tenemos nuestro proyecto debemos declarar las dependencias con 2 archivos dentro de dicha la carpeta: 
   
     - requirements.txt 
     - Procfile
