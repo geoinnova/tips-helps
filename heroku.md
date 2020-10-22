@@ -40,20 +40,45 @@
       heroku open --app java-trasslink
 
 
-[Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
 
-## Desplegar Aplicación Phyton en heroku.
-Una vez tenemos nuestro proyecto en la carpeta **Virtualenv** debemos declarar las dependencias con 2 archivos:
+### [Creando una aplicación con Python y desplegando a Heroku](https://www.youtube.com/watch?v=PEcWR882goU)
+   
+Pasos: 
+   
+   - heroku login
+   - creamos la carpeta /teatro/scraper
+   - Creamos el ambiente virtual virtualenv dentro de la carpeta
+   
+       Para instalarlo:
+
+          sudo easy_install pip
+          pip3 install virtualenv (yo he usado pip3)
+
+
+       Para crear el ambiente virtual:
+
+          virtualenv venv
+
+       Activarlo
+
+          source venv/bin/activate
+      
+
+Una vez tenemos nuestro proyecto debemos declarar las dependencias con 2 archivos dentro de dicha la carpeta: 
+
     - requirements.txt
     - Procfile
     
 **Para crear el requirements.tx**
-pip3 freeze > requirements.txt
+
+    pip3 freeze > requirements.txt
 
 **Procfile**
+
 Debe contener la siguiente linea:
 
     web: python teatro-scraper
     
+### Despliegue en Heroku
 
 
