@@ -79,6 +79,16 @@ Debe contener la siguiente linea:
 
     web: python teatro-scraper
     
-### Despliegue en Heroku
+### Despliegue en Heroku utilizando GIT
+- Creamos el archivo .gitignore dentro de la carpeta con el siguiente contenido:
 
+    venv
+    *.pyc
+
+- git init
+- git add .
+- git commit -m "primer commit"
+- heroku create
+- git push heroku master
+- Elegimos la url donde se ha desplegado
 
