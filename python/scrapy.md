@@ -56,11 +56,17 @@ Usamos la fuente **scrapy_env/bin/active** para activar virtualenv, y ahora si i
    - creamos la carpeta /teatro/scraper
    - Creamos el ambiente virtual virtualenv 
       Para instalarlo
-      #sudo easy_install pip3
+      #sudo easy_install pip
       #pip3 install virtualenv (yo he usado pip3)
       
       Para crear el ambiente virtual:
-      #virtualenv venv --distribute
+      #virtualenv venv
+      
+      Activarlo
+      source venv/bin/activate
+      
+      SEGUIR MINUTO 4: https://www.youtube.com/watch?v=PEcWR882goU
+      
    
     
     
