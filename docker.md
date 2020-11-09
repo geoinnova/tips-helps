@@ -61,7 +61,13 @@ https://www.busindre.com/guia_rapida_de_vagrant
 
 ### Actualizar php
 Instalamos el gestor de paquetes brew
+
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	
+Instalamos php
+
+	brew install php
+	
 	
 
 
