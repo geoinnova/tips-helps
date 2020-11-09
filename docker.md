@@ -64,6 +64,26 @@ Instalamos el gestor de paquetes brew
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	
+Una vez instalado te indicará una serie de pasos que puedes seguir:
+
+	==> Next steps:
+	- Run `brew help` to get started
+	- Further documentation: 
+	    https://docs.brew.sh
+	- Install the Homebrew dependencies if you have sudo access:
+	    sudo apt-get install build-essential
+	    See https://docs.brew.sh/linux for more information
+	- Add Homebrew to your PATH in /home/vagrant/.bash_profile: 
+	    echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/vagrant/.bash_profile
+	    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+	- We recommend that you install GCC:
+	    brew install gcc
+
+
+	echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/vagrant/.bash_profile
+	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+	    
+
 Instalamos php
 
 	brew install php
