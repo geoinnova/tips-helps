@@ -1,3 +1,6 @@
+# CONFIGURACION SMTP
+Utilizado el plugin wp mail smtp
+
 # Crear cupones
 ### Activarlos
 
