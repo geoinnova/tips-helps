@@ -1,5 +1,28 @@
 # CONFIGURACION SMTP
+
 Utilizado el plugin wp mail smtp
+## Sin plugin
+https://www.webempresa.com/blog/configuracion-ajustes-correo-electronico-woocommerce.html
+
+Para enviar notificaciones de tu tienda de WooCommerce por correo electrónico, copia y pega el siguiente código en el archivo wp-config.php, sustituyendo el contenido ejemplo por el contenido específico tuyo.
+
+	define( 'SMTP_HOST', 'servidor.ejemplo.com' ); 
+	 // El nombre del hosting que utilices // 
+
+	define( 'SMTP_AUTH', true );
+	define( 'SMTP_PORT', '465' );
+	define( 'SMTP_SECURE', 'ssl' );
+	define( 'SMTP_USERNAME', 'usuario@ejemplo.com' );
+	// El usuario de autentificación SMTP // 
+
+	define( 'SMTP_PASSWORD', 'contraseña' );
+	 // La contraseña de autentificación SMTP // 
+
+	define( 'SMTP_FROM',     'usuario@ejemplo.com' );
+	 // Desde qué email se envía el correo electrónico // 
+
+	define( 'SMTP_FROMNAME', 'Fulanito Menganito' );  
+	 // El Nombre de quien envía dicho email // 
 
 # Crear cupones
 ### Activarlos
