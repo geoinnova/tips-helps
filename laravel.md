@@ -11,7 +11,14 @@ para activarlo > php artisan ui vue --auth
 
 para instalar los paquetes del package.json > npm install && npm run dev
 
+Para instalar bootstrap > php artisan ui bootstrap
 
+######
+1. composer require laravel/ui
+2. php artisan ui vue --auth // puede ser vue | react | bootstrap
+3. npm install
+4. npm run dev // Aquí está el problema 
+#####
 
 ### Error: Syntax error or access violation: 1463 Non-grouping field 'loquesea' is used in HAVING clause
 
