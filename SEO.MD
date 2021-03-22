@@ -7,6 +7,7 @@ https://developers.facebook.com/tools/debug/
 
 ### Eliminar caché de twitter
 https://cards-dev.twitter.com/validator
+*posible problema con el isp https://wordpress.org/support/topic/unable-to-render-card-preview-twitter/
 
 
 ### Eliminar caché de telegrama
