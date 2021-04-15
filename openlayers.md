@@ -1,4 +1,6 @@
 ### Transformar proyecciones
+      import { transformExtent } from 'ol/proj';
+      
       let currentExtent = map.getView().calculateExtent(map.getSize());
       let projectionCode = map.getView().getProjection().code_;
       //Transformadas para BBox
