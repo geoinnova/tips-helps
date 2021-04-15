@@ -10,6 +10,12 @@
       let transformCoordinate4326 = toLonLat(coordinate, 'EPSG:3857');
       console.log(transformCoordinate4326);
 
+### GetFeatureInfo
+ La solicitud GetFeatureInfo incorpora muchos de los parámetros necesarios en la GetMap solicitud junto con parámetros específicos para las capas de consulta. 
+ 
+http://webhelp.esri.com/arcims/9.3/General/mergedProjects/wms_connect/wms_connector/get_featureinfo.htm
+
+
 ### Obtener capa activa de un grupo de capas
       function getCapaActiva() {
           // let capas = map.getLayers().array_[1]
@@ -37,3 +43,10 @@
           }
 
       }
+
+### OpenLayers: How to detect the map view is completely loaded?
+https://stackoverflow.com/questions/34311461/openlayers-how-to-detect-the-map-view-is-completely-loaded
+
+      map.once('postrender', function(event) {
+          doyourmagic();
+      });
