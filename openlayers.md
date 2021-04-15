@@ -1,3 +1,75 @@
+###  serializar un objeto en una lista de parametros de consulta de URL <<< $.param(objeto) >>> con jquery y <<<<< new URLSearchParams(defaultParameters).toString(); >>>> con jsvanilla
+    // con js vanilla > let url = new URLSearchParams(defaultParameters).toString();
+    // service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Ahigh_voltage_lines&maxFeatures=200&outputFormat=text%2Fjavascript&format_options=callback%3AgetJson&SRSNAME=EPSG%3A3857&FEATUREID:high_voltage_lines.130
+    // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
+
+### WFS obtener URL y hacer zoom
+const zoom2WFS = (wfsLayer, searchField, resultLayer, map) => {
+
+    const rootUrl = CONF.wfssoller;
+    const defaultParameters = {
+        service: 'WFS',
+        version: '1.0.0',
+        request: 'GetFeature',
+        typeName: `vse:${wfsLayer}`,
+        maxFeatures: 200,
+        outputFormat: 'text/javascript',
+        format_options: 'callback:getJson',
+        SRSNAME: 'EPSG:3857',
+        FEATUREID: `${wfsLayer}.${searchField}`,
+    };
+
+    // serializa un objeto en una lista de parametros de consulta de URL ---- $.param(objeto) ----
+    // con js vanilla > let url = new URLSearchParams(defaultParameters).toString();
+    // service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Ahigh_voltage_lines&maxFeatures=200&outputFormat=text%2Fjavascript&format_options=callback%3AgetJson&SRSNAME=EPSG%3A3857&FEATUREID:high_voltage_lines.130
+    // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
+
+    $.ajax({
+        jsonp: false,
+        url: rootUrl + "?" + (new URLSearchParams(defaultParameters).toString()),
+        jsonp: false,
+        dataType: 'jsonp',
+        crossDomain: true,
+        headers: {
+            accept: 'application/json',
+            'Access-Control-Allow-Origin': '*',
+        },
+        jsonpCallback: 'getJson',
+
+        success(data) {
+            if (data.totalFeatures > 0) {
+
+                const styleFunction = function(feature) {
+                    return styles[feature.getGeometry().getType()];
+                };
+
+                //crear vectorSource con las geometrías
+                const vectorSource = new VectorSource({
+                    features: new GeoJSON().readFeatures(data),
+                });
+
+                // Podemos añadir una nueva geometría con vectorSource.addFeature
+                //vectorSource.addFeature(new Feature(new Circle([5e6, 7e6], 1e6)));
+
+                //Crear vectorLayer con source vectorSource
+                const vectorLayer = new VectorLayer({
+                    source: vectorSource,
+                    style: styleFunction,
+                });
+
+                //Añadimos la capa al mapa
+                map.addLayer(vectorLayer);
+
+                // Centramos la vista a los limites del vectorSource
+                map.getView().fit(vectorSource.getExtent(), { "maxZoom": 18 });
+            } else {
+                cardNoGeom();
+            }
+        },
+    });
+};
+
+
 ### Transformar proyecciones
       import { transformExtent } from 'ol/proj';
       
