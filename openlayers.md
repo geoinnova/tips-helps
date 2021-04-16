@@ -1,3 +1,9 @@
+### Borrar datos de una capa vector
+How can I clear a vector layer features in OpenLayers 4?
+https://gis.stackexchange.com/questions/251770/how-can-i-clear-a-vector-layer-features-in-openlayers-4
+
+    layerVector.getSource().clear();
+    
 ### ¿Desactivar la herramienta de medición en OpenLayers 5? 
 https://gis.stackexchange.com/questions/24879/measuring-on-openlayers-map
 ** https://gis.stackexchange.com/questions/321943/deactivating-measurement-tool-in-openlayers-5
