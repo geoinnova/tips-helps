@@ -1,3 +1,13 @@
+### Comprobar si existe previamente una capa VectorLayer
+https://gis.stackexchange.com/questions/240372/how-do-i-get-all-the-layer-vectors-added-to-a-map-in-openlayers-3
+
+    // Comprobamos si hay alguna capa anterior VectorLayer
+    map.getLayers().forEach(function(layer) {
+        if (layer instanceof VectorLayer) {
+            map.removeLayer(layer);
+        }
+    });
+
 ### Borrar datos de una capa vector
 How can I clear a vector layer features in OpenLayers 4?
 https://gis.stackexchange.com/questions/251770/how-can-i-clear-a-vector-layer-features-in-openlayers-4
