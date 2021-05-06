@@ -1,3 +1,28 @@
+### Varias funciones:
+ const feature = map.forEachFeatureAtPixel(evt.pixel,
+        function(feature) {
+            return feature;
+        });
+
+//obtener coordenadas de una caracteristica de un geoJson al pulsar sobre el mapa
+feature.getGeometry().getCoordinates()[0];
+
+Sobre feature:
+* feature.get('TIPO') //obtiene la propiedad con clave "tipo"
+* feature.getProperties() //obtiene todas las propiedades
+*
+recorrer todas la propiedades:
+
+     var objeto = feature.getProperties(),propiedades;
+              for (propiedades in objeto) {
+                console.log (propiedades + ''+ objeto[propiedades]+'</b></i><br />');
+                }
+ 
+Sobre el mapa:
+* Centrar sobre coordenadas: map.getView().setCenter(coordinates);
+* 
+Popup: popup.setPosition(coordinates); 
+
 ### Estilos según geometrías
     // estilos para geometrías
       const image = new CircleStyle({
