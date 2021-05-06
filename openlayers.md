@@ -76,6 +76,13 @@
             }),
         }),
       };
+      
+     //llamada
+      const styleFunction = function(feature) {
+            // console.log(feature.get('Codigo'))
+            return styles[feature.get('Codigo')];
+            // return styles[feature.getGeometry().getType()];
+          };
 
 ### Comprobar si existe previamente una capa VectorLayer
 https://gis.stackexchange.com/questions/240372/how-do-i-get-all-the-layer-vectors-added-to-a-map-in-openlayers-3
