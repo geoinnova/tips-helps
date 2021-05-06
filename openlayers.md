@@ -1,3 +1,56 @@
+
+### VectorLayer, obtener datos (source) de GeoJson externo o con constante
+  //obtención de los puntos desde una constante geoJson
+  const vectorSource = new VectorSource({
+      features: new GeoJSON().readFeatures(geoJsonData, { featureProjection: get('EPSG:3857') }),
+  });
+
+  const vectorLayer = new VectorLayer({
+      name: 'Info xample',
+      source: vectorSource,
+      style: selectIcon,
+  });
+
+/*
+  //obtención de los puntos desde un geoJson externo
+  const vectorLayer = new VectorLayer({
+      name: 'vector Layer nuevo',
+      source: new VectorSource({
+          format: new GeoJSON(),
+          //url: './data/4_1_1.js'
+          //url: 'http://visores.geoinnova.org/planero-react/4_1_1.js'
+          //url: 'https://gist.githubusercontent.com/neogis-de/154f4bd155f77e0f3689/raw/5a1642fac4afff463c3ff08beaad55892fe9acd4/geojson.js'
+      }),
+      style: selectIcon,
+  });
+*/
+
+
+//configuración del icono y color según característica
+  const selectIcon = (feature) =>{
+    let bgColors = {
+        35100018:'#6aff00', // sifonico
+        35100019:'red',     // arqueta
+        35100023:'green',
+        35100004:'#d1ba5e',    
+     } ;
+
+    const codigo = feature.get('Codigo'); 
+    const myStyle = new Style({
+      image: new CircleStyle({
+        radius: 5,
+        fillColor: '#da2122',
+        color: '#000000',
+        dashArray: '',
+        opacity: '1.0',
+        fillOpacity: '1.0',
+        stroke: new Stroke({ color: 'white', width: 1 }),
+        fill: new Fill({color: bgColors[codigo]})
+      }),
+    });
+    return myStyle;
+  }
+
 ### Varias funciones:
  const feature = map.forEachFeatureAtPixel(evt.pixel,
         function(feature) {
