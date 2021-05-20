@@ -1,4 +1,64 @@
 
+### Impresión con ctrl+ arrastre ratón
+
+  //*****************************************++ para impresion
+  const dragBox = new DragBox({
+      condition: platformModifierKeyOnly,
+    });
+
+  map.addInteraction(dragBox);
+
+  //selección
+  dragBox.on('boxend', function () {
+
+     let extent = dragBox.getGeometry().getExtent();
+
+     console.log(extent)
+
+    // map.getView().setCenter(coordinates);
+
+  //   //Añade un botón para ampliar zona seleccionada
+  //   const zoomToExtentControl = new ZoomToExtent({
+  //     extent: extent
+  //   });
+  //   map.addControl(zoomToExtentControl);
+
+    let extentView = map.getView().calculateExtent(map.getSize());
+    //let extentView = map.getView().getProjection().getExtent(); //extend initial de la vista
+    console.log(extentView);
+    map.getView().fit(extent);
+
+
+    //Impresión
+    spinner.classList.remove("hidden");
+    window.setTimeout(imprimirArea, 5000);
+    window.onafterprint = function(){
+      console.log("Printing completed...");
+      map.getView().fit(extentView);
+   }
+
+
+  function imprimirArea(){
+      spinner.classList.add("hidden");
+      javascript: window.print();
+
+  }
+
+    //window.setTimeout( map.getView().fit(extentView), 12000);
+
+  });
+
+    // clear selection when drawing a new box and when clicking on the map
+  dragBox.on('boxstart', function () {
+        //zoomAntesImpresion = map.getView().getZoom();
+        //console.log("entra")
+
+  });
+
+
+
+  
+
 ### VectorLayer, obtener datos (source) de GeoJson externo o con constante
   //obtención de los puntos desde una constante geoJson
   const vectorSource = new VectorSource({
