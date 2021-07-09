@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=zIXwg9kim2s&t=340s
 
 **ctrl+shift+p** Muestra la consola de comandos 
 
-## FileSystem
+## FileSystem 20:30
   Overrides: para trabajar en producción, necesitamos saber si el código va a funcionar con el código que tenemos en producción. 
   Guardamos el archivo que queramos ir modificando en local y podemos comprobar cómo quedaría en producción.
 
