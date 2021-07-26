@@ -1,4 +1,4 @@
-##single_jma_cursos
+### single_jma_cursos
 
     // AÑADIR MARCADO SCHEMA
     add_action('wp_head', 'addschema_producto'); //Add Schema to header
