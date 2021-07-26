@@ -51,8 +51,8 @@ De los datos devueltos:
 
     {
         "info": {
-            **"fb_count": "419",**
-           ** "fb_avg": "4.3",**
+            "fb_count": "419",
+            "fb_avg": "4.3",
             "fb_avg_detail": "4.27",
             "active": true,
             "account_name": "test test",
@@ -61,3 +61,5 @@ De los datos devueltos:
             "ekomi_certificate_seo": "https:\/\/www.ekomi.co.uk\/review-ekomi-testelino2.html"
         },
 
+**"fb_count": "419",
+"fb_avg": "4.3",**
