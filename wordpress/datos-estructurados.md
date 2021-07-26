@@ -78,3 +78,6 @@ De los datos devueltos:
     echo "ratingValue: " .$ratingValue;
     
 Prueba de devolución de los datos: http://localhost/WEB%20CORPORATIVA/test_ekomi.php
+Documentación schema Product: https://schema.org/Product
+Documentación schema Course:https://schema.org/Course
+Ahora mismo estaría como producto, hay que probar como curso
