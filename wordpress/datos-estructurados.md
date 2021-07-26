@@ -66,6 +66,8 @@ De los datos devueltos:
 
 ### single_jma_cursos
 
+#### obtener json desde php https://www.it-swarm-es.com/es/php/llamar-rest-api-en-php/941947080/
+
     <?php
     $response = file_get_contents('http://api.ekomi.de/v3/getSnapshot?auth=665|FMJuyuC8uEbo3WxRa5aG&version=cust-1.0.0&type=json&charset=utf-8');
     $response = json_decode($response);
