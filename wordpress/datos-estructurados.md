@@ -63,3 +63,14 @@ De los datos devueltos:
 
 **"fb_count": "419",
 "fb_avg": "4.3",**
+
+### single_jma_cursos
+
+    <?php
+    $response = file_get_contents('http://api.ekomi.de/v3/getSnapshot?auth=665|FMJuyuC8uEbo3WxRa5aG&version=cust-1.0.0&type=json&charset=utf-8');
+    $response = json_decode($response);
+    $ratingCount = $response->info->fb_count;
+    $ratingValue = $response->info->fb_avg;
+    echo "ratingCount: ".$ratingCount;
+    echo "<br>";
+    echo "ratingValue: " .$ratingValue;
