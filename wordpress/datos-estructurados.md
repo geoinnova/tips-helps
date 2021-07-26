@@ -76,3 +76,5 @@ De los datos devueltos:
     echo "ratingCount: ".$ratingCount;
     echo "<br>";
     echo "ratingValue: " .$ratingValue;
+    
+Prueba de devolución de los datos: http://localhost/WEB%20CORPORATIVA/test_ekomi.php
