@@ -37,10 +37,27 @@
     </script>';
     
  Hay que tomar los siguientes datos de forma dinánimica desde ekomi
- "aggregateRating": {
-        "@type": "AggregateRating",
+ 
         "ratingValue": "4.9",
         "ratingCount": "165"
-      } 
  
 https://www.ekomi.es/testimonios-geoinnova.html
+
+
+## getSnapshot (public)
+Para obtener los datos necesarios utilizar esta url de la API https://ekomi01.atlassian.net/wiki/spaces/KB/pages/2113339432
+
+De los datos devueltos:
+
+    {
+        "info": {
+            **"fb_count": "419",**
+           ** "fb_avg": "4.3",**
+            "fb_avg_detail": "4.27",
+            "active": true,
+            "account_name": "test test",
+            "ekomi_certificate": "https:\/\/www.ekomi.de\/cert\/4090571468444361",
+            "ekomi_certificate_id": "4090571468444361",
+            "ekomi_certificate_seo": "https:\/\/www.ekomi.co.uk\/review-ekomi-testelino2.html"
+        },
+
