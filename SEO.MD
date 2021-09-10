@@ -8,6 +8,7 @@ https://developers.facebook.com/tools/debug/
 
 ### Eliminar caché de linkein
 https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fgeoinnova.org%2Fplanero-web%2F
+Ver: https://marketing4ecommerce.net/como-limpiar-la-cache-de-linkedin-cuando-carga-mal-un-contenido/
 
 ### Eliminar caché de twitter
 https://cards-dev.twitter.com/validator
