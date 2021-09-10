@@ -5,6 +5,10 @@ https://ayudawp.com/open-graph-jetpack/
 ### Eliminar caché de FB
 https://developers.facebook.com/tools/debug/
 
+
+### Eliminar caché de linkein
+https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fgeoinnova.org%2Fplanero-web%2F
+
 ### Eliminar caché de twitter
 https://cards-dev.twitter.com/validator
 *posible problema con el isp https://wordpress.org/support/topic/unable-to-render-card-preview-twitter/
