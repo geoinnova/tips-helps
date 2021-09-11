@@ -1,3 +1,6 @@
+## href con target blank
+<a href="#" target="_blank" rel="noreferrer noopener nofollow">Enlace</a>
+
 ### modo autofit de Android que causa problemas con el ancho css en la página web
 
 Es como si no detectara que estás en versión movil.
