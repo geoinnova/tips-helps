@@ -1,3 +1,28 @@
+
+## Serializar un objeto en una lista de parámetro de consulta de URL
+
+         const defaultParameters = {
+                service: 'WFS',
+                version: '1.0.0',
+                request: 'GetFeature',
+                typeName: `vse:${wfsLayer}`,
+                maxFeatures: 200,
+                outputFormat: 'text/javascript',
+                format_options: 'callback:getJson',
+                SRSNAME: 'EPSG:3857',
+                FEATUREID: `${wfsLayer}.${searchField}`,
+            };
+
+            // serializa un objeto en una lista de parametros de consulta de URL ---- $.param(objeto) ----
+            // con js vanilla > let url = new URLSearchParams(defaultParameters).toString();
+            // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
+
+             const url = URLSearchParams(defaultParameters).toString());
+
+
+
+
+
 ### Comprobar nombre navegador y redireccionar
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
