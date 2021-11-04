@@ -1,6 +1,7 @@
 
 ## Serializar un objeto en una lista de parámetro de consulta de URL
 // con js vanilla > let url = new **URLSearchParams(defaultParameters).toString()**;
+
 // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
 
          const defaultParameters = {
