@@ -1,3 +1,22 @@
+### Cómo ocultar los avisos PHP en WordPress
+https://superadmin.es/blog/wordpress/depurar-errores-php/
+
+Modo depuración: https://decodecms.com/depurar-codigo-php-en-wordpress/
+
+El fichero wp-config.php es el principal fichero de configuración en WordPress. Dentro tienes que buscar si aparece esta línea:
+
+		define('WP_DEBUG', true);
+
+es la encargada de activar el modo de depuración de WordPress. Para ocultar los mensajes de error cambiala para que resulte así:
+
+		ini_set('display_errors','Off');
+		ini_set('error_reporting', E_ALL );
+		define('WP_DEBUG', false);
+		define('WP_DEBUG_DISPLAY', false);
+
+
+
+
 # CONFIGURACION SMTP
 
 Utilizado el plugin wp mail smtp
