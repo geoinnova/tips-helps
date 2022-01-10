@@ -2,11 +2,11 @@
 # Desplegar proyecto en subcarpetas:
 # Configurar APP en subditectorio
 
-- .htaccess
-- package.json
-- App.js
-- data.js
-- Main.jsx
+   - .htaccess
+   - package.json
+   - App.js
+   - data.js
+   - Main.jsx
 
 ## .htaccess
 crear un archivo .htaccess ubicado en la subcarpeta donde se despliegue la  y añadir:
