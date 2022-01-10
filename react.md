@@ -21,7 +21,9 @@ crear un archivo .htaccess ubicado en la subcarpeta donde se despliegue la  y a�
         "homepage": "https://planero-web.geoinnova.org/subdirectorio",
 
 ## App.js
+
 Añadir en path la variable baseRoute configurada en data.js (no funca exportandola, añado la url a mano)
+
        <BrowserRouter basename="/">
            <Route path="/subdirectorio" exact render={Main} />
               .....
@@ -31,29 +33,30 @@ Añadir en path la variable baseRoute configurada en data.js (no funca exportand
 
 ## data.js
 // Indicar carpeta raiz '/' o subdirectorio '/subdirectorio/'
-const baseRoute = "/benirredra";
+
+      const baseRoute = "/benirredra";
 
 
 ## Main.jsx
 Cuidado con esta ruta en ese link
-<Link to="/subidrectorio/PLANO_2_MEDIO_FISICO">
+
+      <Link to="/subidrectorio/PLANO_2_MEDIO_FISICO">
 
 
 # Mostrar/Ocultar popup
 
 ## Map.css
  Eliminar display none para mostrar el popup
- .ol-popup{
-  display: none;
- }
 
+      .ol-popup{
+        display: none;
+       }
 
 
 ## Generar archivos para producciön
     npm run-script build
 
 * muy importante: comprobar en package.json la url donde se desplegará el proyecto
-
       
       "homepage": "http://planero-web2.geoinnova.org/"
       
