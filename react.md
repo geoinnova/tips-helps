@@ -11,10 +11,10 @@
 ## .htaccess
 crear un archivo .htaccess ubicado en la subcarpeta donde se despliegue la  y añadir:
 
- Options -MultiViews
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [QSA,L]
+       Options -MultiViews
+          RewriteEngine On
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteRule ^ index.html [QSA,L]
 
 ## package.json
   "homepage": "https://planero-web.geoinnova.org/subdirectorio",
