@@ -17,16 +17,17 @@ crear un archivo .htaccess ubicado en la subcarpeta donde se despliegue la  y a�
           RewriteRule ^ index.html [QSA,L]
 
 ## package.json
-  "homepage": "https://planero-web.geoinnova.org/subdirectorio",
+
+        "homepage": "https://planero-web.geoinnova.org/subdirectorio",
 
 ## App.js
 Añadir en path la variable baseRoute configurada en data.js (no funca exportandola, añado la url a mano)
- <BrowserRouter basename="/">
-     <Route path="/subdirectorio" exact render={Main} />
-        .....
-    </Route>
-    ))}
-</BrowserRouter>
+       <BrowserRouter basename="/">
+           <Route path="/subdirectorio" exact render={Main} />
+              .....
+          </Route>
+          ))}
+      </BrowserRouter>
 
 ## data.js
 // Indicar carpeta raiz '/' o subdirectorio '/subdirectorio/'
