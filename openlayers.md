@@ -1,3 +1,8 @@
+## Problema de importaciones con ejemplos OpenLayers
+1. incluir type="module" en la llamada del script en index.html
+
+      <script type="module" src="main.js"></script>
+
 
 ### Impresión con ctrl+ arrastre ratón
 
