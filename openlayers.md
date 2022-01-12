@@ -81,17 +81,17 @@
   });
 
 /*
-  //obtención de los puntos desde un geoJson externo
-  const vectorLayer = new VectorLayer({
-      name: 'vector Layer nuevo',
-      source: new VectorSource({
-          format: new GeoJSON(),
-          //url: './data/4_1_1.js'
-          //url: 'http://visores.geoinnova.org/planero-react/4_1_1.js'
-          //url: 'https://gist.githubusercontent.com/neogis-de/154f4bd155f77e0f3689/raw/5a1642fac4afff463c3ff08beaad55892fe9acd4/geojson.js'
-      }),
-      style: selectIcon,
-  });
+        //obtención de los puntos desde un geoJson externo
+        const vectorLayer = new VectorLayer({
+            name: 'vector Layer nuevo',
+            source: new VectorSource({
+                format: new GeoJSON(),
+                //url: './data/4_1_1.js'
+                //url: 'http://visores.geoinnova.org/planero-react/4_1_1.js'
+                //url: 'https://gist.githubusercontent.com/neogis-de/154f4bd155f77e0f3689/raw/5a1642fac4afff463c3ff08beaad55892fe9acd4/geojson.js'
+            }),
+            style: selectIcon,
+        });
 */
 
 
