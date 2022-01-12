@@ -2,6 +2,10 @@
 1. incluir type="module" en la llamada del script en index.html
 
       <script type="module" src="main.js"></script>
+      
+2. Si da error: unexpected character at line 1 column 1 of the JSON data
+
+      SUBIR A UN SERVIDOR, ENTORNO PRODUCCION Y FUNCIONARÁ
 
 
 ### Impresión con ctrl+ arrastre ratón
