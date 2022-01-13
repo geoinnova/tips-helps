@@ -1,3 +1,16 @@
+## Controlar cuando se pulsa en desactivar/activar capa desde layerSwitcher (VISIBLE NO VISIBLE)
+https://gis.stackexchange.com/questions/223641/how-to-get-the-change-event-of-a-layer-in-ol3-using-ol-control-layerswitcher
+
+            layerOverlay.supplies.on('change:visible', function(){
+                alert("Cambia");
+            });
+
+
+## Formatos salida geoserver
+https://docs.geoserver.org/latest/en/user/services/wfs/outputformats.html
+Capa supplies, acometidas: https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&maxFeatures=200&outputFormat=application/json&SRSNAME=EPSG%3A3857
+
+
 ## Cómo añadir un servicio WFS en OpenLayers y darle simbología
 https://mappinggis.com/2016/06/anadir-wfs-en-openlayers-simbologia/
 
