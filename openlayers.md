@@ -1,3 +1,219 @@
+## Cómo añadir un servicio WFS en OpenLayers y darle simbología
+https://mappinggis.com/2016/06/anadir-wfs-en-openlayers-simbologia/
+
+
+            let openSansAdded = false;
+
+            const getText = function (feature) {
+              // const maxResolution = 600;
+              let text = feature.get('id');
+
+              // console.log("resolution",resolution);
+              // console.log("maxResolution", maxResolution)
+
+              // if (resolution > maxResolution) {
+              //   text = '';
+              // } else if (type == 'hide') {
+              //   text = '';
+              // } else if (type == 'shorten') {
+              //   text = text.trunc(12);
+              // } else if (
+              //   type == 'wrap' &&
+              //   (!dom.placement || dom.placement.value != 'line')
+              // ) {
+              //   text = stringDivider(text, 16, '\n');
+              // }
+
+              return text;
+            };
+
+            const createTextStyle = function (feature) {
+             let CONF =  require('../conf/conf_simbologia');
+
+              return new Text({
+                textAlign: CONF.align == '' ? undefined : CONF.align,
+                textBaseline: CONF.baseline,
+                font: CONF.weight + ' ' + CONF.size + '/' + CONF.height + ' ' + 'Arial',
+                text: getText(feature),
+                fill: new Fill({color: CONF.fillColor}),
+                stroke: new Stroke({color: CONF.outlineColor, width: CONF.outlineWidth}),
+                offsetX: CONF.offsetX,
+                offsetY: CONF.offsetY,
+                placement: CONF.placement,
+                maxAngle: CONF.maxAngle,
+                overflow: CONF.overflow,
+                rotation: CONF.rotation,
+              });
+            };
+
+            // Points
+            function pointStyleFunction(feature, resolution) {
+              //console.log("Resolucion",resolution)
+              return new Style({
+                // image: new CircleStyle({
+                //   radius: 10,
+                //   fill: new Fill({color: 'rgba(255, 0, 0, 0.1)'}),
+                //   stroke: new Stroke({color: 'red', width: 1}),
+                // }),
+                text: createTextStyle(feature),
+              });
+            }
+
+            // const vectorPoints = new VectorLayer({
+            //   source: new VectorSource({
+            //     projection: 'EPSG:4326',
+            //     url: 'https://visores.geoinnova.org/test/capa_wfs_soller/data/supplies.geojson',
+            //     format: new GeoJSON(),
+            //   }),
+            //   style: pointStyleFunction,
+            // });
+
+            const vectorPoints = new VectorLayer({
+              source: new VectorSource({
+                projection: 'EPSG:4326',
+                //url: 'https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
+                format: new GeoJSON(),
+                url: function(extent) {
+                  return  'https://geo2.valldesollerenergia.es/geoserver/wfs?'
+                  +'service=WFS&version=1.0.0&request=GetFeature&'
+                  +'typeName=vse%3Asupplies&id&'
+                  +'outputFormat=application/json'
+                  +'&SRSNAME=EPSG%3A4326';
+                }
+              }),
+              style: pointStyleFunction,
+            });
+
+
+Despues de MAP
+
+            // controlo el nivel de zoom para mostrar/ocultar
+            let isVectorLayerAdded = false;
+
+            // map.on('moveend', function(){
+            //   let zoom = map.getView().getZoom()
+
+            //   // zoom >= 16.30875113752317
+            //   if (zoom >= 17){ 
+            //     map.addLayer(vectorPoints);
+            //     isVectorLayerAdded = true;
+            //   }else{
+            //     if (isVectorLayerAdded){
+            //       map.removeLayer(vectorPoints);
+            //       isVectorLayerAdded = false;
+            //       console.log("desactivo")
+            //     }
+            //   }
+            // });
+
+            // map.getView().on('change:resolution', (event) => {
+            //   console.log(event);
+            //   let zoom = map.getView().getZoom()
+
+            //     // zoom >= 16.30875113752317
+            //     if (zoom >= 17){ 
+            //       map.addLayer(vectorPoints);
+            //       isVectorLayerAdded = true;
+            //     }else{
+            //       if (isVectorLayerAdded){
+            //         map.removeLayer(vectorPoints);
+            //         isVectorLayerAdded = false;
+            //         console.log("desactivo")
+            //       }
+            //     }
+            // });
+
+
+            let currentZoomLevel =  CONF.zoomInicial;                   //zoom inicial 
+
+            let isLayerAcometidaVisible = layerOverlay.supplies.values_.visible;;
+            // si la visibilidad de capa de Acometidas cambia comprobamos capa simbología
+            layerOverlay.supplies.on('change:visible', function(){
+              isLayerAcometidaVisible = layerOverlay.supplies.values_.visible; // true-false
+              if (!isLayerAcometidaVisible){
+                map.removeLayer(vectorPoints);
+                isVectorLayerAdded = false;
+              }else{
+                map.addLayer(vectorPoints);
+                isVectorLayerAdded = true;
+              }
+
+            });
+
+            function checknewzoom(evt)
+            {
+               let newZoomLevel = map.getView().getZoom();
+
+               // si cambia de nivel de zoom y la capa acometidas está activa
+               if (newZoomLevel != currentZoomLevel & isLayerAcometidaVisible)
+               {
+                      currentZoomLevel = newZoomLevel;
+                      if (currentZoomLevel >= CONF.nivelZoomActivaCapa){ 
+                        if (!isVectorLayerAdded){
+                          map.addLayer(vectorPoints);
+                          isVectorLayerAdded = true;
+                        }
+
+                      }else{
+                        if (isVectorLayerAdded){
+                          map.removeLayer(vectorPoints);
+                          isVectorLayerAdded = false;
+                          console.log("desactivo")
+                        }
+                      }
+                      console.log(currentZoomLevel);
+               }
+            }
+
+            map.on('moveend', checknewzoom);
+
+
+En conf_simbología.js
+
+            const align = 'center';
+            const baseline = 'middle';
+            const size = '1.5em';
+            const height = 'normal';
+            const offsetX = parseInt(60, 10);
+            const offsetY = parseInt(-20, 10);
+            const weight = 'bold'
+            const placement = undefined;
+            const maxAngle = undefined;
+            const overflow = undefined;
+            const rotation = parseFloat(0); //parseFloat(feature.get('rotation'));
+
+
+            const fillColor = '#000000';
+            const outlineColor = '#ffffff';
+            const outlineWidth = parseInt(3, 10);
+
+            let zoomInicial =  13;             //zoom inicial 
+            let nivelZoomActivaCapa = 20.449; //zoom en el que se activa la capa de simbología
+
+
+            module.exports = {
+                align,
+                baseline,
+                size,
+                height,
+                offsetX,
+                offsetY,
+                weight,
+                placement,
+                maxAngle,
+                overflow,
+                rotation,
+                fillColor,
+                outlineColor,
+                outlineWidth,
+                zoomInicial,
+                nivelZoomActivaCapa,
+            };
+
+
+
+
+
 ## Problema de importaciones con ejemplos OpenLayers
 1. incluir type="module" en la llamada del script en index.html
 
