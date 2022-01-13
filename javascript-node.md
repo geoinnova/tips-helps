@@ -2,7 +2,7 @@
 
 const CONF = require('../conf/conf_map');
 
-        **conf_map.js**
+        conf_map.js
         // WMS zoom levels
         const wmsMaxNativeZoom = 29;
         const wmsMaxZoom = 30;
@@ -12,7 +12,7 @@ const CONF = require('../conf/conf_map');
             wmsMaxZoom,
         };
 
-        **llamada: CONF.wmsMaxNativeZoom;**
+        llamada: CONF.wmsMaxNativeZoom;
 
 
 ## Exportar funciones y variables
