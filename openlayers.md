@@ -1,3 +1,40 @@
+## Controlar cuando se hace un zoom
+https://stackoverflow.com/questions/26734512/open-layers-3-zoom-map-event-handler
+
+            map.on('moveend', function(){
+              let zoom = map.getView().getZoom()
+
+              // zoom >= 16.30875113752317
+              if (zoom >= 17){ 
+                map.addLayer(vectorPoints);
+                isVectorLayerAdded = true;
+              }else{
+                if (isVectorLayerAdded){
+                  map.removeLayer(vectorPoints);
+                  isVectorLayerAdded = false;
+                  console.log("desactivo")
+                }
+              }
+            });
+
+            map.getView().on('change:resolution', (event) => {
+              console.log(event);
+              let zoom = map.getView().getZoom()
+
+                // zoom >= 16.30875113752317
+                if (zoom >= 17){ 
+                  map.addLayer(vectorPoints);
+                  isVectorLayerAdded = true;
+                }else{
+                  if (isVectorLayerAdded){
+                    map.removeLayer(vectorPoints);
+                    isVectorLayerAdded = false;
+                    console.log("desactivo")
+                  }
+                }
+            });
+
+
 ## Controlar cuando se pulsa en desactivar/activar capa desde layerSwitcher (VISIBLE NO VISIBLE)
 https://gis.stackexchange.com/questions/223641/how-to-get-the-change-event-of-a-layer-in-ol3-using-ol-control-layerswitcher
 
