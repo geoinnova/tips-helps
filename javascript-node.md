@@ -1,17 +1,18 @@
 ## Utilizar variables configuradas en un fichero externo
+
 const CONF = require('../conf/conf_map');
 
-**conf_map.js**
-// WMS zoom levels
-const wmsMaxNativeZoom = 29;
-const wmsMaxZoom = 30;
+        **conf_map.js**
+        // WMS zoom levels
+        const wmsMaxNativeZoom = 29;
+        const wmsMaxZoom = 30;
 
-module.exports = {
-    wmsMaxNativeZoom,
-    wmsMaxZoom,
-};
+        module.exports = {
+            wmsMaxNativeZoom,
+            wmsMaxZoom,
+        };
 
-**llamada: CONF.wmsMaxNativeZoom;**
+        **llamada: CONF.wmsMaxNativeZoom;**
 
 
 ## Exportar funciones y variables
