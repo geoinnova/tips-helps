@@ -1,5 +1,6 @@
 ## Funcion para comprobar si una capa concreta está visible, busca dentro de un grupo concreto y la activa si está desactivada
 https://sisteme-ig.com/questions/5096/obtener-una-capa-en-openlayers-3
+
 https://blog.onesaitplatform.com/2021/02/05/visores-de-mapas-parte-3-openlayers/
 
  
