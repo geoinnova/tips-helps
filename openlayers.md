@@ -1,45 +1,49 @@
 ## Funcion para comprobar si una capa concreta está visible, busca dentro de un grupo concreto y la activa si está desactivada
-  erbSetLayerVisible(wfsLayersTranslations['supplies'],'Overlays');
+https://sisteme-ig.com/questions/5096/obtener-una-capa-en-openlayers-3
+https://blog.onesaitplatform.com/2021/02/05/visores-de-mapas-parte-3-openlayers/
+
+ 
+        erbSetLayerVisible(wfsLayersTranslations['supplies'],'Overlays');
   
   
-                          /**
-                         * Comprueba si una capa está activa
-                         * Si está dentro de un grupo hay que indicar el grupo
-                         * Por defecto no tiene grupo
-                         * 
-                         * @param {*} titleLayer nombre de la capa a buscar
-                         * @param {*} titleLayerGroup grupo de capas donde puede estar Overlays, Base
-                         */
-                        function erbSetLayerVisible(titleLayer,titleLayerGroup=''){
-                             //obtenemos array con todas las capas
-                             let arrayLayers = map.getLayers().getArray();
+              /**
+             * Comprueba si una capa está activa
+             * Si está dentro de un grupo hay que indicar el grupo
+             * Por defecto no tiene grupo
+             * 
+             * @param {*} titleLayer nombre de la capa a buscar
+             * @param {*} titleLayerGroup grupo de capas donde puede estar Overlays, Base
+             */
+            function erbSetLayerVisible(titleLayer,titleLayerGroup=''){
+                 //obtenemos array con todas las capas
+                 let arrayLayers = map.getLayers().getArray();
 
-                             //console.dir(map.getLayers().getArray());
-                             //recorremos las capas
-                             arrayLayers.forEach(function (layer, i) {
+                 //console.dir(map.getLayers().getArray());
+                 //recorremos las capas
+                 arrayLayers.forEach(function (layer, i) {
 
-                                //si vamos a comprobar un grupo de capas por ejemplo overlays será otro array
-                                if (titleLayerGroup){
-                                    if (layer.values_.title==titleLayerGroup){
+                    //si vamos a comprobar un grupo de capas por ejemplo overlays será otro array
+                    if (titleLayerGroup){
+                        if (layer.values_.title==titleLayerGroup){
 
-                                        let arrayLayersOverlay = layer.values_.layers.array_;
-                                        arrayLayersOverlay.forEach(function (layerOverlay, i) {
+                            let arrayLayersOverlay = layer.values_.layers.array_;
+                            arrayLayersOverlay.forEach(function (layerOverlay, i) {
 
-                                             if (layerOverlay.values_.title==titleLayer){
-                                                 if (!layerOverlay.getVisible()){
-                                                    layerOverlay.setVisible(true);
-                                                   //TODO intentar salir del bucle foreach, no existe break
-                                                 }
-                                             }
-                                        });
+                                 if (layerOverlay.values_.title==titleLayer){
+                                     if (!layerOverlay.getVisible()){
+                                        layerOverlay.setVisible(true);
+                                       //TODO intentar salir del bucle foreach, no existe break
                                      }
-                                }
-                                else{
-                                   if (!layer.getVisible()) layer.setVisible(true);
-                                }
+                                 }
+                            });
+                         }
+                    }
+                    else{
+                       if (!layer.getVisible()) layer.setVisible(true);
+                    }
 
-                             });
-                        }
+                 });
+            }
 
 ## Controlar cuando se hace un zoom
 https://stackoverflow.com/questions/26734512/open-layers-3-zoom-map-event-handler
