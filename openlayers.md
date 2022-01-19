@@ -7,10 +7,10 @@ Definirlo a la hora de declarar la capa.
       name: 'simbologia',
       source: new VectorSource({
         projection: 'EPSG:4326',
-        //url: 'https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
+       
         format: new GeoJSON(),
         url: function(extent) {
-          return  'https://geo2.valldesollerenergia.es/geoserver/wfs?'
+          return  'url?'
           +'service=WFS&version=1.0.0&request=GetFeature&'
           +'typeName=vse%3Asupplies&id&'
           +'outputFormat=application/json'
@@ -127,7 +127,7 @@ https://gis.stackexchange.com/questions/223641/how-to-get-the-change-event-of-a-
 
 ## Formatos salida geoserver
 https://docs.geoserver.org/latest/en/user/services/wfs/outputformats.html
-Capa supplies, acometidas: https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&maxFeatures=200&outputFormat=application/json&SRSNAME=EPSG%3A3857
+Capa supplies, acometidas: https://url?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&maxFeatures=200&outputFormat=application/json&SRSNAME=EPSG%3A3857
 
 
 ## Cómo añadir un servicio WFS en OpenLayers y darle simbología
@@ -194,7 +194,7 @@ https://mappinggis.com/2016/06/anadir-wfs-en-openlayers-simbologia/
             // const vectorPoints = new VectorLayer({
             //   source: new VectorSource({
             //     projection: 'EPSG:4326',
-            //     url: 'https://visores.geoinnova.org/test/capa_wfs_soller/data/supplies.geojson',
+            //     url: 'https://url/data/supplies.geojson',
             //     format: new GeoJSON(),
             //   }),
             //   style: pointStyleFunction,
@@ -203,10 +203,10 @@ https://mappinggis.com/2016/06/anadir-wfs-en-openlayers-simbologia/
             const vectorPoints = new VectorLayer({
               source: new VectorSource({
                 projection: 'EPSG:4326',
-                //url: 'https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
+                //url: 'https://url/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
                 format: new GeoJSON(),
                 url: function(extent) {
-                  return  'https://geo2.valldesollerenergia.es/geoserver/wfs?'
+                  return  'https://url?'
                   +'service=WFS&version=1.0.0&request=GetFeature&'
                   +'typeName=vse%3Asupplies&id&'
                   +'outputFormat=application/json'
@@ -610,7 +610,7 @@ https://progworks.tistory.com/22
 https://gis.stackexchange.com/questions/30595/how-to-zoom-to-object-on-wms-layer-with-openlayers
 const zoom2WFS = (wfsLayer, searchField, resultLayer, map) => {
 
-    const rootUrl = CONF.wfssoller;
+    const rootUrl = CONF.wfs;
     const defaultParameters = {
         service: 'WFS',
         version: '1.0.0',
