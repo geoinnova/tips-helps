@@ -2,32 +2,33 @@
 
 Definirlo a la hora de declarar la capa.
 
-  const vectorPoints = new VectorLayer({
-    name: 'simbologia',
-    source: new VectorSource({
-      projection: 'EPSG:4326',
-      //url: 'https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
-      format: new GeoJSON(),
-      url: function(extent) {
-        return  'https://geo2.valldesollerenergia.es/geoserver/wfs?'
-        +'service=WFS&version=1.0.0&request=GetFeature&'
-        +'typeName=vse%3Asupplies&id&'
-        +'outputFormat=application/json'
-        +'&SRSNAME=EPSG%3A4326';
-      }
-    }),
-    style: pointStyleFunction,
-  });
+
+    const vectorPoints = new VectorLayer({
+      name: 'simbologia',
+      source: new VectorSource({
+        projection: 'EPSG:4326',
+        //url: 'https://geo2.valldesollerenergia.es/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Asupplies&id&outputFormat=application/json&SRSNAME=EPSG%3A4326',
+        format: new GeoJSON(),
+        url: function(extent) {
+          return  'https://geo2.valldesollerenergia.es/geoserver/wfs?'
+          +'service=WFS&version=1.0.0&request=GetFeature&'
+          +'typeName=vse%3Asupplies&id&'
+          +'outputFormat=application/json'
+          +'&SRSNAME=EPSG%3A4326';
+        }
+      }),
+      style: pointStyleFunction,
+    });
   
 
 Para acceder a esa característica
 
 
-   map.getLayers().forEach(function(layer) {
-          if ((layer instanceof VectorLayer) && (layer.get('name')!='simbologia')) {
-              map.removeLayer(layer);
-          }
-      });
+     map.getLayers().forEach(function(layer) {
+            if ((layer instanceof VectorLayer) && (layer.get('name')!='simbologia')) {
+                map.removeLayer(layer);
+            }
+     });
 
 
 
