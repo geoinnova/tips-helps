@@ -1,3 +1,41 @@
+## Mostrar capa de PNOA con servicio xyz de teselas raster
+
+https://blog-idee.blogspot.com/2022/01/servicios-xyz-de-teselas-raster.html
+https://openlayers.org/en/latest/examples/xyz.html
+
+*CON IMAGE WMS
+
+         const pnoa = new OlLayerImage({
+            name: 'Base PNOA',
+            // extent: extent,
+            source: new ImageWMS({
+              url: "http://www.ign.es/wms-inspire/pnoa-ma?",
+              crossOrigin: "anonymous",
+              attributions:
+                'Base © <a href="http://www.geo.admin.ch/internet/geoportal/' +
+                'en/home.html">PNOA</a>',
+              params: { LAYERS: "OI.OrthoimageCoverage" },
+              serverType: "mapserver",
+            }),
+          });
+          
+
+*CON XYZ
+
+  
+          const pnoa =  new TileLayer({
+            name: 'Base PNOA',
+            crossOrigin: "anonymous",
+            attributions:
+                  'Base © <a href="https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg/' +
+                   '">PNOA</a>',
+            source: new XYZ({
+                      url:  'https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg',
+                    }),
+          });
+
+
+
 ## Importante para localizar una capa por nombre, id u otro campo:
 
 Definirlo a la hora de declarar la capa.
