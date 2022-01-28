@@ -3,7 +3,7 @@
 https://blog-idee.blogspot.com/2022/01/servicios-xyz-de-teselas-raster.html
 https://openlayers.org/en/latest/examples/xyz.html
 
-*CON IMAGE WMS
+#### CON IMAGE WMS
 
          const pnoa = new OlLayerImage({
             name: 'Base PNOA',
@@ -20,7 +20,7 @@ https://openlayers.org/en/latest/examples/xyz.html
           });
           
 
-*CON XYZ
+#### CON XYZ
 
   
           const pnoa =  new TileLayer({
