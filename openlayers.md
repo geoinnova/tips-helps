@@ -22,6 +22,8 @@ https://openlayers.org/en/latest/examples/xyz.html
 
 #### CON XYZ
 
+         import TileLayer from 'ol/layer/Tile';
+
   
           const pnoa =  new TileLayer({
             name: 'Base PNOA',
