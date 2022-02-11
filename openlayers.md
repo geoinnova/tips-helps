@@ -5,19 +5,21 @@ https://openlayers.org/en/latest/examples/xyz.html
 
 #### CON IMAGE WMS
 
-         const pnoa = new OlLayerImage({
-            name: 'Base PNOA',
-            // extent: extent,
-            source: new ImageWMS({
-              url: "http://www.ign.es/wms-inspire/pnoa-ma?",
-              crossOrigin: "anonymous",
-              attributions:
-                'Base © <a href="http://www.geo.admin.ch/internet/geoportal/' +
-                'en/home.html">PNOA</a>',
-              params: { LAYERS: "OI.OrthoimageCoverage" },
-              serverType: "mapserver",
-            }),
-          });
+```js
+const pnoa = new OlLayerImage({
+   name: 'Base PNOA',
+   // extent: extent,
+   source: new ImageWMS({
+     url: "http://www.ign.es/wms-inspire/pnoa-ma?",
+     crossOrigin: "anonymous",
+     attributions:
+       'Base © <a href="http://www.geo.admin.ch/internet/geoportal/' +
+       'en/home.html">PNOA</a>',
+     params: { LAYERS: "OI.OrthoimageCoverage" },
+     serverType: "mapserver",
+   }),
+ });
+ ```
           
 
 #### CON XYZ
