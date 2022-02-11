@@ -44,7 +44,7 @@ const pnoa = new OlLayerImage({
 
 Definirlo a la hora de declarar la capa.
 
-
+```js
     const vectorPoints = new VectorLayer({
       name: 'simbologia',
       source: new VectorSource({
@@ -61,7 +61,7 @@ Definirlo a la hora de declarar la capa.
       }),
       style: pointStyleFunction,
     });
-  
+  ```
 
 Para acceder a esa característica
 
