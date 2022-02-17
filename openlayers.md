@@ -1,3 +1,32 @@
+## Capas de Catastro
+
+´´´ javascript
+const catastroInspire = new TileLayer({
+  title: 'catastroInspire',
+  source: new TileWMS({
+  url: 'http://ovc.catastro.meh.es/cartografia/INSPIRE/spadgcwms.aspx',
+  params: {
+    LAYERS: "CP.CadastralParcel",
+  }
+  }),
+  visible:false
+  });
+
+  const catastro = new TileLayer({
+    title: 'catastro',
+    source: new TileWMS({
+    url: 'http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?',
+    
+    params: {
+      LAYERS: "Catastro",
+      TILED: "true",
+      VERSION: "1.1.1",
+    },
+    }),
+    visible:true
+    });
+´´´
+
 ## Mostrar capa de PNOA con servicio xyz de teselas raster
 
 https://blog-idee.blogspot.com/2022/01/servicios-xyz-de-teselas-raster.html
