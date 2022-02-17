@@ -1,6 +1,10 @@
 ## Capas de Catastro
 
-´´´ javascript
+```js
+
+import TileLayer from 'ol/layer/Tile';
+import TileWMS from 'ol/source/TileWMS';
+
 const catastroInspire = new TileLayer({
   title: 'catastroInspire',
   source: new TileWMS({
@@ -25,7 +29,25 @@ const catastroInspire = new TileLayer({
     }),
     visible:true
     });
-´´´
+    
+    
+  const map = new Map({
+  layers: [
+    new LayerGroup({
+      title: 'Base maps',
+      layers: [
+        catastroInspire,
+        catastro,
+      ],
+      attributions: '< a href = "https://www.valldesollerenergia.es/es/vse/"_blank ">Asociación Geoinnova</a>',
+    }),
+  ],
+  target: 'map',
+  view,
+  controls: defaultControls({ attribution: false }).extend([attribution]),
+});
+    
+```
 
 ## Mostrar capa de PNOA con servicio xyz de teselas raster
 
