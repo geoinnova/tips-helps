@@ -22,7 +22,7 @@ Delaración del VectorLayer
 const vectorSupplies = new VectorLayer({
   source: new VectorSource({
     projection: 'EPSG:4326',
-    url: 'https://visores.geoinnova.org/test/capa_wfs_soller/data/supplies.geojson',
+    url: 'https://.../wfs/data/supplies.geojson',
     format: new GeoJSON(),
   }),
   style: pointStyleFunction,
