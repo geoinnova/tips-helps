@@ -3,7 +3,7 @@
 ```js
 const configColor = {
     FO: { color: '#44ea8e', descripcion: 'Formación', url: 'https://geoinnova.org/cursos/' },
-    IG: { color: '#1473aa', descripcion: 'SIG-Desarrollo', url: 'https://geoinnova.org/consultoria-desarrollo-sistemas-de-informacion-geografica/' },
+    IG: { color: '#1473aa', descripcion: 'SIG-Desarrollo', url: '#' },
     PA: { color: '#4eb7b7', descripcion: 'Proyectos Ambientales', url: 'https://geoinnova.org/consultoria-medio-ambiente/' },
     TU: { color: '#ff6600', descripcion: 'Turismo', url: 'https://geoinnova.org/servicios-consultoria-turismo-sostenible/' }
 };
@@ -12,7 +12,7 @@ const configColor = {
 llamada
 ```js
 color: configColor[element.codtipo].color,
-``
+```
 
 ## Serializar un objeto en una lista de parámetro de consulta de URL
 // con js vanilla > let url = new **URLSearchParams(defaultParameters).toString()**;
