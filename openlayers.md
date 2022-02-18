@@ -1,3 +1,38 @@
+## Capa Vectorial con GeoJSON
+
+Función para estilo del punto
+
+```js
+function pointStyleFunction(feature, resolution) {
+ 
+  //console.log("Resolucion",resolution)
+  return new Style({
+    // image: new CircleStyle({
+    //   radius: 10,
+    //   fill: new Fill({color: 'rgba(255, 0, 0, 0.1)'}),
+    //   stroke: new Stroke({color: 'red', width: 1}),
+    // }),
+    text: createTextStyle(feature),
+  });
+}
+```
+Delaración del VectorLayer
+
+```js
+const vectorSupplies = new VectorLayer({
+  source: new VectorSource({
+    projection: 'EPSG:4326',
+    url: 'https://visores.geoinnova.org/test/capa_wfs_soller/data/supplies.geojson',
+    format: new GeoJSON(),
+  }),
+  style: pointStyleFunction,
+});
+```
+
+
+
+
+
 ## Capas de Catastro
 
 ```js
