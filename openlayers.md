@@ -49,6 +49,12 @@ const catastroInspire = new TileLayer({
     
 ```
 
+## Ver resolución y zoom
+```js
+ console.log(view.getResolution())
+ console.log(map.getView().getZoom())
+```
+
 ## Mostrar capa de PNOA con servicio xyz de teselas raster
 
 https://blog-idee.blogspot.com/2022/01/servicios-xyz-de-teselas-raster.html
