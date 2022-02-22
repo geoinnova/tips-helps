@@ -242,8 +242,8 @@ Llamada
 
 ```js
 baseMap = getGroup('BaseMaps', map)
-baseMap.***push***(catastro);  //Agrega un elemento al final de una matriz.
-baseMap.***pop***(catastro);   //Elimina un elemento del final de una matriz.
+baseMap.push(catastro);  //Agrega un elemento al final de una matriz.
+baseMap.pop(catastro);   //Elimina un elemento del final de una matriz.
 ```
 
 ## Controlar cuando se hace un zoom
