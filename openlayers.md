@@ -74,7 +74,7 @@ const catastroInspire = new TileLayer({
         catastroInspire,
         catastro,
       ],
-      attributions: '< a href = "https://www.valldesollerenergia.es/es/vse/"_blank ">Asociación Geoinnova</a>',
+      attributions: '< a href = "....."_blank ">.....</a>',
     }),
   ],
   target: 'map',
