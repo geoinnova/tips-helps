@@ -1,5 +1,6 @@
-[Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
+[Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
 [Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
+[Ver resolución y zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#ver-resoluci%C3%B3n-y-zoom)
 
 ## Capa Vectorial con GeoJSON
 
