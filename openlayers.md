@@ -1,7 +1,7 @@
 * [Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
 * [Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
 * [Ver resolución y zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#ver-resoluci%C3¿*%B3n-y-zoom)
-* [Mostrar capa de PNOA con servicio xyz de teselas raster](Mostrar capa de PNOA con servicio xyz de teselas raster)
+* [Mostrar capa de PNOA con servicio xyz de teselas raster](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#mostrar-capa-de-pnoa-con-servicio-xyz-de-teselas-raster)
 * [Localizar una capa por nombre, id u otro campo:](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#importante-para-localizar-una-capa-por-nombre-id-u-otro-campo)
 * [Comprobar si una capa está visible](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#funcion-para-comprobar-si-una-capa-concreta-est%C3%A1-visible-busca-dentro-de-un-grupo-concreto-y-la-activa-si-est%C3%A1-desactivada)
 * [Obtener un grupo de capas](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#funci%C3%B3n-para-obtener-un-grupo-de-capas)
@@ -12,8 +12,7 @@
 * [Estilos según geometrías](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#estilos-seg%C3%BAn-geometr%C3%ADas)
 * [Comprobar si existe previamente una capa VectorLayer](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#comprobar-si-existe-previamente-una-capa-vectorlayer)
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
-* ** Serializar ***
-
+* [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 ## Capa Vectorial con GeoJSON
 
 Función para estilo del punto
