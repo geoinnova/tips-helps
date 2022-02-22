@@ -214,6 +214,37 @@ https://blog.onesaitplatform.com/2021/02/05/visores-de-mapas-parte-3-openlayers/
                  });
             }
 
+
+## Función para obtener un grupo de capas
+
+```js
+function getGroup(nameGroup, map) {
+    var layers = map.getLayers();
+    var length = layers.getLength(), l;
+    for (var i = 0; i < length; i++) {
+        l = layers.item(i);
+        var lt = l.get('name');
+
+        // check for layers within groups
+        if (lt === nameGroup) { // Title of Group
+                if (l.getLayers) {
+                var innerLayers = l.getLayers().getArray();
+                return innerLayers;
+            }
+        }
+    }
+}
+let baseMap; //grupo BaseMaps para añadir la capa catastro
+
+```
+
+Llamada
+
+```js
+baseMap = getGroup('BaseMaps', map)
+baseMap.push(catastro);
+```
+
 ## Controlar cuando se hace un zoom
 https://stackoverflow.com/questions/26734512/open-layers-3-zoom-map-event-handler
 
