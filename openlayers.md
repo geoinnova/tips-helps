@@ -1,10 +1,18 @@
-*[Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
-
-*[Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
-
+* [Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
+* [Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
 * [Ver resolución y zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#ver-resoluci%C3¿*%B3n-y-zoom)
-
 * [Mostrar capa de PNOA con servicio xyz de teselas raster](Mostrar capa de PNOA con servicio xyz de teselas raster)
+* [Localizar una capa por nombre, id u otro campo:](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#importante-para-localizar-una-capa-por-nombre-id-u-otro-campo)
+* [Comprobar si una capa está visible](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#funcion-para-comprobar-si-una-capa-concreta-est%C3%A1-visible-busca-dentro-de-un-grupo-concreto-y-la-activa-si-est%C3%A1-desactivada)
+* [Obtener un grupo de capas](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#funci%C3%B3n-para-obtener-un-grupo-de-capas)
+* [Controlar cuando se hace un zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#controlar-cuando-se-hace-un-zoom)
+* [Controlar cuando se pulsa en desactivar/activar capa desde layerSwitcher ](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#controlar-cuando-se-pulsa-en-desactivaractivar-capa-desde-layerswitcher-visible-no-visible)
+* [Formatos salida geoserver](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#formatos-salida-geoserver)
+* [Añadir un servicio **WFS** en OpenLayers y darle simbología](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#c%C3%B3mo-a%C3%B1adir-un-servicio-wfs-en-openlayers-y-darle-simbolog%C3%ADa)
+* [Estilos según geometrías](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#estilos-seg%C3%BAn-geometr%C3%ADas)
+* [Comprobar si existe previamente una capa VectorLayer](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#comprobar-si-existe-previamente-una-capa-vectorlayer)
+* [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
+* ** Serializar ***
 
 ## Capa Vectorial con GeoJSON
 
@@ -775,9 +783,11 @@ https://gis.stackexchange.com/questions/24879/measuring-on-openlayers-map
 
 
 ###  serializar un objeto en una lista de parametros de consulta de URL ---- $.param(objeto) ---- con jquery y ---- new URLSearchParams(defaultParameters).toString(); ---- con jsvanilla
-    // con js vanilla > let url = new URLSearchParams(defaultParameters).toString();
+```js
+    // con js vanilla > let url = new **URLSearchParams(defaultParameters).toString()**;
     // service=WFS&version=1.0.0&request=GetFeature&typeName=vse%3Ahigh_voltage_lines&maxFeatures=200&outputFormat=text%2Fjavascript&format_options=callback%3AgetJson&SRSNAME=EPSG%3A3857&FEATUREID:high_voltage_lines.130
     // https://stackoverflow.com/questions/6566456/how-to-serialize-an-object-into-a-list-of-url-query-parameters
+```
 
 ### WFS obtener URL y hacer zoom 
 https://progworks.tistory.com/22
