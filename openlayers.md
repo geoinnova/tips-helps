@@ -1,10 +1,10 @@
-[Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
+*[Capa Vectorial con GeoJSON](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capa-vectorial-con-geojson)
 
-[Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
+*[Capas de Catastro](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro)
 
-[Ver resolución y zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#ver-resoluci%C3%B3n-y-zoom)
+* [Ver resolución y zoom](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#ver-resoluci%C3¿*%B3n-y-zoom)
 
-[Mostrar capa de PNOA con servicio xyz de teselas raster] (Mostrar capa de PNOA con servicio xyz de teselas raster)
+* [Mostrar capa de PNOA con servicio xyz de teselas raster](Mostrar capa de PNOA con servicio xyz de teselas raster)
 
 ## Capa Vectorial con GeoJSON
 
