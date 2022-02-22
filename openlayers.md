@@ -219,11 +219,11 @@ https://blog.onesaitplatform.com/2021/02/05/visores-de-mapas-parte-3-openlayers/
 
 ```js
 function getGroup(nameGroup, map) {
-    var layers = map.getLayers();
-    var length = layers.getLength(), l;
-    for (var i = 0; i < length; i++) {
+    let layers = map.getLayers();
+    let length = layers.getLength(), l;
+    for (let i = 0; i < length; i++) {
         l = layers.item(i);
-        var lt = l.get('name');
+        let lt = l.get('name');
 
         // check for layers within groups
         if (lt === nameGroup) { // Title of Group
@@ -242,7 +242,8 @@ Llamada
 
 ```js
 baseMap = getGroup('BaseMaps', map)
-baseMap.push(catastro);
+baseMap.***push***(catastro);  //Agrega un elemento al final de una matriz.
+baseMap.***pop***(catastro);   //Elimina un elemento del final de una matriz.
 ```
 
 ## Controlar cuando se hace un zoom
