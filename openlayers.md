@@ -1,3 +1,5 @@
+https://github.com/erabasco/tips-helps/blob/master/openlayers.md#capas-de-catastro
+
 ## Capa Vectorial con GeoJSON
 
 Función para estilo del punto
