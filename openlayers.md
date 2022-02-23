@@ -231,6 +231,8 @@ https://blog.onesaitplatform.com/2021/02/05/visores-de-mapas-parte-3-openlayers/
 
 
 ## Función para obtener un grupo de capas
+https://coder-solution-es.com/solution-es-blog/802596
+
 
 ```js
 function getGroup(nameGroup, map) {
