@@ -1,3 +1,22 @@
+## Checkear si una url hay una imagen
+```js
+function checkImage() {
+    let urlImg = "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=" + referencia.value;
+
+    // console.log("urlImg", urlImg);
+    const request = new XMLHttpRequest();
+    request.open("GET", urlImg, true);
+    request.send();
+    request.onload = function (e) {
+        // if (request.status == 200 ) //if(statusText == OK)
+        if (e.target.response != '') {
+            console.log("existe imagen");
+        } else {
+            console.log("No existe la imagen");
+        }
+    }
+}
+```
 
 ## arrays asociativos
 ```js
