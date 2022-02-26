@@ -39,7 +39,7 @@ const existImg = (urlImg) =>
  ```js
  const existImg = async(urlImg) => {
     let resultado;
-    const response =  await fetch('http://localhost/visores/Soller-electric/public/proxy/functions.php?funcion=imageExist&url='+encodeURIComponent(urlImg));
+    const response =  await fetch('http://urlproxy/proxy.php?function=imageExist&url='+encodeURIComponent(urlImg));
     const data =  await response.json();
     resultado = data;
     return resultado;
