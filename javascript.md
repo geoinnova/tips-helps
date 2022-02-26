@@ -15,7 +15,7 @@ function checkImage(urlImg) {
     }
 }
 ```
-## Chequear si existe una imagen desde una llamada a un proxy externo
+## Chequear si existe una imagen desde una llamada a un proxy externo (con promesas)
 ```js
 const existImg = (urlImg) =>
   new Promise((resolve, reject) => {
@@ -34,7 +34,29 @@ const existImg = (urlImg) =>
  ```
  Devuelve una promesa.
  
-  
+ Otra forma:
+ 
+ ```js
+ const existImg = async(urlImg) => {
+    let resultado;
+    const response =  await fetch('http://localhost/visores/Soller-electric/public/proxy/functions.php?funcion=imageExist&url='+encodeURIComponent(urlImg));
+    const data =  await response.json();
+    resultado = data;
+    return resultado;
+}
+```
+ llamada a la función:
+ 
+ ```js
+ existImg(urlImg).then(
+    (response) => {
+        if (response){
+            console.log("Acciones para true");
+        }else{
+            console.log("Acciones para false");
+        }
+    });
+```  
 
 ## arrays asociativos
 ```js
