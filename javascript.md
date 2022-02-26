@@ -17,6 +17,26 @@ function checkImage() {
     }
 }
 ```
+## Chequear si existe una imagen desde una llamada a un proxy externo
+```js
+const existImg = (urlImg) =>
+  new Promise((resolve, reject) => {
+    fetch('http://urlproxy/proxy.php?function=imageExist&url='
+    + encodeURIComponent(urlImg))
+        .then(response => response.json())
+        .then(data => {
+          let resultado = data;
+          // Resolvemos la Promise con el array 
+          // elements ya procesado
+          resolve(resultado);
+        })
+        // Capturamos el error en caso de haber uno
+        .catch(reject);
+  });
+ ```
+ Devuelve una promesa.
+ 
+  
 
 ## arrays asociativos
 ```js
