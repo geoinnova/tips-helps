@@ -1,8 +1,6 @@
 ## Checkear si una url hay una imagen
 ```js
-function checkImage() {
-    let urlImg = "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=" + referencia.value;
-
+function checkImage(urlImg) {
     // console.log("urlImg", urlImg);
     const request = new XMLHttpRequest();
     request.open("GET", urlImg, true);
