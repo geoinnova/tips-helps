@@ -130,22 +130,23 @@ const pnoa = new OlLayerImage({
           
 
 #### CON XYZ
+```js
 
-         import TileLayer from 'ol/layer/Tile';
+  import TileLayer from 'ol/layer/Tile';
+  import XYZ from 'ol/source/XYZ';
 
-  
-          const pnoa =  new TileLayer({
-            name: 'Base PNOA',
-            crossOrigin: "anonymous",
-            attributions:
-                  'Base © <a href="https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg/' +
-                   '">PNOA</a>',
-            source: new XYZ({
-                      url:  'https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg',
-                    }),
-          });
+    const pnoa =  new TileLayer({
+      name: 'Base PNOA',
+      crossOrigin: "anonymous",
+      attributions:
+            'Base © <a href="https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg/' +
+             '">PNOA</a>',
+      source: new XYZ({
+                url:  'https://tms-pnoa-ma.idee.es/1.0.0/pnoa-ma/{z}/{x}/{-y}.jpeg',
+              }),
+    });
 
-
+```
 
 ## Importante para localizar una capa por nombre, id u otro campo:
 
