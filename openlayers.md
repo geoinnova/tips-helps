@@ -13,6 +13,36 @@
 * [Comprobar si existe previamente una capa VectorLayer](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#comprobar-si-existe-previamente-una-capa-vectorlayer)
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
+
+
+## Añadir Marcador dinámicamente
+https://gis.stackexchange.com/questions/113956/dynamically-change-location-marker-based-on-users-input
+
+
+```js
+const iconGeometry = new ol.geom.Point([637125.42195, 8172199.19090669]);
+
+cpnst iconFeature = new ol.Feature({
+        geometry: iconGeometry,
+        name: 'Null Island',
+        population: 4000,
+        rainfall: 500
+    });
+```
+
+
+2: Actualización de la geometría con el setCoordinates() función :
+
+```js
+
+    map.on('singleclick', function (evt) {
+        iconGeometry.setCoordinates(evt.coordinate);
+    });
+
+```
+
+
+
 ## Capa Vectorial con GeoJSON
 
 Función para estilo del punto
