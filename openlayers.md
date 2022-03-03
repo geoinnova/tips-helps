@@ -14,6 +14,10 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### Añadir vectorLayer para delimitación de Parcela Catastro
+https://programmerclick.com/article/7034332404/
+Fetch(http://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx?service=wfs&version=2&request=getfeature&STOREDQUERIE_ID=GetParcel&refcat=7937409DE7073N&srsname=EPSG::3857)
+
 
 ## Añadir Marcador dinámicamente
 https://gis.stackexchange.com/questions/113956/dynamically-change-location-marker-based-on-users-input
