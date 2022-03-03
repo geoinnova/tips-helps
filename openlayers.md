@@ -22,7 +22,7 @@ https://gis.stackexchange.com/questions/113956/dynamically-change-location-marke
 ```js
 const iconGeometry = new ol.geom.Point([637125.42195, 8172199.19090669]);
 
-cpnst iconFeature = new ol.Feature({
+const iconFeature = new ol.Feature({
         geometry: iconGeometry,
         name: 'Null Island',
         population: 4000,
