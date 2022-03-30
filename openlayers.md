@@ -23,6 +23,8 @@ npm install proj4
 ```js
 import proj4 from "proj4";
 import {register} from 'ol/proj/proj4';
+import { transform } from 'ol/proj';
+
 ...
 //definir y registrar proyección
 proj4.defs("EPSG:25831","+proj=utm +zone=31 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
