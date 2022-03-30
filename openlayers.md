@@ -14,6 +14,29 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+
+### Transformar coordenadas a otro sistema de referencia con librería proj4
+Instalar librería:
+https://www.npmjs.com/package/proj4?spm=a2c41.2013239651.0.0
+npm install proj4
+
+```js
+import proj4 from "proj4";
+import {register} from 'ol/proj/proj4';
+...
+//definir y registrar proyección
+proj4.defs("EPSG:25831","+proj=utm +zone=31 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+register(proj4);
+map.on('click', function(e) {
+        //hacer la transformación con transform(coordinates,fromProjection,toProjection)
+        let EPG25831 = transform(e.coordinate,'EPSG:3857','EPSG:25831');
+
+        console.log(EPSG4326[0].toFixed(6)+' '+EPSG4326[1].toFixed(6));
+        console.log(EPG25831[0].toFixed(2)+ ' '+EPG25831[1].toFixed(2));
+}
+```
+
+
 ### Añadir vectorLayer para delimitación de Parcela Catastro
 https://programmerclick.com/article/7034332404/
 Fetch(http://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx?service=wfs&version=2&request=getfeature&STOREDQUERIE_ID=GetParcel&refcat=7937409DE7073N&srsname=EPSG::3857)
