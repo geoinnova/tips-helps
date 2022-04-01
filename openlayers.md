@@ -66,8 +66,13 @@ map.on('click', function(e) {
   // placeholder: '&nbsp;', //texto fuera de coordenadas
 });
 ```
-
-
+En variable const map añadir:
+```js
+ controls: defaultControls({ attribution: false }).extend([attribution])
+            .extend([mousePositionControlEPSG4326])
+            .extend([mousePositionControlEPSG25831]),
+            
+```
 
 ### Añadir vectorLayer para delimitación de Parcela Catastro
 https://programmerclick.com/article/7034332404/
