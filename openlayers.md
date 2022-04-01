@@ -38,6 +38,13 @@ map.on('click', function(e) {
 }
 ```
 
+Para poder hacer zoom sobre un punto hay que trasnformarlo a EPSG3857
+
+EPSG3857 lat lon: 298462.82651904377  4836431.685886745
+EPSG25831: 472701.36 4405233.17
+EPSG4326:  2.681137 39.796621
+
+
 ### Mostrar Posición del Mouse en varias proyecciones.
 
 ```js
