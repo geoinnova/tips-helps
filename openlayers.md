@@ -26,7 +26,7 @@ import {register} from 'ol/proj/proj4';
 import { transform } from 'ol/proj';
 
 ...
-//definir y registrar proyección
+//definir y registrar proyección (
 proj4.defs("EPSG:25831","+proj=utm +zone=31 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
 register(proj4);
 map.on('click', function(e) {
@@ -37,6 +37,36 @@ map.on('click', function(e) {
         console.log(EPG25831[0].toFixed(2)+ ' '+EPG25831[1].toFixed(2));
 }
 ```
+
+### Mostrar Posición del Mouse en varias proyecciones.
+
+```js
+/**
+ * Registrar proyección 25831
+ */
+ proj4.defs("EPSG:25831","+proj=utm +zone=31 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+ register(proj4);
+
+/**
+ * Controles de Mouse con coordenadas en 2 projecciones
+ */
+ const mousePositionControlEPSG4326 = new MousePosition({
+  coordinateFormat: createStringXY(6),
+  projection: 'EPSG:4326',
+  className: 'bar-coordenates up',
+  target: document.querySelector(".ol-zoom.ol-control"),
+  // placeholder: '&nbsp; ', //texto fuera de coordenadas
+});
+
+ const mousePositionControlEPSG25831 = new MousePosition({
+  coordinateFormat: createStringXY(2),
+  projection: 'EPSG:25831',
+  className: 'bar-coordenates down',
+  target: document.querySelector(".ol-zoom.ol-control"),
+  // placeholder: '&nbsp;', //texto fuera de coordenadas
+});
+```
+
 
 
 ### Añadir vectorLayer para delimitación de Parcela Catastro
