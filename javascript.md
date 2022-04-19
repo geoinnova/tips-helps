@@ -1,3 +1,18 @@
+## Añadir addEventListener a todos los elementos de una class
+```js 
+  list_items = document.querySelectorAll('.list-item');
+  
+   for (let i = 0; i < list_items.length; i++) {
+            const item = list_items[i];
+            console.log("item "+item);
+            item.addEventListener('click', function () {
+               console.log("accion");
+            });
+
+           
+        }
+```
+
 ## Checkear si una url hay una imagen
 ```js
 function checkImage(urlImg) {
