@@ -1,3 +1,26 @@
+## DOM totalmente cargado
+```js
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  console.log("Cargado:" + document.getElementById('popup'));
+  // // Popup
+
+  container = document.getElementById('popup');
+  contentPopup = document.getElementById('popup-content');
+  closer = document.getElementById('popup-closer');
+
+  popup = new Overlay({
+    element: container,
+    positioning: 'bottom-center',
+    stopEvent: false,
+    autoPanAnimation: true,
+    autoPan: true,
+    offset: [0, -40],
+  });
+
+});
+```
+
 ## Añadir addEventListener a todos los elementos de una class
 ```js 
   list_items = document.querySelectorAll('.list-item');
