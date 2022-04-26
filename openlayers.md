@@ -14,6 +14,27 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### displayFeatureInfo
+
+```js
+const displayFeatureInfo = function (pixel) {
+  const features = [];
+  map.forEachFeatureAtPixel(pixel, function (feature) {
+    features.push(feature);
+  });
+  if (features.length > 0) {
+    const info = [];
+    let i, ii;
+    for (i = 0, ii = features.length; i < ii; ++i) {
+      info.push(features[i].get('name'));
+    }
+    document.getElementById('info').innerHTML = info.join(', ') || '&nbsp';
+  } else {
+    document.getElementById('info').innerHTML = '&nbsp;';
+  }
+};
+```
+
 
 ### Transformar coordenadas a otro sistema de referencia con librería proj4
 Instalar librería:
