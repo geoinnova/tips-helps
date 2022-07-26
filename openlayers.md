@@ -14,6 +14,34 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### Comprueba si una capa está activa
+```js
+
+/**
+ * 
+ * @param {*} nameGroup nombre del grupo donde está la capa a buscar
+ * @param {*} nameLayer nombre de la capa a poner visible
+ * @param {*} visibilidad activa/desactiva
+ * 
+ */
+function setVisibleLayerName(nameGroup, nameLayer, visibilidad, map) {
+  let layers = map.getLayers();
+  for (let i = 0; i < layers.getLength(); i++) {
+    let layer = layers.item(i);
+
+    if (layer.get('name') === nameGroup) {
+      let layerOfGroup = layer.getLayers().getArray();
+      layerOfGroup.forEach(function (layer) {
+        if (layer.get('name') == nameLayer) {
+          layer.setVisible(visibilidad);
+        }
+      });
+      break;
+    }
+  }
+}
+```
+
 ### Devuelve true si encuentra el texto en la cadena y false si no
 
 ```js
