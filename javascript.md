@@ -1,3 +1,14 @@
+## Lanzar trigger click de un botón
+
+```js
+
+let botonBuscar = document.getElementById('btn_buscar')
+botonBuscar.click()
+
+
+```
+
+
 ## DOM totalmente cargado
 ```js
 
