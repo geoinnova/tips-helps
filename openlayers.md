@@ -14,7 +14,33 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### Función que devuelve true si se encuentran las siguientes cadenas que indican que  no hay datos 
+```js
 
+/**
+ * Función que devuelve true si se encuentran las siguientes cadenas que indican que
+ * no hay datos 
+ * @param {*} html 
+ */
+function HTMLContieneCadenasNODATOS(html) {
+  let result = false;
+
+  if (
+    findText(html, 'No se han encontrado datos en la ubicación seleccionada') ||
+    findText(html, 'ServiceExceptionReport') ||
+    findText(html, '<body></body>') ||
+    findText(html, '<body class="AGSBodyInfo"></body>') ||
+    findText(html, '<body>↔</body>') ||
+
+    findText(html, 'error: ExceptionReport ó OVCError.aspx en la respuesta')
+
+  ) {
+    result = true;
+  }
+
+  return result;
+}
+```
 ### Devuelve la capa cuyo nombre se especifica o false si no la encuentra y ADEMÁS COINCIDE LA URL DE LA CAPA.
 
 ```js
