@@ -14,6 +14,19 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### Eliminar capas grupo
+```js 
+function eliminarCapasGrupo(map) {
+  let overlaysMap = getGroupByName('groupClimatologia', map);
+  let totalCapas = overlaysMap.length;
+  if (overlaysMap.length > 0) {
+    for (let index = 0; index <= (totalCapas + 1); index++) {
+      overlaysMap.pop();
+    }
+  }
+}
+```
+
 ### refrescar layerSwitcher
 ```js
 function refrescarLayerSwitcher(layerSwitcher) {
