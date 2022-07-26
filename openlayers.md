@@ -14,6 +14,14 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### refrescar layerSwitcher
+```js
+function refrescarLayerSwitcher(layerSwitcher) {
+  layerSwitcher.renderPanel();
+}
+```
+
+
 ### displayFeatureInfo
 
 ```js
