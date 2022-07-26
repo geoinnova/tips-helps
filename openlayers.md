@@ -14,6 +14,32 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+
+### Devuelve la capa cuyo nombre se especifica o false si no la encuentra y ADEMÁS COINCIDE LA URL DE LA CAPA.
+
+```js
+/**
+ * Devuelve la capa cuyo nombre se especifica o false si no la encuentra y ADEMÁS COINCIDE LA URL DE LA CAPA.
+ * @param {*} name 
+ */
+function getCapaByNameAndGroupAndUrl(name, url, group, map) {
+  let grupoCapas = getGroupByName(group, map);
+  let capa = null;
+  if (grupoCapas != undefined) {
+    grupoCapas.forEach(function (layer) {
+      if (layer.values_.name == name && layer.values_.source.params_.url == url) {
+        capa = layer.values_;
+        // url = capa.source.params_.url;
+      }
+    });
+  }
+
+  return capa;
+}
+```
+
+
+
 ### Eliminar capas grupo
 ```js 
 function eliminarCapasGrupo(map) {
