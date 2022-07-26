@@ -74,6 +74,23 @@ EPSG25831: 472701.36 4405233.17
 EPSG4326:  2.681137 39.796621
 ```
 
+
+
+### Eliminar capas del grupo
+
+```js
+function eliminarCapasGrupo(map) {
+  let overlaysMap = getGroupByName('groupClimatologia', map);
+  let totalCapas = overlaysMap.length;
+  if (overlaysMap.length > 0) {
+    for (let index = 0; index <= (totalCapas + 1); index++) {
+      overlaysMap.pop();
+    }
+  }
+}
+```
+
+
 ### Mostrar Posición del Mouse en varias proyecciones.
 
 ```js
