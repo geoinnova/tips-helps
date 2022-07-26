@@ -14,6 +14,27 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### Devuelve true si encuentra el texto en la cadena y false si no
+
+```js
+
+/**
+ * 
+ * @param {*} cadena 
+ * @param {*} text 
+ * @returns true si encuentra el texto en la cadena y false si no
+ */
+function findText(cadena, text) {
+  let result = false;
+  let indice = cadena.indexOf(text);
+  if (indice > -1) {
+    result = true;
+  }
+  return result;
+}
+
+```
+
 ### Función que devuelve true si se encuentran las siguientes cadenas que indican que  no hay datos 
 ```js
 
