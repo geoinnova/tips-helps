@@ -14,6 +14,31 @@
 * [Borrar datos de una capa vector](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#borrar-datos-de-una-capa-vector)
 * [serializar un objeto en una lista de parametros de consulta de URL](https://github.com/erabasco/tips-helps/blob/master/openlayers.md#serializar-un-objeto-en-una-lista-de-parametros-de-consulta-de-url------paramobjeto------con-jquery-y------new-urlsearchparamsdefaultparameterstostring------con-jsvanilla)
 
+### mostrarLeyendaSource
+
+```js
+**
+ * 
+ * @param {*} layer le pasamos la capa
+ * @param {*} map 
+ */
+function mostrarLeyendaSource(layer, map) {
+  let source = layer.values_.source;
+  let resolution = map.getView().getResolution();
+  let legendHead = document.getElementById('legend-head');
+  let legendFooter = document.getElementById('legend-footer');
+  let graphicUrl = source.getLegendUrl(resolution);
+  let img = document.getElementById('legend-img');
+
+  document.getElementById("legend").style.display = "block";
+  img.src = graphicUrl;
+  legendHead.innerHTML = source.params_.LAYERS;
+  legendFooter.innerHTML = '<strong>Fuente: </strong>Ministerio de Agricultura, Pesca y Alimentación'
+ 
+}
+```
+
+
 ### Comprueba si una capa está activa
 ```js
 
