@@ -1,3 +1,7 @@
+### Datos estructurados
+https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fwww.pequerecetas.com%2Freceta%2F8-cenas-ninos-saludables%2F
+https://search.google.com/test/rich-results?utm_campaign=sdtt&utm_medium=message
+
 ### single_jma_cursos
 
     // AÑADIR MARCADO SCHEMA
