@@ -31,3 +31,12 @@ Si está en true, ponerlo a false
 
 https://stackoverflow.com/questions/39053335/laravel-5-3-syntax-error-or-access-violation-1463-non-grouping-field-distance
 
+## LLamar controlador
+```js
+Ejemplo llamada:
+http://localhost/laravel/laravel-leaflet-example/public/api/outlets
+Action: App\Http\Controllers\Api\OutletController@index 
+```
+
+estoy en home-admin
+
