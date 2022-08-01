@@ -1,3 +1,25 @@
+## Modificar .env para conexión
+
+Importante estos datos:
+```sh
+APP_NAME=geoApp
+APP_ENV=local
+APP_KEY=base64:8uxkjKoAbC3EdBgER+So8rRv9EHOHcsbFMn/RK7DkSU=
+APP_DEBUG=false
+APP_URL=http://visores2.geoinnova.org/geoapp/
+
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+``` 
+
 ## Sistema de roles
 composer create-project laravel/laravel laravel_roles
 
