@@ -24,4 +24,8 @@ psql -d tema7 -U postgres -f  Jaen.sql
 psql -U postgres PRUEBAS_ALPI < nuevas_coordenadas.sql
 ```
 
+### osm to pgrouting desde consola
+```sql
+osm2pgrouting --file lugones --dbname daniel --username postgres --password postgres --conf mapconfig.xml --clean
 
+```
