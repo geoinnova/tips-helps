@@ -29,3 +29,6 @@ psql -U postgres PRUEBAS_ALPI < nuevas_coordenadas.sql
 osm2pgrouting --file lugones --dbname daniel --username postgres --password postgres --conf mapconfig.xml --clean
 
 ```
+
+### Copiar sql a bbdd existente
+psql -U postgres -f dump_respuestas_15_12.sql ALPI
