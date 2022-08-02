@@ -12,13 +12,16 @@ psql -d tema7 -U postgres -f  Jaen.sql
 ```sql
 \COPY nuevas_coordenadas (codbarrio, nombre, distrito, area) FROM C:\xampp\htdocs\ALPI\data\alpi_actualizacion\nuevas_coordenadas.csv' DELIMITER ';' CSV HEADER ENCODING 'UTF8',
 
-## onectada a la BBDD: psql -U postgres -d PRUEBAS_ALPI
+##Conectada a la BBDD: psql -U postgres -d PRUEBAS_ALPI
 
 \COPY nuevas_coordenadas (id_general, texto_pregunta, posicion_h, posicion_v, x, y, actualizado) FROM 'C:\xampp\htdocs\ALPI\data\alpi_actualizacion\nuevas_coordenadas.csv' DELIMITER ';' CSV ENCODING 'UTF8';
 
 ```
 
 ### Crear estructura desde fichero  sql:
+
+```sql
 psql -U postgres PRUEBAS_ALPI < nuevas_coordenadas.sql
+```
 
 
