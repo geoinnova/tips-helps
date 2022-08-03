@@ -22,3 +22,8 @@ https://help.clouding.io/hc/es/articles/360017428140-C%C3%B3mo-utilizar-la-API-d
 * Utilizaremos el Plugin "Application Passwords" que nos permite crear una clave para el usuario de WordPress sin exponer su contraseña de acceso al panel de WordPress.
 
 Para añadir el Plugin iremos a Plugins -> Añadir nuevo y en la barra de búsqueda escribiremos "Application Passwords" e instalamos y activamos el plugin.
+
+#### Autenticación con JWT en la API de WordPress
+- https://decodecms.com/autenticacion-con-jwt-en-la-api-de-wordpress/
+- https://www.youtube.com/watch?v=EkWnRaz5Obw
+- 
