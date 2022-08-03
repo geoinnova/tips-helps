@@ -14,3 +14,11 @@ solo tuve que actualizar los enlaces permanentes para obtener un sitio nuevo y r
         éxito. la página muestra la respuesta JSON
 ```
 
+
+### Crear usuario y credenciales para utilizar la API - Creación de claves de acceso a la API
+https://help.clouding.io/hc/es/articles/360017428140-C%C3%B3mo-utilizar-la-API-de-WordPress-y-crear-nuestros-Custom-Post-Types)
+
+* Crear un usuario diferente para la API
+* Utilizaremos el Plugin "Application Passwords" que nos permite crear una clave para el usuario de WordPress sin exponer su contraseña de acceso al panel de WordPress.
+
+Para añadir el Plugin iremos a Plugins -> Añadir nuevo y en la barra de búsqueda escribiremos "Application Passwords" e instalamos y activamos el plugin.
