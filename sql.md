@@ -1,3 +1,14 @@
+### importar archivo .sql externo a una base de datos mysql en local
+
+- Abrir consola de windows.
+
+- Posicionarnos en carpeta: C:\xampp\mysql\bin
+
+```sh
+cd C:\xampp\mysql\bin
+```
+
+
 ### importar archivo sql a una bbdd desde consola
 ```sql
 mysql -h localhost -u root dbe5fezlxyvlhg < dbe5fezlxyvlhg_table_wp_geo_options.sql
