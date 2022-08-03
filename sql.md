@@ -6,9 +6,16 @@
 
 ```sh
 cd C:\xampp\mysql\bin
-```
 mysql -h localhost -u root dbe5fezlxyvlhg < C:\Users\evara\Downloads\dbe5fezlxyvlhg(3).sql
 
+```
+
+Para que no de errores de importación por el tamaño del paquete modificar el archivo my.ini (desde xammpp) y buscar:
+
+```sql
+[mysqld]
+max_allowed_packet=100M
+```
 
 ### importar archivo sql a una bbdd desde consola
 ```sql
