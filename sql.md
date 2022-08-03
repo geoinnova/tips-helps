@@ -7,6 +7,7 @@
 ```sh
 cd C:\xampp\mysql\bin
 ```
+mysql -h localhost -u root dbe5fezlxyvlhg < C:\Users\evara\Downloads\dbe5fezlxyvlhg(3).sql
 
 
 ### importar archivo sql a una bbdd desde consola
