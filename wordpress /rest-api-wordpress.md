@@ -39,3 +39,13 @@ Para que sea accesible desde la api, en la configuración del CPT hay que poner:
 Ahora hay que registrar la ruta propia para los distintos métodos. 
 
 El siguiente código debemos insertarlo en Aparencia -> Editor de Temas -> functions.php. Esto declarará la url midominio.com/wp-json/api/v1/insertar_vps.
+
+
+## Páginas a revisar:
+### Cómo utilizar la API de WordPress y crear nuestros Custom Post Types : https://help.clouding.io/hc/es/articles/360017428140-C%C3%B3mo-utilizar-la-API-de-WordPress-y-crear-nuestros-Custom-Post-Types)
+### Post url en local de la API: https://geoinnova.org/wp-json/wp/v2/posts
+
+### Agregar endpoints a la API REST de WordPress: https://decodecms.com/agregar-endpoints-a-la-api-rest-de-wordpress/
+
+
+
