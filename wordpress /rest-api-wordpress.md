@@ -44,8 +44,62 @@ El siguiente código debemos insertarlo en Aparencia -> Editor de Temas -> funct
 ## Páginas a revisar:
 ### Cómo utilizar la API de WordPress y crear nuestros Custom Post Types : https://help.clouding.io/hc/es/articles/360017428140-C%C3%B3mo-utilizar-la-API-de-WordPress-y-crear-nuestros-Custom-Post-Types)
 ### Post url en local de la API: https://geoinnova.org/wp-json/wp/v2/posts
+### Url getCourses (listado) http://localhost/_geoinnova.org/wp-json/v1/getCourses
 
+### Obtener rutas y endpoints: [Routes and Endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/ro
+https://ourawesomesite.com/wp-json/
+
+### Obtener campos personalizados con get_post() https://maswordpress.info/questions/50097/campos-personalizados-con-get-post
+
+```php
+ foreach ($posts as $clave => $valor) {
+        $registro['ID'] = $posts[$clave]->ID;
+        $registro['title'] = $posts[$clave]->post_title;
+        $registro['meta'] = get_post_meta($registro['ID']);
+        array_push($data, $registro);
+    }
+ ```
+ 
+ https://developer.wordpress.org/reference/functions/get_post_meta/
+```php
+$post_metas = get_post_meta(get_the_ID());
+
+sample output:
+array(2) {
+  ["_meta_key1"]=>
+  array(1) {
+    [0]=> "value1"
+   }
+  ["_meta_key2"]=>
+  array(1) {
+    [0]=> "val2"
+   }
+}
+```
+ 
 ### Agregar endpoints a la API REST de WordPress: https://decodecms.com/agregar-endpoints-a-la-api-rest-de-wordpress/
 
+### fecht api - pasar token
+https://es.stackoverflow.com/questions/381268/fetch-api-con-javascript-token
+
+```js
+fetch('https://randomuser.me/api',
+     headers: {
+       "Authorization": "Bearer API_TOKEN", //Agregado
+     },
+     )
+    .then(r => r.json())
+    .then(data => {
+        (data.results[0])
+            contenido.innerHTML = `
+            <img src="${data.results['0'].picture.large}">
+            <p>Nombre: ${data.results['0'].name.title +' ' + data.results['0'].name.last +' ' + data.results['0'].name.last}</p>
+            `
+    })
+   ```
+
+https://es.stackoverflow.com/questions/428354/error-al-pasar-token-a-trav%C3%A9s-de-api-por-fetch
+
+https://www.youtube.com/watch?v=hioDMKdJhwQ
 
 
