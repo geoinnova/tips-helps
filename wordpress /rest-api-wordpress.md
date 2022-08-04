@@ -35,3 +35,7 @@ Para que sea accesible desde la api, en la configuración del CPT hay que poner:
 ```php
 'show_in_rest'          => true,
 ```
+
+Ahora hay que registrar la ruta propia para los distintos métodos. 
+
+El siguiente código debemos insertarlo en Aparencia -> Editor de Temas -> functions.php. Esto declarará la url midominio.com/wp-json/api/v1/insertar_vps.
