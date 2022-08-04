@@ -102,4 +102,7 @@ https://es.stackoverflow.com/questions/428354/error-al-pasar-token-a-trav%C3%A9s
 
 https://www.youtube.com/watch?v=hioDMKdJhwQ
 
+## Ejemplo de CRUD API REST para CPT
+https://www.youtube.com/watch?v=jKLhwFhf9AA
+https://github.com/Pricoders/wp-rest-api-endpoints-example/blob/master/functions.php
 
