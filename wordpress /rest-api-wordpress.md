@@ -104,5 +104,16 @@ https://www.youtube.com/watch?v=hioDMKdJhwQ
 
 ## Ejemplo de CRUD API REST para CPT
 https://www.youtube.com/watch?v=jKLhwFhf9AA
+
 https://github.com/Pricoders/wp-rest-api-endpoints-example/blob/master/functions.php
+
+### CRUD para JS con Fetch API
+https://postsrc.com/code-snippets/how-to-make-patch-request-with-fetch-api
+
+### Añadir de forma correcta tanto js como css al plugin
+
+https://kinsta.com/es/blog/wp-enqueue-scripts/
+
+
+
 
