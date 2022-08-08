@@ -1,3 +1,15 @@
+### LLamar promesa await sync
+
+```js
+                (async () => {
+                console.log(json.id)
+                const course = await getCourse(json.id);
+                console.log(course);
+                 })();
+                 
+                 
+```
+
 ## Lanzar trigger click de un botón
 
 ```js
