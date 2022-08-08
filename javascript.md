@@ -1,11 +1,16 @@
+
+### CRUD para JS con Fetch API
+
+https://postsrc.com/code-snippets/how-to-make-patch-request-with-fetch-api
+
 ### LLamar promesa await sync
 
 ```js
-                (async () => {
-                console.log(json.id)
-                const course = await getCourse(json.id);
-                console.log(course);
-                 })();
+          (async () => {
+              console.log(json.id)
+              const course = await getCourse(json.id);
+              console.log(course);
+           })();
                  
                  
 ```
