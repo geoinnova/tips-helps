@@ -25,7 +25,8 @@ Para añadir el Plugin iremos a Plugins -> Añadir nuevo y en la barra de búsqu
 
 #### Autenticación con JWT en la API de WordPress (me ha funcionado este plugin)
 - https://decodecms.com/autenticacion-con-jwt-en-la-api-de-wordpress/
-- https://www.youtube.com/watch?v=EkWnRaz5Obw
+- https://www.youtube.com/watch?v=EkWnRaz5Obw (importante)
+- 
 
 *modificar wp-config.php y añadir: define('JWT_AUTH_SECRET_KEY', 'una-clave-secreta');
 
