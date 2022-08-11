@@ -1,3 +1,11 @@
+## Cambiar el color de una imagen con CSS filter generator to convert from black to target hex color
+(Cómo colorear una imagen blanca o negra con CSS filter)
+https://codepen.io/sosuke/pen/Pjoqqp
+
+
+## Convertir imagen a base64 para incrustar la imagen en el src
+https://www.base64-image.de
+
 ## href con target blank
 <a href="#" target="_blank" rel="noreferrer noopener nofollow">Enlace</a>
 `<a href="#" target="_blank" rel="noreferrer noopener nofollow">Enlace</a>`
