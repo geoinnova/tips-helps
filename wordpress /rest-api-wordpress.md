@@ -29,6 +29,10 @@ Para añadir el Plugin iremos a Plugins -> Añadir nuevo y en la barra de búsqu
 
 *modificar wp-config.php y añadir: define('JWT_AUTH_SECRET_KEY', 'una-clave-secreta');
 
+### generar token
+https://es.wordpress.org/plugins/jwt-auth/
+
+
 #### Preparar el CPT para crear endpoint a la API de Wordpress
 
 Para que sea accesible desde la api, en la configuración del CPT hay que poner:
