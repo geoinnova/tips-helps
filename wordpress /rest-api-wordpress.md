@@ -7,6 +7,10 @@ En caso de querer agregar una auth al endpoint, algo como CS y CK? se peude?: Ho
 https://www.youtube.com/watch?v=tTh-W90yWUw
 *** Añadir capa de seguridad de acceso a la api para usuarios registrados: ver a partir de minuto 28 
 
+#### Añadir capa de seguridad al endpoint
+https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/#permissions-callback
+
+
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
 
