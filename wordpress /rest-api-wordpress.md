@@ -3,6 +3,10 @@ https://www.youtube.com/watch?v=T_4205O1mNA
 
 En caso de querer agregar una auth al endpoint, algo como CS y CK? se peude?: Hola, si se podría extender la autorización, aunque posiblemente termines creando un plugin, revisa: https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins
 
+### Este*** Como crear Custom Endpoints en la API REST de Wordpress
+https://www.youtube.com/watch?v=tTh-W90yWUw
+*** Añadir capa de seguridad de acceso a la api para usuarios registrados: ver a partir de minuto 28 
+
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
 
