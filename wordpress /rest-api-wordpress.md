@@ -3,6 +3,10 @@ https://www.youtube.com/watch?v=T_4205O1mNA
 
 En caso de querer agregar una auth al endpoint, algo como CS y CK? se peude?: Hola, si se podría extender la autorización, aunque posiblemente termines creando un plugin, revisa: https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins
 
+### Cómo proteger rutas en tu API REST con JSON Web Tokens
+https://www.youtube.com/watch?v=w8It1NHeGps
+
+
 
 ### API REST de Wordpress (wp-api) 404 Error: No se puede acceder a la API REST de WordPress en local
 
