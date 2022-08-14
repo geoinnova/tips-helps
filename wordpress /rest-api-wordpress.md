@@ -10,6 +10,10 @@ https://www.youtube.com/watch?v=tTh-W90yWUw
 #### Añadir capa de seguridad al endpoint
 https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/#permissions-callback
 
+**AUTORIZACIÓN DE API REST WP:
+1. Header Authorization de tipo Basis Auth con cerednciales de usuario y contraseña de aplicacion (obligatoria)
+2. Definir capacidad específica para permitir petición
+
 
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
