@@ -6,6 +6,9 @@ En caso de querer agregar una auth al endpoint, algo como CS y CK? se peude?: Ho
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
 
+### Autenticación con JWT en la API de WordPress
+https://decodecms.com/autenticacion-con-jwt-en-la-api-de-wordpress/
+
 
 
 ### API REST de Wordpress (wp-api) 404 Error: No se puede acceder a la API REST de WordPress en local
