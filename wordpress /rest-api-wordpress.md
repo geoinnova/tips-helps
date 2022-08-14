@@ -7,6 +7,10 @@ En caso de querer agregar una auth al endpoint, algo como CS y CK? se peude?: Ho
 https://www.youtube.com/watch?v=tTh-W90yWUw
 *** Añadir capa de seguridad de acceso a la api para usuarios registrados: ver a partir de minuto 28 
 
+
+
+
+---------------------
 #### Añadir capa de seguridad al endpoint
 https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/#permissions-callback
 
@@ -14,7 +18,10 @@ https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-en
 1. Header Authorization de tipo Basis Auth con cerednciales de usuario y contraseña de aplicacion (obligatoria)
 2. Definir capacidad específica para permitir petición
 
+#### importantísimo Autenticación de la API REST de WordPress usando Fetch
+https://www.revivemyvote.com/preguntas-wordpress/autenticacion-de-la-api-rest-de-wordpress-usando-fetch/
 
+------------------------
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
 
