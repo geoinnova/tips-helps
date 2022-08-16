@@ -23,7 +23,7 @@ https://www.revivemyvote.com/preguntas-wordpress/autenticacion-de-la-api-rest-de
 
 En las headers tener en cuenta esta cabecera para que funcione, sino no permitirá la autorización (se omite el envio de cookie)
 ```js
-  credentials: 'omit' // utilizar si no está en local
+  credentials: 'omit' 
 ```
 
 https://javascript.info/fetch-api#credentials
