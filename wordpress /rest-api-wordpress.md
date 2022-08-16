@@ -21,6 +21,13 @@ https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-en
 #### importantísimo Autenticación de la API REST de WordPress usando Fetch
 https://www.revivemyvote.com/preguntas-wordpress/autenticacion-de-la-api-rest-de-wordpress-usando-fetch/
 
+En las headers tener en cuenta esta cabecera para que funcione, sino no permitirá la autorización (se omite el envio de cookie)
+```js
+  credentials: 'omit' // utilizar si no está en local
+```
+
+https://javascript.info/fetch-api#credentials
+
 ------------------------
 ### Cómo proteger rutas en tu API REST con JSON Web Tokens
 https://www.youtube.com/watch?v=w8It1NHeGps
