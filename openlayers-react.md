@@ -12,6 +12,13 @@ https://www.youtube.com/watch?v=6Jfk8ic3KVk
 
 ```js
 npx create-react-app curso-react
+
+// si está creada ya la carpeta
+npx create-react-app .
+
+// añadir openlayers
+npm install react-openlayers --save
+
 ```
 
 ## Crear un componente (1:32')
