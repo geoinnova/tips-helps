@@ -1,3 +1,10 @@
+##  Call to undefined function pg_connect()
+
+descomentar en php/php.ini
+
+extension=php_pdo_pgsql.dll
+extension=php_pgsql.dll
+
 ## error - Can't create/write to file '/var/folders/
 
 Solución: https://stackoverflow.com/questions/19932371/1-cant-create-write-to-file-var-folders
