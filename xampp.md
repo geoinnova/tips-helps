@@ -1,9 +1,17 @@
-##  Call to undefined function pg_connect()
+## error - pg_connect(): Unable to connect to PostgreSQL server: authentication method 10 not supported in 
+
+
+## error -  Call to undefined function pg_connect()
 
 descomentar en php/php.ini
 
+```sh
 extension=php_pdo_pgsql.dll
 extension=php_pgsql.dll
+```
+
+## vesiones anteriores de xampp
+https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/
 
 ## error - Can't create/write to file '/var/folders/
 
@@ -26,5 +34,8 @@ Solución: https://stackoverflow.com/questions/19932371/1-cant-create-write-to-f
       
       
       sudo chmod 644 config.inc.php
+      
+     
+     
 
 
