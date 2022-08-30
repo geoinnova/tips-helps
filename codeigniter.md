@@ -22,3 +22,18 @@ Once I updated Xampp to the 7.4 version (download here), I just needed to enable
 Then you can leave the C:\xampp\htdocs\projectfolder\system\CodeIgniter.php - line 184 as it was in the beginning.
 
 locale_set_default($this->config->defaultLocale ?? 'en');
+
+### Cómo instalar o configurar CodeIgniter 4 en Xampp Server
+https://www.youtube.com/watch?v=uZJyh7rON_Q
+
+
+### https://forum.codeigniter.com/thread-76953.html 
+ Sigue mostrando "404 Página no encontrada" excepto el mensaje de bienvenida predeterminado 
+ 
+ ###  404 - Archivo no encontrado Codeigniter 4 
+ https://forum.codeigniter.com/thread-77786.html
+ 
+ ## Instalación manual de codeigniter 4 en xampp windows
+  https://www.youtube.com/watch?v=lfViPGxfO0I
+
+ 
