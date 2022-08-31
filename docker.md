@@ -1,3 +1,53 @@
+# Ejemplos de docker-compose.yml
+
+```sh
+version: '3'
+
+services:
+  nginx:
+    build: ./nginx/
+    container_name: hargadunia-nginx
+    ports:
+      - 80
+    depends_on:
+      - php
+    volumes:
+    - ./www/:/var/www/html
+    networks:
+      mysql-net:
+        ipv4_address: 172.8.0.101
+    restart: unless-stopped
+  php:
+    build: ./php/
+    container_name: hargadunia-php
+    expose:
+      - 9000
+    volumes:
+      - ./www/:/var/www/html
+    networks:
+      mysql-net:
+        ipv4_address: 172.8.0.100
+    restart: unless-stopped
+
+networks:
+  mysql-net:
+    external:
+      name: mysql_bridge
+```
+
+.env (en el raiz)
+
+```sh
+# MySQL docker network configuration
+MYSQL_DOCKER_NETWORK=mysql_bridge
+NGINX_IP=172.8.0.101
+PHP_IP=172.8.0.100
+```
+
+
+
+
+
 ## Instalar Vagrant
 Vagrant, una gran herramienta que facilita la creación de entornos virtuales de forma sencilla y replicable
 
