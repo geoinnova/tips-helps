@@ -44,9 +44,40 @@ NGINX_IP=172.8.0.101
 PHP_IP=172.8.0.100
 ```
 
+/php/Dockerfile
 
+```sh
+FROM php:5.6-fpm
 
+RUN apt-get update && apt-get -y --no-install-recommends install \
+    # gd
+    libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev \
+    # intl
+    # libicu-dev \
+    # imageick
+    # libmagickwand-dev \
+    # memcached    
+    libmemcached-dev zlib1g-dev \
+    && pecl install memcached-2.2.0 \
+    && docker-php-ext-enable memcached \
+    && docker-php-ext-install mysql pdo_mysql mbstring \
+    && echo date.timezone=Asia/Jakarta >> /usr/local/etc/php/conf.d/php.ini \
+    && echo upload_max_filesize = 100M >> /usr/local/etc/php/conf.d/php.ini \
+    && echo post_max_size = 108M >> /usr/local/etc/php/conf.d/php.ini \
+    # && echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini \
+    && apt-get autoremove -y \
+    && apt-get \
+    && rm -rf /tmp/* /var/tmp/*
+    
+```
 
+/nginx/Dockerfile
+
+```sh
+FROM nginx:alpine
+
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+```
 
 ## Instalar Vagrant
 Vagrant, una gran herramienta que facilita la creación de entornos virtuales de forma sencilla y replicable
