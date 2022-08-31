@@ -1,3 +1,19 @@
+#Arrancar servidor
+# docker build -t php-new .
+# docker run -p 4000:80 -d -v C:\Users\evara\Desktop\prueba\src:/var/www/html/ php-new
+# http://localhost:4000/
+
+# Ejecutar docker bash
+# $ docker exec -it id_contenedor bash
+
+# Instalar nano desde el bash: apt-get install nano 
+# Modificar php.ini: /usr/local/etc/php# nano php.ini
+
+
+# Para todos los procesos
+# docker stop $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
+
 # Ejemplos de docker-compose.yml
 
 ```sh
