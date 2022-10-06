@@ -1,6 +1,9 @@
 ### proxy publico 
 https://corsanywhere.herokuapp.com/ 
 
+https://stackoverflow.com/questions/29670703/how-to-use-cors-anywhere-to-reverse-proxy-and-add-cors-headers
+
+
 # urls
 https://www.google.com/search?client=firefox-b-d&q=ajax+jsonp+transformar+xml+a+json
 https://www.youtube.com/watch?v=ErPOtzP85UM
