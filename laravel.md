@@ -3,6 +3,8 @@
 ```bs
 composer create-project laravel/laravel api
 
+cd .\api\
+
 # Crear modelo
 
 php artisan make:model Point -cmf
