@@ -9,6 +9,9 @@ cd .\api\
 
 php artisan make:model Point -cmf
 
+* Controlador
+php artisan make:controller  Api/V1/PointController --api --model=Point
+
 ```
 
 ## Modificar .env para conexión
