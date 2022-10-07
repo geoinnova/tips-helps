@@ -1,3 +1,10 @@
+## Crear API REST
+
+```bs
+composer create-project laravel/laravel api
+
+```
+
 ## Modificar .env para conexión
 
 Importante estos datos:
