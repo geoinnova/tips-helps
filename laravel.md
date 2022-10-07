@@ -14,6 +14,14 @@ php artisan make:controller  Api/V1/PointController --api --model=Point
 
 ```
 
+El archivo recurso, también lo crearemos en una ruta especifica dentro del directorio App\Http\Resource.
+
+```bs
+php artisan make:resource  V1/PointResource
+```
+
+¿Por que creamos este archivo? Lo que hacemos con este proceso, es añadir una capa de transformación entre nuestro modelo y su respuesta en JSON.  Por ejemplo, puede que desees mostrar ciertos atributos para un subconjunto de usuarios y no para otros, o puede que desees incluir siempre ciertas relaciones en la representación JSON de sus modelos.
+
 ## Modificar .env para conexión
 
 Importante estos datos:
