@@ -3,6 +3,10 @@
 ```bs
 composer create-project laravel/laravel api
 
+# Crear modelo
+
+php artisan make:model Point -cmf
+
 ```
 
 ## Modificar .env para conexión
