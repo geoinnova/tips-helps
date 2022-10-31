@@ -1,3 +1,7 @@
+## url proxy publico
+ let urlProxy ="https://corsanywhere.herokuapp.com/"+url;
+ 
+
 ## Javascript
 
     // Capa catastro
