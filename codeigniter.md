@@ -1,3 +1,8 @@
+## ¿Actualizar completamente la página en CodeIgniter
+```php
+redirect($_SERVER['REQUEST_URI'], 'refresh');
+```
+
 Descomprimir y subir al servidor
 configurar la URL en System/application/config/config.php
 
