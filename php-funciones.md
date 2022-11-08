@@ -1,3 +1,11 @@
+## Dar formato a un objeto y/o arreglo
+
+```php
+echo "<pre>";
+   print_r($myarray);
+echo "</pre>";
+```
+
 ## Generar un nombre de archivo único
 
     <?php 
