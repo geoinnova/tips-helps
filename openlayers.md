@@ -439,6 +439,26 @@ const pnoa = new OlLayerImage({
 
 ```
 
+
+https://www.ign.es/web/mapasantiguos/index.html
+Comparador de Mapas del IGN CNIG
+Comparador Mapas del IGN CNIG
+
+El Comparador de Mapas del IGN CNIG permite consultar los mapas del Archivo Topográfico del IGN con diversas fuentes cartográficas y ortofotos.
+aquí incluso lo tiene capado a 1:2000
+pienso que no está hecho para trabajar a escalas inferiores
+1:500 aquí https://iberpix.cnig.es/iberpix/visor/
+
+Iberpix
+Iberpix es un visualizador cartográfico publicado por el Centro Nacional de Información Geográfico (CNIG) y el Instituto Geográfico Nacional de España (IGN) que tiene como objetivo la consulta y visualización de mapas y capas de información geográfica.
+
+otra opción la IDE de las islas baleares tb suministran ortofotos
+http://ideib.caib.es/cataleg/srv/cat/catalog.search;jsessionid=B131E89F7B9B13F9D2A5EFBF699D0052#/metadata/003ae39c-77a3-4433-9e07-c589bd973e55
+Catàleg de la IDEIB - IDEIB
+parece que va bastante rápida tb
+
+
+
 ## Importante para localizar una capa por nombre, id u otro campo:
 
 Definirlo a la hora de declarar la capa.
