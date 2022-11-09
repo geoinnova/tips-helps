@@ -1,3 +1,24 @@
+## Creada función para mostrar todas las querys que se han ejecutado
+
+```php
+function mostrar_querys(){
+		$CI = get_instance();
+		$times = $CI->db->query_times;
+		foreach ($CI->db->queries as $key => $query) 
+		{ 
+			$sql = $query . " \n "; 
+			// $sql = $query . " \n Execution Time:" . $times[$key]; 
+
+			echo $sql . "<br><br>";    
+		}
+
+	}
+    
+    $this->mostrar_querys();
+    ```
+    
+    
+
 ## ¿Actualizar completamente la página en CodeIgniter
 ```php
 redirect($_SERVER['REQUEST_URI'], 'refresh');
