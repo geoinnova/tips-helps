@@ -1,3 +1,12 @@
+### Operador :: (signo de dos puntos doble)
+https://learn.microsoft.com/es-es/azure/databricks/sql/language-manual/functions/coloncolonsign
+
+Convierte el valor expr al tipo de datos de destino type.
+
+```sql
+expr :: type
+```
+
 ### importar archivo .sql externo a una base de datos mysql en local
 
 - Abrir consola de windows.
