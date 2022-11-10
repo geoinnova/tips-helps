@@ -1,3 +1,7 @@
+## Guia usuario query builder
+https://codeigniter.com/userguide3/database/query_builder.html
+
+
 ## Creada función para mostrar todas las querys que se han ejecutado
 
 ```php
