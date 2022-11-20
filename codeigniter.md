@@ -42,6 +42,16 @@ body
 /body
 
 
+Uso con Alert boostrap
+
+```php
+<!-- alert boostrap -->
+<div class="alert alert-info">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<? echo $this->session->flashdata('mensaje'); ?>
+</di>
+
+```
 ## Guia usuario query builder
 https://codeigniter.com/userguide3/database/query_builder.html
 
