@@ -1,6 +1,51 @@
+## Mensajes en codeigniter
+https://groups.google.com/g/codeigniter-spanish/c/HLWV23tvSLk?pli=1
+
+podrias usar este conjunto de funciones
+
+para los mensajes puedes usar la funcion set_flashmessage(); que se encuentra en la clase de manejo de sesiones
+para insertar y recuperar los datos en caso de errores usar el form_validation
+
+con el tema del insert haces algo como
+en tu controlador ---
+
+```php
+if($this->mi_modelo->insertar_datos())
+{
+// si inserto
+redirect('http://url.de.tu.pagina/controlador/metodo/lista');
+}
+----
+
+entu modelo
+function insertar_datos()
+{
+ $data = array( ... datos de tus columnas para la tabla...);
+if($this->db->insert('tabla',$data))
+ $this->session->set_flashdata('resultado_insercion','Se inserto correctamente el registro');
+return true;
+}else{
+ $this->session->set_flashdata('resultado_insercion','Error al insertar el registro');
+return false;
+}
+}//end function
+
+
+y en tu vista ....
+
+html
+
+body
+
+<div class='mensaje_resultado'> <?=$this->session->flashdata('resultado_insercion'); ?> </div>
+
+/body
+
+
 ## Guia usuario query builder
 https://codeigniter.com/userguide3/database/query_builder.html
 
+```
 
 ## Creada función para mostrar todas las querys que se han ejecutado
 
