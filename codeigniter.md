@@ -52,6 +52,30 @@ Uso con Alert boostrap
 </di>
 
 ```
+
+Ejemplo: 
+```php
+//consulta.php
+$this->session->set_flashdata('message',['No existen datos con este criterio', 'danger']);
+
+
+//consulta_model
+function mostrar_messages(){
+	if ($this->session->flashdata('message') !='') { 
+		// <!-- alert boostrap -->	
+		echo '
+		<div class="alert alert-'.$this->session->flashdata('message')[1].'">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>'
+			.$this->session->flashdata('message')[0].'
+		</div>';
+
+	}
+}
+
+//informe_dashboar.php
+<div id="infoMessage"><? echo $this->session->flashdata('mensaje'); ?></div>
+
+```
 ## Guia usuario query builder
 https://codeigniter.com/userguide3/database/query_builder.html
 
