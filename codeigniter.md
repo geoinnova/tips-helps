@@ -1,3 +1,15 @@
+## Controlar si una query contiene errores
+```php
+if(!$this->db->simple_query($sql))
+	{
+	echo "Error nº: ".$this->db->_error_number(). " - ".$this->db->_error_message(); 
+	return false;
+}else{
+	return $this->db->simple_query($sql);
+}
+```
+
+
 ## Mensajes en codeigniter
 https://groups.google.com/g/codeigniter-spanish/c/HLWV23tvSLk?pli=1
 
