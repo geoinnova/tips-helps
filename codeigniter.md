@@ -1,3 +1,35 @@
+## Mensajes en codeigniter
+Crear mensaje de error:
+```php
+	$this->session->set_flashdata('message',['No existen datos con este criterio', 'danger']);
+	$this->session->set_flashdata('message',['Existen datos con este criterio', 'info']);
+```
+
+En modelo sociedad_model.php
+```php
+   /**
+     *  Función para gestionar mensajes de error
+     *  @author Eva Rabasc <eva.rabasco@geoinnova.org>
+     *  
+     * */
+    function mostrar_messages(){
+        if ($this->session->flashdata('messages') !='') { 
+            echo '
+            <div class="alert alert-'.$this->session->flashdata('messages')[1].' alert-dismissible fade show" role="alert">
+                '.$this->session->flashdata('messages')[0].'
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            ';
+        }
+    }
+```
+
+En la vista
+```php
+$this->sociedad_model->mostrar_messages();
+```
+    
+
 ## Controlar si una query contiene errores
 ```php
 if(!$this->db->simple_query($sql))
@@ -8,6 +40,7 @@ if(!$this->db->simple_query($sql))
 	return $this->db->simple_query($sql);
 }
 ```
+
 
 
 ## Mensajes en codeigniter
