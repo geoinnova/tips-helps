@@ -41,6 +41,28 @@ if(!$this->db->simple_query($sql))
 }
 ```
 
+## Funcion borrar
+
+```php
+   /**
+     *  Actualiza a enviado el documento anexo sociedades 
+     *  @author Eva Rabasc <eva.rabasco@geoinnova.org>
+     *  @param int $id_anexo (id de la sociedad cargada)
+     *  @param int $estado (0 no enviado, 1 enviado)
+     */
+    function delete_doc_anexo_sociedades($id_anexo){
+        $sql = "delete from doc_anexo_sociedades where id = " . $id_anexo. ";";
+        $this->db->query($sql);
+        $rows_affected = $this->db->affected_rows();
+        if($rows_affected>0){
+           return true;
+        }else{
+           return false;
+        }
+
+    } 
+```
+
 
 
 ## Mensajes en codeigniter
