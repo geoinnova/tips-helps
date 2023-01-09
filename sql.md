@@ -1,3 +1,9 @@
+### restaurar .backup
+
+```psql
+psql --single-transaction -U postgres -p 5433 basalan < c:\basalan.backup
+```
+
 ### Operador :: (signo de dos puntos doble)
 https://learn.microsoft.com/es-es/azure/databricks/sql/language-manual/functions/coloncolonsign
 
