@@ -1,5 +1,7 @@
 ### restaurar .backup
 
+En primer lugar debe existir una base de datos con el mismo nombre de la que se va a restaurar y comprobar que tenga permisos el usuario -U con el que se está haciendo la conexión.
+
 ```psql
 psql --single-transaction -U postgres -p 5433 basalan < c:\basalan.backup
 ```
