@@ -1,3 +1,14 @@
+### Sequence 
+```psql
+CREATE SEQUENCE IF NOT EXISTS sequence_name
+  START WITH (SELECT MAX(column_name) FROM table_name)
+  INCREMENT BY 1;
+SELECT column_name, column_default
+FROM information_schema.columns
+WHERE table_name = 'table_name'
+AND column_default LIKE 'nextval%';
+```
+
 ### restaurar .backup
 
 En primer lugar debe existir una base de datos con el mismo nombre de la que se va a restaurar y comprobar que tenga permisos el usuario -U con el que se está haciendo la conexión.
