@@ -17,6 +17,12 @@ En primer lugar debe existir una base de datos con el mismo nombre de la que se 
 psql --single-transaction -U postgres -p 5433 basalan < c:\basalan.backup
 ```
 
+Hasta hace unos días me funcionaba ahora lo he tenido con hacer con pg_restore
+
+```psql
+pg_restore -U postgres -p 5433 -d basalan c:\basalan.backup
+```
+
 ### Operador :: (signo de dos puntos doble)
 https://learn.microsoft.com/es-es/azure/databricks/sql/language-manual/functions/coloncolonsign
 
