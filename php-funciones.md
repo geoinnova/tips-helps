@@ -1,3 +1,8 @@
+## No mostrar mensajes de warning
+```php
+error_reporting(E_ALL ^ E_NOTICE);
+```
+
 ## Dar formato a un objeto y/o arreglo
 
 ```php
