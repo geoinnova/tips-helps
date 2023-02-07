@@ -1,3 +1,15 @@
+## ENDPOINTS
+
+### OBTENER POST DE UNA CATEGORÍA CONCRETA, (TAXONOMIA ES CATEGORIA)
+```HTML
+https://web.com/wp-json/wp/v2/posts?categories=1136&taxonomy=category&per_page=100
+```
+### OBTENER POST CON UNA ETIQUETA CONCRETA, (TAXONOMIA ES ETIQUETA)
+
+```html
+wp-json/wp/v2/posts?tags=1177&taxonomy=tag&per_page=100
+```
+
 ### Agregar Endpoints a la API REST de WordPress
 https://www.youtube.com/watch?v=T_4205O1mNA
 
