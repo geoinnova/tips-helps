@@ -10,6 +10,38 @@ https://web.com/wp-json/wp/v2/posts?categories=1136&taxonomy=category&per_page=1
 wp-json/wp/v2/posts?tags=1177&taxonomy=tag&per_page=100
 ```
 
+### OBTENER AQUELLAS ENTRADAS QUE SEAN UN CPT CON UNA CATEGORIA CONCRETA
+
+wp/v2/{post-type}
+
+```js
+https://WEB.org/wp-json/wp/v2/erb_webinars?cat_categoria_webinar=1270
+
+```
+dode:
+erb_webinars es el nombre del CPT (post_type)
+cat_categoria_webinar es la taxonomia (taxonomy)
+
+Ejemplos:
+https://tusitio.com/wp-json/wp/v2/libro
+
+Puedes agregar parámetros adicionales a la URL para filtrar los resultados. Por ejemplo, para obtener los últimos 5 posts de tipo "libro", puedes hacer una solicitud GET a la siguiente URL:
+
+https://tusitio.com/wp-json/wp/v2/libro?per_page=5
+
+También puedes utilizar el método fetch() en JavaScript para realizar la solicitud y procesar los datos de respuesta:
+
+```js
+  fetch('https://tusitio.com/wp-json/wp/v2/libro')
+  .then(response => response.json())
+  .then(data => {
+  console.log(data);
+  })
+  .catch(error => {
+  console.error(error);
+  });
+```
+
 ### Agregar Endpoints a la API REST de WordPress
 https://www.youtube.com/watch?v=T_4205O1mNA
 
