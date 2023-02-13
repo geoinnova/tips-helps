@@ -23,6 +23,14 @@ Hasta hace unos días me funcionaba ahora lo he tenido con hacer con pg_restore
 pg_restore -U postgres -p 5433 -d basalan c:\basalan.backup
 ```
 
+Este error indica que el rol "g_app" no existe en su base de datos. Para resolver este problema, primero debe crear el rol "g_app" antes de intentar realizar la restauración.
+
+Puede crear un nuevo rol ejecutando el siguiente comando en su línea de comandos:
+
+css
+
+createuser -U postgres -p 5433 -d g_app
+
 ### Operador :: (signo de dos puntos doble)
 https://learn.microsoft.com/es-es/azure/databricks/sql/language-manual/functions/coloncolonsign
 
